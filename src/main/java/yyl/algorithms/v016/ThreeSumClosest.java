@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class ThreeSumClosest {
 	public static void main(String[] args) {
 		for (TestSample sample : TestSample.values()) {
-			int result = threeSumClosest(sample.nums(), sample.target());
+			int result = threeSumClosest2(sample.nums(), sample.target());
 			System.out.println("answer:" + result + "; expected:" + sample.expected());
 		}
 	}
@@ -78,36 +78,30 @@ public class ThreeSumClosest {
 	public static int threeSumClosest2(int[] nums, int target) {
 		Arrays.sort(nums);
 		int closest = 0;
-		int d0 = Integer.MAX_VALUE;
+		int minDifference = Integer.MAX_VALUE;
 		for (int i = 0, I = nums.length - 2, R = nums.length - 1; i < I; i++) {
 			int left = i + 1;
 			int right = R;
-			int c1 = closest;
-			int d1 = Integer.MAX_VALUE;
 			while (left < right) {
 				int sum = nums[i] + nums[left] + nums[right];
 				if (sum == target) {
 					return sum;
 				}
 				if (sum > target) {
-					int dt = sum - target;
-					if (dt < d1) {
-						d1 = dt;
-						c1 = sum;
+					int difference = sum - target;
+					if (difference < minDifference) {
+						minDifference = difference;
+						closest = sum;
 					}
 					right--;
 				} else {
-					int dt = target - sum;
-					if (dt < d1) {
-						d1 = dt;
-						c1 = sum;
+					int difference = target - sum;
+					if (difference < minDifference) {
+						minDifference = difference;
+						closest = sum;
 					}
 					left++;
 				}
-			}
-			if (d1 < d0) {
-				d0 = d1;
-				closest = c1;
 			}
 		}
 		return closest;
