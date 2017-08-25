@@ -3,7 +3,7 @@ package yyl.algorithms.v016;
 /**
  * 样本数据
  */
-public enum TestSample {
+enum TestSample {
 	S0(new int[] { 1, 1, 1 }, 0, 3), //
 	S1(new int[] { -1, 2, 1, -4 }, 1, 2), //
 	S2(new int[] { -55, -24, -18, -11, -7, -3, 4, 5, 6, 9, 11, 23, 33 }, 0, 0), //
