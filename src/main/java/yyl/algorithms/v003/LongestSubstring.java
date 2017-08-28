@@ -11,6 +11,7 @@ import java.util.Map;
  * Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring, "pwke" is a
  * subsequence and not a substring.<br>
  */
+//计算最长无重复子串长度
 public class LongestSubstring {
 	public static void main(String[] args) {
 		System.out.println(lengthOfLongestSubstring("abcabcbb"));
