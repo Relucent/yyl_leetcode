@@ -55,30 +55,28 @@ public class ZigZagConversion {
 		if (numRows < 2 || s.length() == 0) {
 			return s;
 		}
-		int len = s.length();
-		int interval = numRows * 2 - 2;
+		int interval = (numRows - 1) << 1; //(numRows - 1) * 2
 		int k = 0;
-		char[] chars = new char[len];
+		char[] chars = new char[s.length()];
 
 		//first line
-		for (int i = 0; i < len; i += interval) {
+		for (int i = 0; i < s.length(); i += interval) {
 			chars[k++] = s.charAt(i);
 		}
 
 		//middle line
 		for (int row = 1; row < numRows - 1; row++) {
 			// row => +(interval–2*row) | +(2*row) | +(interval–2*row) | +(2*row) | 
-			int midInterval = 2 * row;
-			for (int i = row; i < len; i += midInterval) {
+			int midInterval = row << 1; // row * 2
+			//1-> interval–2*row
+			//2-> interval–(interval–2*row) = 2*row
+			for (int i = row; i < s.length(); i += (midInterval = interval - midInterval)) {
 				chars[k++] = s.charAt(i);
-				//1-> interval–2*row
-				//2-> interval–(interval–2*row) = 2*row
-				midInterval = interval - midInterval;
 			}
 		}
 
 		//last line
-		for (int i = numRows - 1; i < len; i += interval) {
+		for (int i = numRows - 1; i < s.length(); i += interval) {
 			chars[k++] = s.charAt(i);
 		}
 		return new String(chars);
