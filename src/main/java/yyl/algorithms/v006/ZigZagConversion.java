@@ -13,18 +13,43 @@ package yyl.algorithms.v006;
  * Write the code that will take a string and make this conversion given a number of rows: <br>
  * convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".<br>
  */
-//Z型转换 (输出的文本也是一行，并不是图形文本)
+//Z型转换 (输出的文本也是一行，并不是图形文本，这题其实就是找规律)
 public class ZigZagConversion {
 
 	public static void main(String[] args) {
-		//1___9___7___5
-		//2__80__68__46
-		//3_7_1_5_9_3_7
-		//46__24__02__8_0
-		//5___3___1___9
-		String result = convert("123456789012345678901234567890", 5);
+		//A___I___Q___Y
+		//B__HJ__PR__XZ
+		//C_G_K_O_S_W
+		//DF__LN__TV
+		//E___M___U
+		String result = convert("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 5);
 		System.out.println(result);
 	}
+
+	//ROWS=1 (special)
+	//r0: |01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|
+
+	//ROWS=2 (interval=2)
+	//r0: |01|03|05|07|09|11|13|15|17|19|21|23|25|
+	//r1: |02|04|06|08|10|12|14|16|18|20|22|24|26|
+
+	//ROWS=3 (interval=4)
+	//r0: |01|__|05|__|09|__|13|__|17|__|21|__|25|
+	//r1: |02|04|06|08|10|12|14|16|18|20|22|24|26|
+	//r2: |03|__|07|__|11|__|15|__|19|__|23|__|
+
+	//ROWS=4 (interval=6) 
+	//r0: |01|__|__|07|__|__|13|__|__|19|__|__|25|
+	//r1: |02|__|06|08|__|12|14|__|18|20|__|24|26|
+	//r2: |03|05|__|09|11|__|15|17|__|21|23|
+	//r3: |04|__|__|10|__|__|16|__|__|22|
+
+	//ROWS=5 (interval=8) (midInterval=interval-2*row,2*row)
+	//r0: |01|__|__|__|09|__|__|__|17|__|__|__|25|
+	//r1: |02|__|__|08|10|__|__|16|18|__|__|24|26|
+	//r2: |03|__|07|__|11|__|15|__|19|__|23|
+	//r3: |04|06|__|__|12|14|__|__|20|22|
+	//r4: |05|__|__|__|13|__|__|__|21|__|
 
 	public static String convert(String s, int numRows) {
 		if (numRows < 2 || s.length() == 0) {
@@ -32,12 +57,12 @@ public class ZigZagConversion {
 		}
 		int len = s.length();
 		int interval = numRows * 2 - 2;
-
-		StringBuilder sbr = new StringBuilder();
+		int k = 0;
+		char[] chars = new char[len];
 
 		//first line
 		for (int i = 0; i < len; i += interval) {
-			sbr.append(s.charAt(i));
+			chars[k++] = s.charAt(i);
 		}
 
 		//middle line
@@ -45,7 +70,7 @@ public class ZigZagConversion {
 			// row => +(interval–2*row) | +(2*row) | +(interval–2*row) | +(2*row) | 
 			int midInterval = 2 * row;
 			for (int i = row; i < len; i += midInterval) {
-				sbr.append(s.charAt(i));
+				chars[k++] = s.charAt(i);
 				//1-> interval–2*row
 				//2-> interval–(interval–2*row) = 2*row
 				midInterval = interval - midInterval;
@@ -54,8 +79,8 @@ public class ZigZagConversion {
 
 		//last line
 		for (int i = numRows - 1; i < len; i += interval) {
-			sbr.append(s.charAt(i));
+			chars[k++] = s.charAt(i);
 		}
-		return sbr.toString();
+		return new String(chars);
 	}
 }
