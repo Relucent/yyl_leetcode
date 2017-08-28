@@ -20,6 +20,9 @@ public class LongestSubstring {
 	}
 
 	public static int lengthOfLongestSubstring(String s) {
+		if (s.isEmpty()) {
+			return 0;
+		}
 		int maxLength = 0;
 		int[] indexs = new int[128];//ASCII
 		for (int begin = 0, end = 0; end < s.length(); end++) {
