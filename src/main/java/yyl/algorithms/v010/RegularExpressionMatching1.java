@@ -22,7 +22,7 @@ package yyl.algorithms.v010;
 // 正则匹配实现题
 // '.' 匹配单个字符
 // '*' 匹配零到多个前一个字符
-public class RegularExpressionMatching2 {
+public class RegularExpressionMatching1 {
 	public static void main(String[] args) {
 		System.out.println(isMatch("abcdefg", "abcdefg"));//T
 		System.out.println(isMatch("abcdefg", "ab.*defg"));//T
@@ -32,42 +32,31 @@ public class RegularExpressionMatching2 {
 		System.out.println(isMatch("abc", "..c"));//T
 	}
 
-	//动态规划算法
 	public static boolean isMatch(String s, String p) {
+		return matchhere(s, p, 0, 0);
+	}
 
-		boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
-
-		for (int i = 0; i <= s.length(); i++) {
-			for (int j = 0; j <= p.length(); j++) {
-				if (j == 0) {
-					dp[i][j] = i == 0;
-				}
-				// j>1  p[j-1]=='*'
-				else if (p.charAt(j - 1) == '*') {
-
-					for (int k = 0; k <= i; k++) {
-						if (k != 0 && !isSame(s.charAt(i - k), p.charAt(j - 2))) {
-							dp[i][j] = false;
-							break;
-						}
-						if (dp[i - k][j - 2]) {
-							dp[i][j] = true;
-							break;
-						}
-					}
-				}
-				//p[j-1]!='*'
-				else {
-					dp[i][j] = i >= 1// 
-							&& isSame(s.charAt(i - 1), p.charAt(j - 1))// 
-							&& dp[i - 1][j - 1];
-				}
-			}
+	private static boolean matchhere(String s, String p, int i, int j) {
+		if (j == p.length()) {
+			return i == s.length();
 		}
-		return dp[s.length()][p.length()];
+		if (j < p.length() - 1 && p.charAt(j + 1) == '*') {
+			return matchstar(p.charAt(j), s, p, i, j + 2);
+		}
+		if (i < s.length() && (p.charAt(j) == s.charAt(i) || p.charAt(j) == '.')) {
+			return matchhere(s, p, i + 1, j + 1);
+		}
+		return false;
 	}
 
-	private static boolean isSame(char c, char p) {
-		return p == '.' || c == p;
+	//
+	private static boolean matchstar(char c, String s, String p, int i, int j) {
+		do {
+			if (matchhere(s, p, i, j)) {
+				return true;
+			}
+		} while (i < s.length() && (s.charAt(i++) == c || '.' == c));
+		return false;
 	}
+
 }
