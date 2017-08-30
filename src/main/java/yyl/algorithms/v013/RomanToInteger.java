@@ -15,7 +15,30 @@ public class RomanToInteger {
 		}
 	}
 
+	// O(n)
 	public static int romanToInt(String s) {
+		int[] map = new int[128];
+		map['I'] = 1;
+		map['V'] = 5;
+		map['X'] = 10;
+		map['L'] = 50;
+		map['C'] = 100;
+		map['D'] = 500;
+		map['M'] = 1000;
+		int sum = 0;
+		char[] value = s.toCharArray();
+		for (int i = 0; i < value.length - 1; ++i) {
+			if (map[value[i]] < map[value[i + 1]]) {
+				sum -= map[value[i]];
+			} else {
+				sum += map[value[i]];
+			}
+		}
+		return sum + map[value[s.length() - 1]];
+	}
+
+	// O(n*d)
+	public static int romanToInt2(String s) {
 		String[][] digitals = { //
 				{ "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }, //10^0
 				{ "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" }, //10^1
