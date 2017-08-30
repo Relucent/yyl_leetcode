@@ -10,7 +10,7 @@ public class IntegerToRoman {
 
 	public static void main(String[] args) {
 		for (int i = 0; i <= 3999; i++) {
-			System.out.println(intToRoman(i));
+			System.out.println(i + "	" + intToRoman(i));
 		}
 	}
 
