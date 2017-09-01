@@ -21,55 +21,58 @@ import java.util.List;
 public class LetterCombinationsOfAPhoneNumber {
 
 	public static void main(String[] args) {
-		System.out.println(letterCombinations(""));
-		System.out.println(letterCombinations("01"));
-		System.out.println(letterCombinations("##"));
-		System.out.println(letterCombinations("23"));
-		System.out.println(letterCombinations("345"));
+		Solution solution = new Solution();
+		System.out.println(solution.letterCombinations(""));
+		System.out.println(solution.letterCombinations("01"));
+		System.out.println(solution.letterCombinations("##"));
+		System.out.println(solution.letterCombinations("23"));
+		System.out.println(solution.letterCombinations("345"));
 	}
 
-	private static final char[][] MAPPING = { //
-			{ 'a', 'b', 'c' }, //2
-			{ 'd', 'e', 'f' }, //3
-			{ 'g', 'h', 'i' }, //4
-			{ 'j', 'k', 'l' }, //5
-			{ 'm', 'n', 'o' }, //6
-			{ 'p', 'q', 'r', 's' }, //7
-			{ 't', 'u', 'v' }, //8
-			{ 'w', 'x', 'y', 'z' },//9
-	};
+	static class Solution {
+		private static final char[][] MAPPING = { //
+				{ 'a', 'b', 'c' }, //2
+				{ 'd', 'e', 'f' }, //3
+				{ 'g', 'h', 'i' }, //4
+				{ 'j', 'k', 'l' }, //5
+				{ 'm', 'n', 'o' }, //6
+				{ 'p', 'q', 'r', 's' }, //7
+				{ 't', 'u', 'v' }, //8
+				{ 'w', 'x', 'y', 'z' },//9
+		};
 
-	public static List<String> letterCombinations(String digits) {
-		List<String> result = new ArrayList<>();
-		if (digits.isEmpty()) {
-			return result;
-		}
-		char[] chars = digits.toCharArray();
-		for (int i = 0; i < chars.length; i++) {
-			if (chars[i] < '2' || chars[i] > '9') {
+		public List<String> letterCombinations(String digits) {
+			List<String> result = new ArrayList<>();
+			if (digits.isEmpty()) {
 				return result;
 			}
-			chars[i] -= '2';
+			char[] chars = digits.toCharArray();
+			for (int i = 0; i < chars.length; i++) {
+				if (chars[i] < '2' || chars[i] > '9') {
+					return result;
+				}
+				chars[i] -= '2';
+			}
+			repairCombinations(chars, 0, result);
+			return result;
 		}
-		repairCombinations(chars, 0, result);
-		return result;
-	}
 
-	private static void repairCombinations(char[] chars, int pos, List<String> result) {
-		if (pos == chars.length - 1) {
-			char i = chars[pos];
-			for (char c : MAPPING[i]) {
-				chars[pos] = c;
-				result.add(new String(chars));
+		private static void repairCombinations(char[] chars, int pos, List<String> result) {
+			if (pos == chars.length - 1) {
+				char i = chars[pos];
+				for (char c : MAPPING[i]) {
+					chars[pos] = c;
+					result.add(new String(chars));
+				}
+				chars[pos] = i;
+			} else {
+				char i = chars[pos];
+				for (char c : MAPPING[i]) {
+					chars[pos] = c;
+					repairCombinations(chars, pos + 1, result);
+				}
+				chars[pos] = i;
 			}
-			chars[pos] = i;
-		} else {
-			char i = chars[pos];
-			for (char c : MAPPING[i]) {
-				chars[pos] = c;
-				repairCombinations(chars, pos + 1, result);
-			}
-			chars[pos] = i;
 		}
 	}
 }

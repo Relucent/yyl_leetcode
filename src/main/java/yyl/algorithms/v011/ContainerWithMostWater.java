@@ -13,45 +13,54 @@ package yyl.algorithms.v011;
 public class ContainerWithMostWater {
 
 	public static void main(String[] args) {
+		Solution solution = new Solution();
 		int[] height = { 2, 3, 4, 5, 18, 17, 6 };
-		System.out.println(maxArea(height));
+		long l = System.currentTimeMillis();
+		for (int i = 0; i < 1001; i++)
+			System.out.println(solution.maxArea(height));
+
+		System.out.println(System.currentTimeMillis() - l);
 	}
 
-	//1.首先假设我们找到能取最大容积的纵线为 i , j (假定i<j)，那么得到的最大容积 C = min(ai,aj)*(j-i)
-	//2.在 j的右端没有一条线会比它高(因为如果存在 k(j<k&&ak>aj,那么由i,k构成的容器的容积也会大于 C'> C
-	//3.同理，在i的左边也不会有比它高的线
-	//所以我们从两头向中间靠拢，同时更新候选值；在收缩区间的时候优先从 较小的边开始收缩
-	public static int maxArea(int[] height) {
-		int left = 0;
-		int right = height.length - 1;
-		int maxArea = 0;
-		while (left < right) {
-			maxArea = Math.max(Math.min(height[left], height[right]) * (right - left), maxArea);
-			if (height[left] < height[right]) {
-				int i = left;
-				while (i < right && height[i] <= height[left]) {
-					i++;
+	static class Solution {
+		//1.首先假设我们找到能取最大容积的纵线为 i , j (假定i<j)，那么得到的最大容积 C = min(ai,aj)*(j-i)
+		//2.在 j的右端没有一条线会比它高(因为如果存在 k(j<k&&ak>aj,那么由i,k构成的容器的容积也会大于 C'> C
+		//3.同理，在i的左边也不会有比它高的线
+		//所以我们从两头向中间靠拢，同时更新候选值；在收缩区间的时候优先从 较小的边开始收缩
+		public int maxArea(int[] height) {
+			int left = 0;
+			int right = height.length - 1;
+			int maxArea = 0;
+			while (left < right) {
+				maxArea = Math.max(Math.min(height[left], height[right]) * (right - left), maxArea);
+				if (height[left] < height[right]) {
+					int i = left;
+					while (i < right && height[i] <= height[left]) {
+						i++;
+					}
+					left = i;
+				} else {
+					int i = right;
+					while (i > left && height[i] <= height[right]) {
+						i--;
+					}
+					right = i;
 				}
-				left = i;
-			} else {
-				int i = right;
-				while (i > left && height[i] <= height[right]) {
-					i--;
-				}
-				right = i;
 			}
+			return maxArea;
 		}
-		return maxArea;
 	}
 
-	@Deprecated
-	public static int maxArea2(int[] height) {
-		int area = 0;
-		for (int i = 0; i < height.length; i++) {
-			for (int j = i + 1; j < height.length; j++) {
-				area = Math.max(area, Math.min(height[i], height[j]) * (j - i));
+	//暴力方式 , 时间复杂度 O(N^2)
+	static class Solution2 {
+		public int maxArea(int[] height) {
+			int area = 0;
+			for (int i = 0; i < height.length; i++) {
+				for (int j = i + 1; j < height.length; j++) {
+					area = Math.max(area, Math.min(height[i], height[j]) * (j - i));
+				}
 			}
+			return area;
 		}
-		return area;
 	}
 }

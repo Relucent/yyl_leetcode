@@ -9,15 +9,15 @@ package yyl.algorithms.v008;
  * <br>
  * Requirements for atoi:<br>
  * 
- * The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this
- * character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical
- * value.<br>
- * The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of
- * this function.<br>
- * If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty
- * or it contains only whitespace characters, no conversion is performed.<br>
- * If no valid conversion could be performed, a zero value is returned. If the correct value is out of the range of representable values, INT_MAX
- * (2147483647) or INT_MIN (-2147483648) is returned.<br>
+ * The function first discards as many whitespace characters as necessary until the first non-whitespace character is
+ * found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical
+ * digits as possible, and interprets them as a numerical value.<br>
+ * The string can contain additional characters after those that form the integral number, which are ignored and have no
+ * effect on the behavior of this function.<br>
+ * If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence
+ * exists because either str is empty or it contains only whitespace characters, no conversion is performed.<br>
+ * If no valid conversion could be performed, a zero value is returned. If the correct value is out of the range of
+ * representable values, INT_MAX (2147483647) or INT_MIN (-2147483648) is returned.<br>
  */
 // 字符串转为整数
 //1. 若字符串开头是空格，则跳过所有空格，到第一个非空格字符，如果没有，则返回0.
@@ -30,61 +30,66 @@ package yyl.algorithms.v008;
 public class StringToInteger {
 
 	public static void main(String[] args) {
-		System.out.println(myAtoi(" 2147483647"));
-		System.out.println(myAtoi(" 2147483648"));
-		System.out.println(myAtoi(""));
-		System.out.println(myAtoi("1a"));
-		System.out.println(myAtoi("++1a"));
-		System.out.println(myAtoi("+-1a"));
+		Solution solution = new Solution();
+		System.out.println(solution.myAtoi(" 2147483647"));
+		System.out.println(solution.myAtoi(" 2147483648"));
+		System.out.println(solution.myAtoi(""));
+		System.out.println(solution.myAtoi("1a"));
+		System.out.println(solution.myAtoi("++1a"));
+		System.out.println(solution.myAtoi("+-1a"));
+		System.out.println(solution.myAtoi("+2147483648"));
+		System.out.println(solution.myAtoi("-2147483649"));
 	}
 
-	public static int myAtoi(String str) {
-		if (str == null) {
-			return 0;
-		}
-
-		boolean negative = false;
-		int len = str.length();
-		int i = 0;
-		int result = 0;
-
-		while (i < len) {
-			char c = str.charAt(i);
-			if (c > ' ') {
-				break;
+	static class Solution {
+		public int myAtoi(String str) {
+			if (str == null) {
+				return 0;
 			}
-			i++;
-		}
 
-		if (i == len) {
-			return result;
-		}
+			boolean negative = false;
+			int len = str.length();
+			int i = 0;
+			int result = 0;
 
-		char firstChar = str.charAt(i);
-
-		if (firstChar == '-') {
-			negative = true;
-			i++;
-		} else if (firstChar == '+') {
-			i++;
-		}
-
-		int limit = negative ? Integer.MIN_VALUE : -Integer.MAX_VALUE;// -MAX
-		int multiplicationLimit = limit / 10;
-		while (i < len) {
-			int digit = str.charAt(i++) - '0';
-			if (digit < 0 || digit > 9) {
-				break;
+			while (i < len) {
+				char c = str.charAt(i);
+				if (c > ' ') {
+					break;
+				}
+				i++;
 			}
-			if (result < multiplicationLimit) {
-				return negative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+
+			if (i == len) {
+				return result;
 			}
-			result *= 10;
-			if (result < limit + digit) {
-				return negative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+
+			char firstChar = str.charAt(i);
+
+			if (firstChar == '-') {
+				negative = true;
+				i++;
+			} else if (firstChar == '+') {
+				i++;
 			}
-			result -= digit;
+
+			int limit = negative ? Integer.MIN_VALUE : -Integer.MAX_VALUE;// -MAX
+			int multiplicationLimit = limit / 10;
+			while (i < len) {
+				int digit = str.charAt(i++) - '0';
+				if (digit < 0 || digit > 9) {
+					break;
+				}
+				if (result < multiplicationLimit) {
+					return negative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+				}
+				result *= 10;
+				if (result < limit + digit) {
+					return negative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+				}
+				result -= digit;
+			}
+			return negative ? result : -result;
 		}
-		return negative ? result : -result;
 	}
 }

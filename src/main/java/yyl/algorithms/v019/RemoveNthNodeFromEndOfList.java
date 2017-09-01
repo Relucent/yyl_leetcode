@@ -21,26 +21,29 @@ import yyl.algorithms.bean.ListNode;
 public class RemoveNthNodeFromEndOfList {
 
 	public static void main(String[] args) {
+		Solution solution = new Solution();
 		ListNode l1 = ListNode.create(1, 2);
 		System.out.println(l1);
-		l1 = removeNthFromEnd(l1, 2);
+		l1 = solution.removeNthFromEnd(l1, 2);
 		System.out.println(l1);
 	}
 
-	public static ListNode removeNthFromEnd(ListNode head, int n) {
-		ListNode fast = head;
-		while ((n--) != 0) {
-			fast = fast.next;
+	static class Solution {
+		public ListNode removeNthFromEnd(ListNode head, int n) {
+			ListNode fast = head;
+			while ((n--) != 0) {
+				fast = fast.next;
+			}
+			if (fast == null) {
+				return head.next;
+			}
+			ListNode cursor = head;
+			while (fast.next != null) {
+				fast = fast.next;
+				cursor = cursor.next;
+			}
+			cursor.next = cursor.next.next;
+			return head;
 		}
-		if (fast == null) {
-			return head.next;
-		}
-		ListNode cursor = head;
-		while (fast.next != null) {
-			fast = fast.next;
-			cursor = cursor.next;
-		}
-		cursor.next = cursor.next.next;
-		return head;
 	}
 }

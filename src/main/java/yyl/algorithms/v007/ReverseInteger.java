@@ -12,73 +12,80 @@ package yyl.algorithms.v007;
 public class ReverseInteger {
 
 	public static void main(String[] args) {
+		Solution solution = new Solution();
 		int[] samples = { 0, 123, -2147483648, -100, -123, 2147447412, 1534236469, -2147483412 };
 		for (int sample : samples) {
-			System.out.println(sample + " -> " + reverse(sample));
+			System.out.println(sample + " -> " + solution.reverse(sample));
 		}
 	}
 
-	public static int reverse(int x) {
-		long reverse = 0;
-		while (x != 0) {
-			reverse = (reverse * 10) + (x % 10);
-			x /= 10;
-		}
-		//overflows
-		if (reverse > Integer.MAX_VALUE || reverse < Integer.MIN_VALUE) {
-			return 0;
-		}
-		return (int) reverse;
-	}
-
-	public static int reverse1(int x) {
-		int result = 0;
-		while (x != 0) {
-			int digit = x % 10;
-			int forward = result * 10 + digit;
+	static class Solution {
+		public int reverse(int x) {
+			long reverse = 0;
+			while (x != 0) {
+				reverse = (reverse * 10) + (x % 10);
+				x /= 10;
+			}
 			//overflows
-			if ((forward - digit) / 10 != result) {
+			if (reverse > Integer.MAX_VALUE || reverse < Integer.MIN_VALUE) {
 				return 0;
 			}
-			result = forward;
-			x /= 10;
+			return (int) reverse;
 		}
-		return result;
 	}
 
-	public static int reverse2(int x) {
-		//MIN_VALUE -2147483648
-		//MAX_VALUE +2147483647
-		if (x == Integer.MIN_VALUE || x == Integer.MAX_VALUE) {
-			return 0;
-		}
-
-		boolean negative = x < 0;
-		if (negative) {
-			x = -x;
-		}
-		int[] digits = new int[10];
-		int n = 0;
-		int d = x;
-		while (d != 0) {
-			digits[n++] = d % 10;
-			d /= 10;
-		}
-		int limit = negative ? Integer.MIN_VALUE : -Integer.MAX_VALUE;
-		int multiLimit = limit / 10;
-		int result = 0;
-		for (int i = 0; i < n; i++) {
-			if (result < multiLimit) {
-				return 0;//overflows
+	static class Solution2 {
+		public int reverse(int x) {
+			int result = 0;
+			while (x != 0) {
+				int digit = x % 10;
+				int forward = result * 10 + digit;
+				//overflows
+				if ((forward - digit) / 10 != result) {
+					return 0;
+				}
+				result = forward;
+				x /= 10;
 			}
-			result *= 10;
-			int digit = digits[i];
-
-			if (result < limit + digit) {
-				return 0;//overflows
-			}
-			result -= digit;
+			return result;
 		}
-		return negative ? result : -result;
+	}
+
+	static class Solution3 {
+		public int reverse(int x) {
+			//MIN_VALUE -2147483648
+			//MAX_VALUE +2147483647
+			if (x == Integer.MIN_VALUE || x == Integer.MAX_VALUE) {
+				return 0;
+			}
+
+			boolean negative = x < 0;
+			if (negative) {
+				x = -x;
+			}
+			int[] digits = new int[10];
+			int n = 0;
+			int d = x;
+			while (d != 0) {
+				digits[n++] = d % 10;
+				d /= 10;
+			}
+			int limit = negative ? Integer.MIN_VALUE : -Integer.MAX_VALUE;
+			int multiLimit = limit / 10;
+			int result = 0;
+			for (int i = 0; i < n; i++) {
+				if (result < multiLimit) {
+					return 0;//overflows
+				}
+				result *= 10;
+				int digit = digits[i];
+
+				if (result < limit + digit) {
+					return 0;//overflows
+				}
+				result -= digit;
+			}
+			return negative ? result : -result;
+		}
 	}
 }

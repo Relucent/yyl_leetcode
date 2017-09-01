@@ -9,7 +9,7 @@ public class Test01 {
 
 		long l = System.currentTimeMillis();
 
-		List<List<Integer>> result = N3Sum.threeSum(sample);
+		List<List<Integer>> result = new N3Sum.Solution().threeSum(sample);
 
 		System.out.println(System.currentTimeMillis() - l);
 

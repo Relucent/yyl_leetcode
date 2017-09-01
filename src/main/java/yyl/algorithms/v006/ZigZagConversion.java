@@ -17,12 +17,13 @@ package yyl.algorithms.v006;
 public class ZigZagConversion {
 
 	public static void main(String[] args) {
+		Solution solution = new Solution();
 		//A___I___Q___Y
 		//B__HJ__PR__XZ
 		//C_G_K_O_S_W
 		//DF__LN__TV
 		//E___M___U
-		String result = convert("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 5);
+		String result = solution.convert("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 5);
 		System.out.println(result);
 	}
 
@@ -50,35 +51,36 @@ public class ZigZagConversion {
 	//r2: |03|__|07|__|11|__|15|__|19|__|23|
 	//r3: |04|06|__|__|12|14|__|__|20|22|
 	//r4: |05|__|__|__|13|__|__|__|21|__|
+	static class Solution {
+		public String convert(String s, int numRows) {
+			if (numRows < 2 || s.length() == 0) {
+				return s;
+			}
+			int interval = (numRows - 1) << 1; //(numRows - 1) * 2
+			int k = 0;
+			char[] chars = new char[s.length()];
 
-	public static String convert(String s, int numRows) {
-		if (numRows < 2 || s.length() == 0) {
-			return s;
-		}
-		int interval = (numRows - 1) << 1; //(numRows - 1) * 2
-		int k = 0;
-		char[] chars = new char[s.length()];
-
-		//first line
-		for (int i = 0; i < s.length(); i += interval) {
-			chars[k++] = s.charAt(i);
-		}
-
-		//middle line
-		for (int row = 1; row < numRows - 1; row++) {
-			// row => +(interval–2*row) | +(2*row) | +(interval–2*row) | +(2*row) | 
-			int midInterval = row << 1; // row * 2
-			//1-> interval–2*row
-			//2-> interval–(interval–2*row) = 2*row
-			for (int i = row; i < s.length(); i += (midInterval = interval - midInterval)) {
+			//first line
+			for (int i = 0; i < s.length(); i += interval) {
 				chars[k++] = s.charAt(i);
 			}
-		}
 
-		//last line
-		for (int i = numRows - 1; i < s.length(); i += interval) {
-			chars[k++] = s.charAt(i);
+			//middle line
+			for (int row = 1; row < numRows - 1; row++) {
+				// row => +(interval–2*row) | +(2*row) | +(interval–2*row) | +(2*row) | 
+				int midInterval = row << 1; // row * 2
+				//1-> interval–2*row
+				//2-> interval–(interval–2*row) = 2*row
+				for (int i = row; i < s.length(); i += (midInterval = interval - midInterval)) {
+					chars[k++] = s.charAt(i);
+				}
+			}
+
+			//last line
+			for (int i = numRows - 1; i < s.length(); i += interval) {
+				chars[k++] = s.charAt(i);
+			}
+			return new String(chars);
 		}
-		return new String(chars);
 	}
 }

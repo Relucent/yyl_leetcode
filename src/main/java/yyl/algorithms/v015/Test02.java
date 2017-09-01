@@ -2,6 +2,8 @@ package yyl.algorithms.v015;
 
 import java.util.List;
 
+import yyl.algorithms.v015.N3Sum.SolutionForkJoin;
+
 public class Test02 {
 	public static void main(String[] args) {
 
@@ -9,7 +11,7 @@ public class Test02 {
 
 		long l = System.currentTimeMillis();
 
-		List<List<Integer>> result = N3Sum02ForkJoin.threeSum(sample);
+		List<List<Integer>> result = new SolutionForkJoin().threeSum(sample);
 
 		System.out.println(System.currentTimeMillis() - l);
 
