@@ -22,10 +22,10 @@ import java.util.List;
 public class N4Sum {
 
 	public static void main(String[] args) {
-		int[] nums = { 1, 0, -1, 0, -2, 2 };
-		List<List<Integer>> result = fourSum(nums, 0);
+		int[] nums = { -3, -1, 0, 2, 4, 5 };
+		List<List<Integer>> result = fourSum(nums, 1);
 		for (List<Integer> list : result) {
-			System.out.println(list);
+			System.out.println(list);//[[-3,-1,0,5],[-3,0,0,4],[-1,0,0,2]]
 		}
 	}
 
@@ -35,9 +35,9 @@ public class N4Sum {
 			return result;
 		}
 		Arrays.sort(nums);
-		for (int i = 0, end = nums.length - 3; i < end; i++) {
-			if (i == 0 || nums[i] != nums[i - 1]) {
-				List<List<Integer>> values = threeSum(nums, i + 1, target - nums[i]);
+		for (int right = nums.length - 1, i = right; i > 2; i--) {
+			if (i == right || nums[i] != nums[i + 1]) {
+				List<List<Integer>> values = threeSum(nums, i - 1, target - nums[i]);
 				for (int j = 0; j < values.size(); j++) {
 					values.get(j).add(nums[i]);
 				}
@@ -47,11 +47,11 @@ public class N4Sum {
 		return result;
 	}
 
-	private static List<List<Integer>> threeSum(int[] nums, int offset, int target) {
+	private static List<List<Integer>> threeSum(int[] nums, int right, int target) {
 		List<List<Integer>> result = new ArrayList<>();
-		for (int i = offset, end = nums.length - 2; i < end; i++) {
-			if (i == offset || nums[i] != nums[i - 1]) {
-				List<List<Integer>> values = twoSum(nums, i + 1, target - nums[i]);
+		for (int i = right; i > 1; i--) {
+			if (i == right || nums[i] != nums[i + 1]) {
+				List<List<Integer>> values = twoSum(nums, i - 1, target - nums[i]);
 				for (int j = 0; j < values.size(); j++) {
 					values.get(j).add(nums[i]);
 				}
@@ -61,10 +61,9 @@ public class N4Sum {
 		return result;
 	}
 
-	private static List<List<Integer>> twoSum(int[] nums, int offset, int target) {
+	private static List<List<Integer>> twoSum(int[] nums, int right, int target) {
 		List<List<Integer>> result = new ArrayList<>();
-		int left = offset;
-		int right = nums.length - 1;
+		int left = 0;
 		while (left < right) {
 			if (nums[left] + nums[right] == target) {
 				List<Integer> values = new ArrayList<Integer>();
