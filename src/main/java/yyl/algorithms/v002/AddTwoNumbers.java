@@ -1,8 +1,10 @@
 package yyl.algorithms.v002;
 
+import yyl.algorithms.bean.ListNode;
+
 /**
- * You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse
- * order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.<br>
+ * You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes
+ * contain a single digit. Add the two numbers and return it as a linked list.<br>
  * You may assume the two numbers do not contain any leading zero, except the number 0 itself.<br>
  * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)<br>
  * Output: 7 -> 0 -> 8 <br>
@@ -12,12 +14,12 @@ package yyl.algorithms.v002;
 public class AddTwoNumbers {
 
 	public static void main(String[] args) {
-		ListNode l1 = create(2, 4, 3);
-		ListNode l2 = create(5, 6, 4);
+		ListNode l1 = ListNode.create(2, 4, 3);
+		ListNode l2 = ListNode.create(5, 6, 4);
 		ListNode result = addTwoNumbers(l1, l2);
-		println(l1);
-		println(l2);
-		println(result);
+		System.out.println(l1);
+		System.out.println(l2);
+		System.out.println(result);
 	}
 
 	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -44,43 +46,4 @@ public class AddTwoNumbers {
 		}
 		return dummyHead.next;
 	}
-
-	public static class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-		}
-	}
-
-	public static ListNode create(int... values) {
-		ListNode dummyHead = new ListNode(0);
-		ListNode pre = dummyHead;
-		for (int val : values) {
-			ListNode temp = new ListNode(val);
-			pre.next = temp;
-			pre = temp;
-		}
-		return dummyHead.next == null ? dummyHead : dummyHead.next;
-	}
-
-	public static void println(ListNode l) {
-		if (l == null) {
-			System.out.println("null");
-		}
-		StringBuilder sb = new StringBuilder();
-		sb.append('[');
-		for (;;) {
-			sb.append(l.val);
-			l = l.next;
-			if (l == null) {
-				sb.append(']');
-				break;
-			}
-			sb.append(',').append(' ');
-		}
-		System.out.println(sb);
-	}
-
 }

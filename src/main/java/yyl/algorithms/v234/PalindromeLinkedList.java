@@ -2,6 +2,8 @@ package yyl.algorithms.v234;
 
 import java.util.ArrayList;
 
+import yyl.algorithms.bean.ListNode;
+
 /**
  * Given a singly linked list, determine if it is a palindrome.
  */
@@ -9,10 +11,10 @@ import java.util.ArrayList;
 public class PalindromeLinkedList {
 
 	public static void main(String[] args) {
-		ListNode l0 = create(0);
-		ListNode l1 = create(1, 2, 3, 4, 5);
-		ListNode l2 = create(1, 2, 3, 2, 1);
-		ListNode l3 = create(1, 2, 3, 3, 2, 1);
+		ListNode l0 = ListNode.create(0);
+		ListNode l1 = ListNode.create(1, 2, 3, 4, 5);
+		ListNode l2 = ListNode.create(1, 2, 3, 2, 1);
+		ListNode l3 = ListNode.create(1, 2, 3, 3, 2, 1);
 		System.out.println(isPalindrome(l0));
 		System.out.println(isPalindrome(l1));
 		System.out.println(isPalindrome(l2));
@@ -75,44 +77,5 @@ public class PalindromeLinkedList {
 			cursor = cursor.next;
 		}
 		return true;
-	}
-
-	/* Definition for singly-linked list. */
-	public static class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-		}
-	}
-
-	public static ListNode create(int... values) {
-		ListNode dummyHead = new ListNode(0);
-		ListNode pre = dummyHead;
-		for (int val : values) {
-			ListNode temp = new ListNode(val);
-			pre.next = temp;
-			pre = temp;
-		}
-		return dummyHead.next == null ? dummyHead : dummyHead.next;
-	}
-
-	public static void println(ListNode l) {
-		if (l == null) {
-			System.out.println("null");
-		}
-		StringBuilder sb = new StringBuilder();
-		sb.append('[');
-		for (;;) {
-			sb.append(l.val);
-			l = l.next;
-			if (l == null) {
-				sb.append(']');
-				break;
-			}
-			sb.append(',').append(' ');
-		}
-		System.out.println(sb);
 	}
 }
