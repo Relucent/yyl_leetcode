@@ -18,11 +18,14 @@ public class ListNode {
 		StringBuilder sb = new StringBuilder();
 		sb.append('[');
 		ListNode l = this;
-		for (;;) {
+		for (int i = 0;; i++) {
 			sb.append(l.val);
 			l = l.next;
 			if (l == null) {
 				sb.append(']');
+				break;
+			} else if (i == 31) {
+				sb.append(", ...]");
 				break;
 			}
 			sb.append(',').append(' ');
