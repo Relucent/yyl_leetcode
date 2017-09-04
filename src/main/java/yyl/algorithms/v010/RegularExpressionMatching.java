@@ -34,6 +34,7 @@ public class RegularExpressionMatching {
 		System.out.println(solution.isMatch("abc", "..c"));//T
 	}
 
+	//递归求解
 	static class Solution {
 
 		public boolean isMatch(String s, String p) {
@@ -71,6 +72,7 @@ public class RegularExpressionMatching {
 		}
 	}
 
+	//递归求解
 	static class Solution2 {
 
 		public boolean isMatch(String s, String p) {
@@ -100,40 +102,26 @@ public class RegularExpressionMatching {
 		}
 	}
 
-	//动态规划算法(比算法1和算法2要快)
+	//动态规划算法 O(n^2) (比算法1和算法2都要快)
 	static class Solution3 {
 		public boolean isMatch(String s, String p) {
-
-			boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
-
-			for (int i = 0; i <= s.length(); i++) {
-				for (int j = 0; j <= p.length(); j++) {
-					if (j == 0) {
-						dp[i][j] = i == 0;
-					}
-					// j>1  p[j-1]=='*'
-					else if (p.charAt(j - 1) == '*') {
-
-						for (int k = 0; k <= i; k++) {
-							if (k != 0 && !isSame(s.charAt(i - k), p.charAt(j - 2))) {
-								dp[i][j] = false;
-								break;
-							}
-							if (dp[i - k][j - 2]) {
-								dp[i][j] = true;
-								break;
-							}
-						}
-					}
-					//p[j-1]!='*'
-					else {
-						dp[i][j] = i >= 1// 
-								&& isSame(s.charAt(i - 1), p.charAt(j - 1))// 
-								&& dp[i - 1][j - 1];
+			int m = s.length();
+			int n = p.length();
+			boolean[][] dp = new boolean[m + 1][n + 1];
+			dp[0][0] = true;
+			for (int i = 0; i <= m; ++i) {
+				for (int j = 1; j <= n; ++j) {
+					if (j > 1 && p.charAt(j - 1) == '*') {
+						dp[i][j] = dp[i][j - 2] //
+								|| (i > 0 && isSame(s.charAt(i - 1), p.charAt(j - 2)) && dp[i - 1][j]);
+					} else {
+						dp[i][j] = i > 0 // 
+								&& dp[i - 1][j - 1]// 
+								&& isSame(s.charAt(i - 1), p.charAt(j - 1));
 					}
 				}
 			}
-			return dp[s.length()][p.length()];
+			return dp[m][n];
 		}
 
 		private boolean isSame(char c, char p) {
