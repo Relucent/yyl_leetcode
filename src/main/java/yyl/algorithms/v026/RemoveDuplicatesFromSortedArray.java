@@ -31,8 +31,8 @@ public class RemoveDuplicatesFromSortedArray {
 			}
 			int k = 0;
 			for (int i = 0; i < nums.length; i++) {
-				if (nums[k] != nums[i]) {
-					nums[k++] = nums[i];
+				if (nums[i] != nums[k]) {
+					nums[++k] = nums[i];
 				}
 			}
 			return k + 1;
