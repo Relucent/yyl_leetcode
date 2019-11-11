@@ -65,7 +65,9 @@ public class SearchRotationSortArrayII {
                     } else {
                         left = mid + 1;
                     }
-                } else {
+                }
+                // 因为有重复值，可能出现 nums[mid] == nums[right] 的情况，这时候可以 right--，避免掉这种情况
+                else {
                     right = right - 1;
                 }
             }
