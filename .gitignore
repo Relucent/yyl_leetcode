@@ -15,6 +15,7 @@ target/
 .project
 .settings/
 .metadata/
+.apt_generated
 .factorypath
 .springBeans
 
@@ -34,4 +35,7 @@ Thumbs.db
 # Log File
 *.log
 *.log.*
+
+# gegerator
+generator/
 
