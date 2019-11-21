@@ -24,18 +24,18 @@ public class Trap {
 
 
     static class Solution {
+
+        // 对于一个较低的坑来说，其储水量高度取决于左侧最高柱与右侧最高柱的较小高度
+        // lower = height[(height[left] < height[right]) ? left : right]
+        // 然后 if(height[left] < height[right]){left++;}else{right--}移动指针
+        // 时间复杂度O(n)，空间复杂度O(1)
         public int trap(int[] height) {
             int left = 0;
             int right = height.length - 1;
-            int level = 0;
+            int level = 0; // 记录当前水平面
             int result = 0;
             while (left < right) {
-                int lower = 0;
-                if (height[left] < height[right]) {
-                    lower = height[left++];
-                } else {
-                    lower = height[right--];
-                }
+                int lower = height[(height[left] < height[right]) ? (left++) : (right--)];
                 level = level > lower ? level : lower;
                 result += level - lower;
             }
