@@ -29,26 +29,51 @@ public class LongestPalindromicSubstring {
         System.out.println(solution.longestPalindrome(
                 "civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth"//
         ));// ranynar
+        System.out.println(solution.longestPalindrome(null));// null
+        System.out.println(solution.longestPalindrome(""));// ""
+        System.out.println(solution.longestPalindrome("a"));// a
     }
 
     static class Solution {
+
+        // 时间复杂度：O(n^2)，两层循环
+        // 空间复杂度：O(n^2)，用了一个DP二维数组
         public String longestPalindrome(String s) {
-            int rLen = 0;
-            int rBegin = 0;
-            int rEnd = 0;
-            boolean[][] ranges = new boolean[s.length()][s.length()];
-            for (int end = 0; end < s.length(); end++) {
-                ranges[end][end] = true;
-                for (int begin = 0; begin < end; begin++) {
-                    if ((ranges[begin][end] = s.charAt(begin) == s.charAt(end) && (end - begin < 2 || ranges[begin + 1][end - 1]))//
-                            && rLen < end - begin + 1) {
-                        rLen = end - begin + 1;
-                        rBegin = begin;
-                        rEnd = end;
+
+            // 空字符串，只有一个字符的字符串，只有唯一的子串就是自身
+            if (s == null || s.length() < 2) {
+                return s;
+            }
+
+            int max = 0;
+            int left = 0;
+            int right = 0;
+
+            // 动态规划 dp[i][j] 表示子串 [i,j]是否是回文
+            boolean[][] dp = new boolean[s.length()][s.length()];
+
+            // 结束位置指针后移
+            for (int j = 0; j < s.length(); j++) {
+                // 子串只有一个字符，是回文子串
+                dp[j][j] = true;
+                // 子串开始位置的指针后移
+                for (int i = 0; i < j; i++) {
+                    // 子串[i,j]是回文的充分必要条件是
+                    // 开头和结尾字符一定相等 (s.charAt(i) == s.charAt(j))
+                    // 并且如果子串[i+1,j-1]存在，那么也必然是回文
+                    if ((s.charAt(i) == s.charAt(j)) && (j - 1 < i + 1 || dp[i + 1][j - 1])) {
+                        // 记录子串[i,j]为回文
+                        dp[i][j] = true;
+                        // 如果当前子串长度比之前保存的回文子串长，那么记录当前子串为最长子串
+                        if (j - i + 1 > max) {
+                            max = j - i + 1;
+                            left = i;
+                            right = j;
+                        }
                     }
                 }
             }
-            return s.substring(rBegin, rEnd + 1);
+            return s.substring(left, right + 1);
         }
     }
 }
