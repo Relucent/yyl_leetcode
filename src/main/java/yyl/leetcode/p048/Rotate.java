@@ -70,9 +70,6 @@ public class Rotate {
         // 总结出规律为：
         // [x][y] => [y][n-x-1]
         // [x][y] => [n-y-1][x] => [n-x-1][n-y-1] => [y][n-x-1] => [y][n-x-1] => [x][y]
-
-
-
         public void rotate(int[][] matrix) {
             if (matrix == null || matrix.length == 0) {
                 return;

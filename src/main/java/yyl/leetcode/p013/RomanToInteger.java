@@ -34,7 +34,7 @@ package yyl.leetcode.p013;
 // 3. 在较大的罗马数字的左边记上较小的罗马数字，表示大数字减小数字。
 // 4. 同一数码最多只能连续出现三次，比如4写成IV，而不能写成IIII。
 // 5. 左减时不可跨越一个位值：比如8写成VIII，而不能写成IIX。
-public class RomanToInt {
+public class RomanToInteger {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
