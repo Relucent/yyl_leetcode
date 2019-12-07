@@ -13,12 +13,12 @@ package yyl.leetcode.p053;
 public class MaxSubArray {
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution3 solution = new Solution3();
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         System.out.println(solution.maxSubArray(nums));
     }
 
-    // 扫描法
+    // 扫描法(最优解)
     // 时间复杂度：O(n)
     // 空间复杂度：O(1)
     static class Solution {
@@ -69,4 +69,57 @@ public class MaxSubArray {
             return max;
         }
     }
+
+    // 分治法求解(分治法不是最优算法)
+    // 时间复杂度： O(NlogN)
+    // 空间复杂度： O(logN) 递归
+    static class Solution3 {
+
+        public int maxSubArray(int[] nums) {
+            if (nums.length == 0) {
+                return 0;
+            }
+            if (nums.length == 1) {
+                return nums[0];
+            }
+            return maxSubArray(nums, 0, nums.length - 1);
+        }
+
+        // [left,right]范围最大子序列和
+        public int maxSubArray(int[] nums, int left, int right) {
+            if (left == right) {
+                return nums[left];
+            }
+            int middle = (left + right) / 2;
+            // 左半区最大子序列和
+            int leftMaxSub = maxSubArray(nums, left, middle);
+            // 右半区最大子序列和
+            int rightMaxSub = maxSubArray(nums, middle + 1, right);
+            // 横跨左右半区最大子序列和
+            int crossMaxSub = maxCrossSubArray(nums, left, middle, right);
+            return Math.max(Math.max(leftMaxSub, rightMaxSub), crossMaxSub);
+        }
+
+        // 横跨左右半区最大子序列和
+        public int maxCrossSubArray(int[] nums, int left, int middle, int right) {
+            int leftSum = 0;
+            int leftMaxSum = Integer.MIN_VALUE;
+            for (int i = middle; i >= left; i--) {
+                leftSum += nums[i];
+                if (leftMaxSum < leftSum) {
+                    leftMaxSum = leftSum;
+                }
+            }
+            int rightSum = 0;
+            int rightMaxSum = Integer.MIN_VALUE;
+            for (int i = middle + 1; i <= right; i++) {
+                rightSum += nums[i];
+                if (rightMaxSum < rightSum) {
+                    rightMaxSum = rightSum;
+                }
+            }
+            return leftMaxSum + rightMaxSum;
+        }
+    }
+
 }
