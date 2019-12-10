@@ -33,58 +33,48 @@ public class ReverseNodesInKGroup {
     public static void main(String[] args) {
         Solution solution = new Solution();
         ListNode head = ListNode.create(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
-        // ListNode head = ListNode.create(1, 2, 3);
-        ListNode result = solution.reverseKGroup(head, 4);
+        ListNode result = solution.reverseKGroup(head, 3);
         System.out.println(result);
     }
 
-    // (1->2)(2->3)(3->4)|(4->5)(5->6)(6->7)|(7->8)(8->9)(9->N)
-    // (1->6)(2->1)(3->2)|(4->9)(5->4)(6->5)|(7->N)(8->7)(9->8)
+    // (1->2)(2->3)(3->4)|(4->5)(5->6)(6->7)|(7->8)(8->9)(9->10)|(10->11)(11->N)
+    // (3->2)(2->1)(1->6)|(6->5)(5->4)(4->9)|(9->8)(8->7)(7->10)|(10->11)(11->N)
     static class Solution {
         public ListNode reverseKGroup(ListNode head, int k) {
             if (head == null || k < 2) {
                 return head;
             }
-            ListNode cursor = head;
-            ListNode previous = null;
-
             ListNode dummyHead = new ListNode(0);
-            ListNode prePreGroupHead = null;
-            ListNode preGroupHead = dummyHead;
-            int groupTailIndex = k - 1;
-            int count = 0;
-            while (cursor != null) {
-                if (count % k == 0) {
-                    prePreGroupHead = preGroupHead;
-                    preGroupHead = cursor;
-                    ListNode next = cursor.next;
-                    cursor.next = null;
-                    previous = cursor;
-                    cursor = next;
-                } else if (count % k == groupTailIndex) {
-                    prePreGroupHead.next = cursor;
-                    ListNode next = cursor.next;
-                    cursor.next = previous;
-                    previous = cursor;
-                    cursor = next;
-                } else {
-                    ListNode next = cursor.next;
-                    cursor.next = previous;
-                    previous = cursor;
-                    cursor = next;
+            dummyHead.next = head;
+
+            // (D->1)(1->2)(2->3)(3->4)|(4->5)(5->6)(6->7)|(7->8)(8->9)(9->10)|(10->11)(11->N)
+            ListNode previous = dummyHead;
+            ListNode quick = previous;
+            ListNode cursor = null;
+
+            while (quick != null) {
+
+                // 让quick先跑k步，判断区间内节点是否够k个
+                for (int i = 0; i < k && quick != null; i++) {
+                    quick = quick.next;
                 }
-                count++;
-            }
-            if (count % k != 0) {
-                cursor = previous;
-                previous = null;
-                while (cursor != null) {
-                    ListNode next = cursor.next;
-                    cursor.next = previous;
-                    previous = cursor;
-                    cursor = next;
+
+                // 不够k个，直接跳出
+                if (quick == null) {
+                    break;
                 }
-                prePreGroupHead.next = previous;
+
+                // 否则反转子区间内的节点
+                cursor = previous.next;
+                for (int i = 1; i < k; i++) {
+                    ListNode next = cursor.next;
+                    cursor.next = next.next;
+                    next.next = previous.next;
+                    previous.next = next;
+                }
+
+                // 设置quick，previous
+                quick = previous = cursor;
             }
             return dummyHead.next;
         }
