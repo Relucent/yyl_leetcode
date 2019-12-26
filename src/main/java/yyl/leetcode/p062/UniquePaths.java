@@ -62,8 +62,10 @@ public class UniquePaths {
     // 动态规划(空间压缩)
     // 设dp[i][j]为从S点到右下方格子(i,j)的步骤数，得出状态转移方式
     // dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+    // 因为每一个位置的dp值只来源于左一格和上一格，上述的二维数组其实可以压缩为一维数组。
+    // dp[j] = dp[j - 1] + dp[j];
     // 时间复杂度：O(m*n)
-    // 空间复杂度O(min(m, n))
+    // 空间复杂度：O(min(m, n))
     static class Solution2 {
         public int uniquePaths(int m, int n) {
             if (m == 1 || n == 1) {
