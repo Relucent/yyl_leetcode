@@ -30,7 +30,7 @@ package yyl.leetcode.p063;
 public class UniquePathsII {
 
     public static void main(String[] args) {
-        Solution2 solution = new Solution2();
+        Solution solution = new Solution();
         int[][] sample = {{0, 0, 0}, {0, 1, 0}, {0, 0, 0}};
         System.out.println(solution.uniquePathsWithObstacles(sample));
     }
