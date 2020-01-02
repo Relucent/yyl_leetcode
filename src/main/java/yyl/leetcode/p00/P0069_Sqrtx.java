@@ -20,12 +20,13 @@ package yyl.leetcode.p00;
 public class P0069_Sqrtx {
 
     public static void main(String[] args) {
-        Solution1 solution = new Solution1();
+        Solution solution = new Solution();
         System.out.println(solution.mySqrt(0));// 0
         System.out.println(solution.mySqrt(1));// 1
         System.out.println(solution.mySqrt(4));// 2
         System.out.println(solution.mySqrt(10));// 3
         System.out.println(solution.mySqrt(2147395599));// 46339
+        System.out.println(solution.mySqrt(Integer.MAX_VALUE/* 2147483647 */));// 46340
     }
 
 
@@ -34,9 +35,10 @@ public class P0069_Sqrtx {
     // 求 x 的平方根，首先猜测一个值z=x/2，然后根据迭代公式 z{n+1} = (z{n} + x/z{n})/2，算出z2，再将z2代公式的右边算出z3
     // 通过反复迭代，z 趋近于x的平方根 ，当 z^2与x 的差的绝对值小于某个值，即认为找到了精确的平方根。
     // 牛顿迭代法一般不讨论其时间复杂度，迭代法的总的计算量由迭代次数决定，而迭代次数与阈值、初始值、收敛后的值有关。
-    // 开平方所需的迭代次数随被开方数的大小变化，当被开方数范围在10-1000之间时，迭代次数仅为6-9次。
-    // 时间复杂度：O(1)，时间复杂度与精度有关，一般情况可以认为是常数级别
-    // 空间复杂度是：O(1)
+    // 开平方所需的迭代次数随被开方数的大小变化：
+    // 当被开方数范围在 1~1000之间时，迭代次数在1~9之间。
+    // 时间复杂度：O(1)，时间复杂度与精度有关，一般情况可以认为是常数级别。
+    // 空间复杂度：O(1)
     static class Solution {
         public int mySqrt(int x) {
             if (x == 0 || x == 1) {
@@ -56,8 +58,9 @@ public class P0069_Sqrtx {
     // 这个算法比上一个算法少了一个平方运算，并且更为求的解更加精确
     // 牛顿迭代法一般不讨论其时间复杂度，迭代法的总的计算量由迭代次数决定，而迭代次数与阈值、初始值、收敛后的值有关。
     // 根据牛顿法的原理可知，迭代的次数越多，近似值越逼近真实值，当然我们会通过设置精度来限制它的迭代次数。
-    // 时间复杂度：O(1) ~ O(logN)，牛顿法每次迭代的误差至少会减少一半，一般情况时间复杂度为常数级别，最差情况复杂度也会小于O(logN)。
-    // 空间复杂度是：O(1)
+    // 当被开方数为 范围为 0~2147483647(Integer.Integer.MAX_VALUE)时，迭代次数范围为 1~20 次。。
+    // 时间复杂度：O(1)，时间复杂度与精度有关，一般情况可以认为是常数级别<br>
+    // 空间复杂度：O(1)
     static class Solution1 {
         public int mySqrt(int x) {
             if (x < 0) {
