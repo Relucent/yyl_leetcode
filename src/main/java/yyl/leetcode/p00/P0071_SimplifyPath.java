@@ -58,7 +58,8 @@ public class P0071_SimplifyPath {
         }
     }
 
-    // 遍历回溯法(优化)
+    // 遍历法(优化)
+    // 直接对字节数组进行操作，并且减少回溯，需要注意首字母非 '/'的情况(防止下标越界异常)
     // 时间复杂度：O(N)，N为输入字符串长度
     // 空间复杂度：O(N)
     static class Solution {
@@ -67,7 +68,7 @@ public class P0071_SimplifyPath {
                 return path;
             }
             char[] raw = path.toCharArray();
-            char[] result = new char[raw.length + 1];
+            char[] result = new char[raw.length];
             int end = 0;
             for (int i = 0; i < raw.length;) {
                 while (i < raw.length && raw[i] == '/') {
