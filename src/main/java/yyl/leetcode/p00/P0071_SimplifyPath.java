@@ -48,14 +48,70 @@ public class P0071_SimplifyPath {
                 "/a//b////c/d//././/..", //
                 "/../../../", //
                 "/...", //
-                "/",//
+                "/", //
+                "chaos/1/../...//", //
+                "../../..", //
+                "..",//
         };
         for (String sample : samples) {
             System.out.println(sample + "   =>  " + solution.simplifyPath(sample));
         }
     }
 
-    // 一次遍历回溯法
+    // 遍历回溯法(优化)
+    // 时间复杂度：O(N)，N为输入字符串长度
+    // 空间复杂度：O(N)
+    static class Solution {
+        public String simplifyPath(String path) {
+            if (path == null || path.length() == 0) {
+                return path;
+            }
+            char[] raw = path.toCharArray();
+            char[] result = new char[raw.length + 1];
+            int end = 0;
+            for (int i = 0; i < raw.length;) {
+                while (i < raw.length && raw[i] == '/') {
+                    i++;
+                }
+                if (i == raw.length) {
+                    break;
+                }
+                int length = 1;
+                while (i + length < raw.length && raw[i + length] != '/') {
+                    length++;
+                }
+                // ~/./
+                if (length == 1 && raw[i] == '.') {
+                    // ignore
+                }
+                // ~/../
+                else if (length == 2 && raw[i] == '.' && raw[i + 1] == '.') {
+                    while (end > 0 && result[end - 1] != '/') {
+                        end--;
+                    }
+                    end = Math.max(0, end - 1);
+                }
+                // ~
+                else {
+                    // 首字母不是 '/'
+                    if (i == 0) {
+                        System.arraycopy(raw, i, result, end, length);
+                        end += length;
+                    } else {
+                        System.arraycopy(raw, i - 1, result, end, length + 1);
+                        end += length + 1;
+                    }
+                }
+                i += length;
+            }
+            if (end <= 0) {
+                return "/";
+            }
+            return new String(result, 0, end);
+        }
+    }
+
+    // 遍历回溯法
     // 直接遍历，拼装路径字符串，遇到特殊字符进行判断，符合一定条件回退路径。
     // 创建 StringBuider ，用于拼装新路径
     // 遍历路径字符时，如果没有遇到 '/' ,直接将遍历到的字符添加到StringBuider中即可。
@@ -67,7 +123,7 @@ public class P0071_SimplifyPath {
     // 因为只遍历了一次，并且回溯次数有限(最差情况，回溯字符总数=N)，所以时间复杂度为 O(2N)，计算时间复杂度忽略常数。
     // 时间复杂度：O(N)，N为输入字符串长度
     // 空间复杂度：O(N)
-    static class Solution {
+    static class Solution2 {
         public String simplifyPath(String path) {
             if (path == null || path.length() == 0) {
                 return path;
