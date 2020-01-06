@@ -28,11 +28,47 @@ package yyl.leetcode.p00;
  * exection -> execution (插入 'u')
  * </pre>
  */
-public class P0071_EditDistance {
+public class P0072_EditDistance {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.minDistance("intention", "execution"));
+    }
+
+    // 动态规划 +空间优化(滚动数组)
+    // 根据状态转移方程，可以发现，每个格子只和上一层和左边格子有关，所以二维数组可以压缩成一维数组
+    // 时间复杂度：O(m*n)，m和n为两个字符串分别的长度
+    // 空间复杂度：O(m)
+    static class Solution {
+        public int minDistance(String word1, String word2) {
+            if (word1 == null && word2 == null) {
+                return 0;
+            }
+            if (word1 == null || word1.isEmpty()) {
+                return word2.length();
+            }
+            if (word2 == null || word2.isEmpty()) {
+                return word1.length();
+            }
+            char[] chars1 = word1.toCharArray();
+            char[] chars2 = word2.toCharArray();
+            int len1 = chars1.length;
+            int len2 = chars2.length;
+            int[] dp = new int[len1 + 1];
+            for (int i = 1; i <= len1; i++) {
+                dp[i] = i;
+            }
+            for (int j = 1; j <= len2; j++) {
+                int topL = dp[0];
+                dp[0] = j;
+                for (int i = 1; i <= len1; i++) {
+                    int temp = dp[i];
+                    dp[i] = Math.min(Math.min(dp[i - 1] + 1, dp[i] + 1), topL + (chars1[i - 1] != chars2[j - 1] ? 1 : 0));
+                    topL = temp;
+                }
+            }
+            return dp[len1];
+        }
     }
 
     // 动态规划
@@ -48,7 +84,7 @@ public class P0071_EditDistance {
     // 3.1 若str1[i]==str2[j]，两个字符串最后一个字符相等，则不需要进行操作，总最少操作数为 n
     // 3.2 若str1[i]!=str2[j]，两个字符串最后一个字符不等，需要用str2[j]替换str1[i]，总最少操作数为 n+1
     // 取 k+1，m+1，(n或n+1) 中最小值即为str1[1…i]~str2[1…j]的的最少操作数(最小编辑距离)。
-    // 得到状态转移函数
+    // 得到状态转移方程
     // pd[i][j] = min(pd[i-1][j]+1, pd[i][j-1]+1,(pd[i-1][j-1]+(str1[i]!=str2[j]?1:0))
     // 以word1 = "horse", word2 = "ros"为例：
     // |*|#|h|o|r|s|e|
@@ -58,8 +94,8 @@ public class P0071_EditDistance {
     // |s|3|3|2|3|2|3|
     // 最后得到最小编辑距离为3
     // 时间复杂度：O(m*n)，m和n为两个字符串分别的长度
-    // 空间复杂度：O(m*n)
-    static class Solution {
+    // 空间复杂度：O(m*n)，循环的每一步都要记录结果
+    static class Solution2 {
         public int minDistance(String word1, String word2) {
             if (word1 == null && word2 == null) {
                 return 0;
@@ -72,24 +108,24 @@ public class P0071_EditDistance {
             }
             int len1 = word1.length();
             int len2 = word2.length();
-            int[][] pd = new int[len1 + 1][len2 + 1];
+            int[][] dp = new int[len1 + 1][len2 + 1];
 
             for (int i = 1; i <= len1; i++) {
-                pd[i][0] = pd[i - 1][0] + 1;
+                dp[i][0] = i;
             }
             for (int j = 1; j <= len2; j++) {
-                pd[0][j] = pd[0][j - 1] + 1;
+                dp[0][j] = j;
             }
 
             for (int i = 1; i <= len1; i++) {
                 for (int j = 1; j <= len2; j++) {
-                    pd[i][j] = Math.min(//
-                            Math.min(pd[i - 1][j] + 1, pd[i][j - 1] + 1), //
-                            pd[i - 1][j - 1] + (word1.charAt(i - 1) != word2.charAt(j - 1) ? 1 : 0)//
+                    dp[i][j] = Math.min(//
+                            Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1), //
+                            dp[i - 1][j - 1] + (word1.charAt(i - 1) != word2.charAt(j - 1) ? 1 : 0)//
                     );
                 }
             }
-            return pd[len1][len2];
+            return dp[len1][len2];
         }
     }
 }
