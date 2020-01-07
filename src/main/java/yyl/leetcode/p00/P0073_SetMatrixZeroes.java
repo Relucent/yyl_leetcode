@@ -43,7 +43,7 @@ import java.util.Arrays;
  */
 public class P0073_SetMatrixZeroes {
     public static void main(String[] args) {
-        Solution2 solution = new Solution2();
+        Solution solution = new Solution();
         int[][] sample = {//
                 {1, 1, 1}, //
                 {1, 0, 1}, //
