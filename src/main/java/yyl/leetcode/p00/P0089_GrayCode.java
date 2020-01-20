@@ -35,7 +35,7 @@ import java.util.List;
 public class P0089_GrayCode {
 
     public static void main(String[] args) {
-        Solution1 solution = new Solution1();
+        Solution solution = new Solution();
         System.out.println(solution.grayCode(3));
     }
 
