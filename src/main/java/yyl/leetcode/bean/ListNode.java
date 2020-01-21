@@ -35,11 +35,11 @@ public class ListNode {
 
 	public static ListNode create(int... values) {
 		ListNode dummyHead = new ListNode(0);
-		ListNode pre = dummyHead;
+        ListNode previous = dummyHead;
 		for (int val : values) {
 			ListNode temp = new ListNode(val);
-			pre.next = temp;
-			pre = temp;
+			previous.next = temp;
+			previous = temp;
 		}
 		return dummyHead.next == null ? dummyHead : dummyHead.next;
 	}
