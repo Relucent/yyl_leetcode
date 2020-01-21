@@ -1,5 +1,7 @@
 package yyl.leetcode.bean;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.function.Consumer;
@@ -13,8 +15,44 @@ public class TreeNode {
     public TreeNode left;
     public TreeNode right;
 
-    TreeNode(int x) {
+    public TreeNode(int x) {
         val = x;
+    }
+
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        Deque<TreeNode> queue = new ArrayDeque<>();
+        queue.add(this);
+        int level = 1;
+        builder.append("[");
+        TreeNode dummyNull = new TreeNode(Integer.MIN_VALUE);
+        while (!queue.isEmpty()) {
+            if (level > 5) {
+                builder.append("...,");
+                break;
+            }
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                if (node == dummyNull) {
+                    builder.append("null,");
+                } else {
+                    builder.append(node.val).append(",");
+                    TreeNode left = node.left;
+                    TreeNode right = node.right;
+                    if (left != null || right != null) {
+                        queue.add(left == null ? dummyNull : left);
+                        queue.add(right == null ? dummyNull : right);
+                    }
+                }
+            }
+            level++;
+        }
+        builder.deleteCharAt(builder.length() - 1);
+        builder.append("]");
+        return builder.toString();
     }
 
     /**
@@ -78,13 +116,12 @@ public class TreeNode {
         return root;
     }
 
-
     /**
      * 前序遍历，根左右(DLR)
      * @param root 根节点
      * @param action 回调动作
      */
-    public void preorderTraversal(TreeNode root, Consumer<TreeNode> action) {
+    public static void preorderTraversal(TreeNode root, Consumer<TreeNode> action) {
         if (root != null) {
             action.accept(root);
             preorderTraversal(root.left, action);
@@ -97,7 +134,7 @@ public class TreeNode {
      * @param root 根节点
      * @param action 回调动作
      */
-    public void inorderTraversal(TreeNode root, Consumer<TreeNode> action) {
+    public static void inorderTraversal(TreeNode root, Consumer<TreeNode> action) {
         if (root != null) {
             preorderTraversal(root.left, action);
             action.accept(root);
@@ -110,7 +147,7 @@ public class TreeNode {
      * @param root 根节点
      * @param action 回调动作
      */
-    public void postorderTraversal(TreeNode root, Consumer<TreeNode> action) {
+    public static void postorderTraversal(TreeNode root, Consumer<TreeNode> action) {
         if (root != null) {
             preorderTraversal(root.left, action);
             preorderTraversal(root.right, action);

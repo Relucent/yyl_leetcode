@@ -14,22 +14,22 @@ public class ListNode {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append('[');
-        ListNode l = this;
+        StringBuilder builder = new StringBuilder();
+        builder.append('[');
+        ListNode node = this;
         for (int i = 0;; i++) {
-            sb.append(l.val);
-            l = l.next;
-            if (l == null) {
-                sb.append(']');
+            builder.append(node.val);
+            node = node.next;
+            if (node == null) {
+                builder.append(']');
                 break;
             } else if (i == 31) {
-                sb.append(", ...]");
+                builder.append(", ...]");
                 break;
             }
-            sb.append(',').append(' ');
+            builder.append(',').append(' ');
         }
-        return sb.toString();
+        return builder.toString();
     }
 
     public static ListNode create(int... values) {
