@@ -45,7 +45,7 @@ import yyl.leetcode.bean.TreeNode;
  * 使用 O(n) 空间复杂度的解法很容易实现。<br>
  * 你能想出一个只使用常数空间的解决方案吗？<br>
  */
-public class P0098_RecoverBinarySearchTree {
+public class P0099_RecoverBinarySearchTree {
 
     public static void main(String[] args) {
         Solution solution = new Solution();

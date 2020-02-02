@@ -32,7 +32,7 @@ import yyl.leetcode.bean.TreeNode;
  * 
  * <br>
  */
-public class P0096_ValidateBinarySearchTree {
+public class P0098_ValidateBinarySearchTree {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
