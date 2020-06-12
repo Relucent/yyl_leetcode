@@ -101,3 +101,8 @@ Solve problems from Leetcode.
 |95|[不同的二叉搜索树II](src/main/java/yyl/leetcode/p00/P0095_UniqueBinarySearchTreesII.java)|中等|
 |96|[不同的二叉搜索树](src/main/java/yyl/leetcode/p00/P0096_UniqueBinarySearchTrees.java)|中等|
 |97|[交错字符串](src/main/java/yyl/leetcode/p00/P0097_InterleavingString.java)|困难|
+|98|[验证二叉搜索树 ](src/main/java/yyl/leetcode/p00/P0098_ValidateBinarySearchTree.java)|中难|
+|99|[恢复二叉搜索树 ](src/main/java/yyl/leetcode/p00/P0099_RecoverBinarySearchTree.java)|困难|
+|100|[相同的树 ](src/main/java/yyl/leetcode/p00/P0100_SameTree.java)|简单|
+|101|[对称二叉树 ](src/main/java/yyl/leetcode/p01/P0101_SymmetricTree.java)|简单|
+
