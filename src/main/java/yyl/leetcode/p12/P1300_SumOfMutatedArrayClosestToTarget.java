@@ -28,13 +28,14 @@ import java.util.Arrays;
  * </pre>
  */
 public class P1300_SumOfMutatedArrayClosestToTarget {
+
 	public static void main(String[] args) {
 		Solution2 solution = new Solution2();
-		// System.out.println(solution.findBestValue(new int[] { 4, 9, 3 }, 10));// 3
-		// System.out.println(solution.findBestValue(new int[] { 2, 3, 5 }, 10));// 5
+		System.out.println(solution.findBestValue(new int[] { 4, 9, 3 }, 10));// 3
+		System.out.println(solution.findBestValue(new int[] { 2, 3, 5 }, 10));// 5
 		System.out.println(solution.findBestValue(new int[] { 2, 3, 5 }, 11));// 5
-		// System.out.println(solution.findBestValue(new int[] { 60864, 25176, 27249, 21296, 20204 }, 56803));// 11361
-		// System.out.println(solution.findBestValue(new int[] { 1547, 83230, 57084, 93444, 70879 }, 71237));// 17422
+		System.out.println(solution.findBestValue(new int[] { 60864, 25176, 27249, 21296, 20204 }, 56803));// 11361
+		System.out.println(solution.findBestValue(new int[] { 1547, 83230, 57084, 93444, 70879 }, 71237));// 17422
 	}
 
 	// 双重二分查找
