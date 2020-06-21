@@ -30,7 +30,7 @@ import java.util.Arrays;
 public class P1300_SumOfMutatedArrayClosestToTarget {
 
 	public static void main(String[] args) {
-		Solution2 solution = new Solution2();
+		Solution solution = new Solution();
 		System.out.println(solution.findBestValue(new int[] { 4, 9, 3 }, 10));// 3
 		System.out.println(solution.findBestValue(new int[] { 2, 3, 5 }, 10));// 5
 		System.out.println(solution.findBestValue(new int[] { 2, 3, 5 }, 11));// 5
