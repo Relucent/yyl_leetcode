@@ -1,4 +1,4 @@
-package yyl.leetcode.p12;
+package yyl.leetcode.p01;
 
 import yyl.leetcode.bean.TreeNode;
 
@@ -26,7 +26,7 @@ import yyl.leetcode.bean.TreeNode;
  * 输出: 42
  * </pre>
  */
-public class P124_BinaryTreeMaximumPathSum {
+public class P0124_BinaryTreeMaximumPathSum {
 
 	public static void main(String[] args) {
 		Solution solution = new Solution();
