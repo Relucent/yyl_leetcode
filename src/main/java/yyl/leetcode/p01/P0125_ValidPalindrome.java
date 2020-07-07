@@ -16,7 +16,7 @@ package yyl.leetcode.p01;
  * </pre>
  */
 
-public class P125_ValidPalindrome {
+public class P0125_ValidPalindrome {
 
 	public static void main(String[] args) {
 		Solution solution = new Solution();
