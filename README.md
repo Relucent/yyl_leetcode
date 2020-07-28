@@ -105,6 +105,7 @@ Solve problems from Leetcode.
 |99|[恢复二叉搜索树 ](src/main/java/yyl/leetcode/p00/P0099_RecoverBinarySearchTree.java)|困难|
 |100|[相同的树 ](src/main/java/yyl/leetcode/p00/P0100_SameTree.java)|简单|
 |101|[对称二叉树 ](src/main/java/yyl/leetcode/p01/P0101_SymmetricTree.java)|简单|
+|104|[二叉树的最大深度](src/main/java/yyl/leetcode/p01/P0104_MaximumDepthOfBinaryTree)|简单|
 |108|[将有序数组转换为二叉搜索树 ](src/main/java/yyl/leetcode/p01/P0108_ConvertSortedArrayToBinarySearchTree.java)|简单|
 |112|[路径总和 ](src/main/java/yyl/leetcode/p01/P0112_PathSum.java)|简单|
 |120|[三角形最小路径和 ](src/main/java/yyl/leetcode/p01/P0120_Triangle.java))|中等|

@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import yyl.leetcode.bean.TreeNode;
+import yyl.leetcode.util.Assert;
 
 /**
  * <h3>对称二叉树</h3> <br>
@@ -30,12 +31,12 @@ import yyl.leetcode.bean.TreeNode;
 public class P0101_SymmetricTree {
 
 	public static void main(String[] args) {
-		Solution2 solution = new Solution2();
-		System.out.println(solution.isSymmetric(TreeNode.create("[]")));// true
-		System.out.println(solution.isSymmetric(TreeNode.create("[1,2,2,3,4,4,3]")));// true
-		System.out.println(solution.isSymmetric(TreeNode.create("[1,2,2,null,3,null,3]")));// false
-		System.out.println(solution.isSymmetric(TreeNode.create("[1,2,2,2,null,2]")));// false
-		System.out.println(solution.isSymmetric(TreeNode.create("[9,-42,-42,null,76,76,null,null,13,null,13]")));// false
+		Solution solution = new Solution();
+		Assert.assertEquals(solution.isSymmetric(TreeNode.create("[]")), true);
+		Assert.assertEquals(solution.isSymmetric(TreeNode.create("[1,2,2,3,4,4,3]")), true);
+		Assert.assertEquals(solution.isSymmetric(TreeNode.create("[1,2,2,null,3,null,3]")), false);
+		Assert.assertEquals(solution.isSymmetric(TreeNode.create("[1,2,2,2,null,2]")), false);
+		Assert.assertEquals(solution.isSymmetric(TreeNode.create("[9,-42,-42,null,76,76,null,null,13,null,13]")), false);
 	}
 
 	// 递归
