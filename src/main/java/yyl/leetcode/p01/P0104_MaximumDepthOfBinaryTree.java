@@ -26,7 +26,7 @@ public class P0104_MaximumDepthOfBinaryTree {
 	public static void main(String[] args) {
 		Solution solution = new Solution();
 		TreeNode root = TreeNode.create("[3,9,20,null,null,15,7]");
-		Assert.assertEquals(solution.maxDepth(root), 3);
+		Assert.assertEquals(3, solution.maxDepth(root));
 	}
 
 	// 递归 （深度优先搜索）

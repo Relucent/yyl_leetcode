@@ -12,18 +12,19 @@ public class Assert {
 	 * 断言表达式为真，如果不为真则抛出异常
 	 * @param expression 表达式
 	 */
-	public static void isTrue(boolean expression) {
-		isTrue(expression, "[Assertion failed] - this expression must be true");
+	public static void assertTrue(boolean expression) {
+		if (!expression) {
+			fail("[Assertion failed] - this expression must be true");
+		}
 	}
 
 	/**
-	 * 断言表达式为真，如果不为真则抛出异常
+	 * 断言表达式为假，如果不为假则抛出异常
 	 * @param expression 表达式
-	 * @param message 异常信息内容
 	 */
-	public static void isTrue(boolean expression, String message) {
+	public static void assertFalse(boolean expression) {
 		if (!expression) {
-			fail(message);
+			fail("[Assertion failed] - this expression must be false");
 		}
 	}
 

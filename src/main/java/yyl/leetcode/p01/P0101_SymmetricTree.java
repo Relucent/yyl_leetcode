@@ -32,11 +32,11 @@ public class P0101_SymmetricTree {
 
 	public static void main(String[] args) {
 		Solution solution = new Solution();
-		Assert.assertEquals(solution.isSymmetric(TreeNode.create("[]")), true);
-		Assert.assertEquals(solution.isSymmetric(TreeNode.create("[1,2,2,3,4,4,3]")), true);
-		Assert.assertEquals(solution.isSymmetric(TreeNode.create("[1,2,2,null,3,null,3]")), false);
-		Assert.assertEquals(solution.isSymmetric(TreeNode.create("[1,2,2,2,null,2]")), false);
-		Assert.assertEquals(solution.isSymmetric(TreeNode.create("[9,-42,-42,null,76,76,null,null,13,null,13]")), false);
+		Assert.assertTrue(solution.isSymmetric(TreeNode.create("[]")));
+		Assert.assertTrue(solution.isSymmetric(TreeNode.create("[1,2,2,3,4,4,3]")));
+		Assert.assertFalse(solution.isSymmetric(TreeNode.create("[1,2,2,null,3,null,3]")));
+		Assert.assertFalse(solution.isSymmetric(TreeNode.create("[1,2,2,2,null,2]")));
+		Assert.assertFalse(solution.isSymmetric(TreeNode.create("[9,-42,-42,null,76,76,null,null,13,null,13]")));
 	}
 
 	// 递归
