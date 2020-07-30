@@ -86,7 +86,7 @@ public class P0343_IntegerBreak {
 			}
 			// y==3
 			// 3x+2=n
-			return (int) Math.pow(3, x - 1) * 2;
+			return (int) Math.pow(3, x) * 2;
 		}
 	}
 }
