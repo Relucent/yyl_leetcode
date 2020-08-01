@@ -55,13 +55,40 @@ public class Assert {
 		if (message != null && !message.equals("")) {
 			formatted = message + " ";
 		}
-		String expectedString = String.valueOf(expected);
-		String actualString = String.valueOf(actual);
+		String expectedString = valueOfString(expected);
+		String actualString = valueOfString(actual);
 		if (expectedString.equals(actualString)) {
 			return formatted + "expected: " + formatClassAndValue(expected, expectedString) + " but was: "
 					+ formatClassAndValue(actual, actualString);
 		} else {
 			return formatted + "expected:<" + expectedString + "> but was:<" + actualString + ">";
+		}
+	}
+
+	private static String valueOfString(Object value) {
+		StringBuilder writer = new StringBuilder();
+		valueOfString(value, writer);
+		return writer.toString();
+	}
+
+	private static void valueOfString(Object value, StringBuilder writer) {
+		if (value == null) {
+			writer.append("null");
+		} else {
+			Class<?> clazz = value.getClass();
+			if (clazz.isArray()) {
+				writer.append("[");
+				int length = Array.getLength(value);
+				for (int i = 0; i < length; i++) {
+					if (i != 0) {
+						writer.append(",");
+					}
+					valueOfString(Array.get(value, i), writer);
+				}
+				writer.append("]");
+			} else {
+				writer.append(value);
+			}
 		}
 	}
 
