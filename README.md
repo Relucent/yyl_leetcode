@@ -108,6 +108,7 @@ Solve problems from Leetcode.
 |104|[二叉树的最大深度](src/main/java/yyl/leetcode/p01/P0104_MaximumDepthOfBinaryTree)|简单|
 |108|[将有序数组转换为二叉搜索树 ](src/main/java/yyl/leetcode/p01/P0108_ConvertSortedArrayToBinarySearchTree.java)|简单|
 |112|[路径总和 ](src/main/java/yyl/leetcode/p01/P0112_PathSum.java)|简单|
+|114|[二叉树展开为链表](src/main/java/yyl/leetcode/p01/P0114_FlattenBinaryTreeToLinkedList.java))|中等|
 |120|[三角形最小路径和 ](src/main/java/yyl/leetcode/p01/P0120_Triangle.java))|中等|
 |124|[二叉树中的最大路径和  ](src/main/java/yyl/leetcode/p01/P0124_BinaryTreeMaximumPathSum.java)|困难|
 |125|[验证回文串  ](src/main/java/yyl/leetcode/p01/P0125_ValidPalindrome.java)|简单|
