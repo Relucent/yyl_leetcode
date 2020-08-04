@@ -29,17 +29,14 @@ public class TreeNode {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
+	public boolean equals(Object object) {
+		if (this == object) {
 			return true;
 		}
-		if (obj == null) {
+		if (object == null || getClass() != object.getClass()) {
 			return false;
 		}
-		if (getClass() != obj.getClass()) {
-			return false;
-		}
-		TreeNode other = (TreeNode) obj;
+		TreeNode other = (TreeNode) object;
 		if (left == null) {
 			if (other.left != null) {
 				return false;

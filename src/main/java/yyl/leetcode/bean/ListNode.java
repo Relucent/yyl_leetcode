@@ -13,6 +13,34 @@ public class ListNode {
 	}
 
 	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((next == null) ? 0 : next.hashCode());
+		result = prime * result + val;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object object) {
+		if (this == object) {
+			return true;
+		}
+		if (object == null || getClass() != object.getClass()) {
+			return false;
+		}
+		ListNode other = (ListNode) object;
+		if (next == null) {
+			if (other.next != null) {
+				return false;
+			}
+		} else if (!next.equals(other.next)) {
+			return false;
+		}
+		return val == other.val;
+	}
+
+	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append('[');
