@@ -1,4 +1,4 @@
-package yyl.leetcode.q00;
+package yyl.leetcode.lcci;
 
 import yyl.leetcode.util.Assert;
 
@@ -20,7 +20,7 @@ import yyl.leetcode.util.Assert;
  * nums长度在[1, 1000000]之间
  * </pre>
  */
-public class Q0803_MagicIndexLcci {
+public class L0803_MagicIndexLcci {
 
 	public static void main(String[] args) {
 		Solution solution = new Solution();
