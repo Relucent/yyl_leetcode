@@ -1,6 +1,6 @@
-﻿#LeetCode
-
+# LeetCode
 Solve problems from Leetcode.  
+Leetcode 题解
 
 |#|题名|难度  |
 |------|-----|-----|
@@ -125,4 +125,27 @@ Solve problems from Leetcode.
 |217|[存在重复元素](src/main/java/yyl/leetcode/p02/P0217_ContainsDuplicate.java)|简单|
 |234|[回文链表](src/main/java/yyl/leetcode/p02/P0234_PalindromeLinkedList.java)|简单|
 |297|[二叉树的序列化与反序列化](src/main/java/yyl/leetcode/p02/P0297_SerializeAndDeserializeBinaryTree.java)|困难|
+|309|[最佳买卖股票时机含冷冻期](src/main/java/yyl/leetcode/p03/P0309_BestTimeToBuyAndSellStockWithCooldown.java)|中等|
+|312|[戳气球 ](src/main/java/yyl/leetcode/p03/P0312_BurstBalloons.java)|困难|
+|315|[计算右侧小于当前元素的个数  ](src/main/java/yyl/leetcode/p03/P0315_CountOfSmallerNumbersAfterSelf.java)|困难|
+|329|[矩阵中的最长递增路径  ](src/main/java/yyl/leetcode/p03/P0329_LongestIncreasingPathInAMatrix.java)|困难|
+|336|[回文对](src/main/java/yyl/leetcode/p03/P0336_PalindromePairs.java)|困难|
+|337|[打家劫舍 III](src/main/java/yyl/leetcode/p03/P0337_HouseRobberIII.java)|中等|
+|343|[整数拆分](src/main/java/yyl/leetcode/p03/P0343_IntegerBreak.java)|中等|
+|350|[两个数组的交集 II](src/main/java/yyl/leetcode/p03/P0350_IntersectionOfTwoArraysII.java)|简单|
+|378|[有序矩阵中第K小的元素  ](src/main/java/yyl/leetcode/p03/P0378_KthSmallestElementInASortedMatrix.java)|中等|
+|392|[判断子序列](src/main/java/yyl/leetcode/p03/P0392_IsSubsequence.java)|简单|
 |410|[分割数组的最大值](src/main/java/yyl/leetcode/p04/P0410_SplitArrayLargestSum.java)|困难|
+|415|[字符串相加](src/main/java/yyl/leetcode/p04/P0415_AddStrings.java)|简单|
+|445|[两数相加 II](src/main/java/yyl/leetcode/p04/P0445_AddTwoNumbersII.java)|中等|
+|632|[最小区间 ](src/main/java/yyl/leetcode/p06/P0632_SmallestRangeCoveringElementsFromKLists.java)|困难|
+|718|[最长重复子数组](src/main/java/yyl/leetcode/p07/P0718_MaximumLengthOfRepeatedSubarray.java)|中等|
+|739|[每日温度](src/main/java/yyl/leetcode/p07/P0739_DailyTemperatures.java)|中等|
+|785|[判断二分图](src/main/java/yyl/leetcode/p07/P0785_IsGraphBipartite.java)|中等|
+|1014|[最佳观光组合 ](src/main/java/yyl/leetcode/p10/P1014_BestSightseeingPair.java)|中等|
+|1025|[除数博弈](src/main/java/yyl/leetcode/p10/P1025_DivisorGame.java)|中等|
+|1028|[从先序遍历还原二叉树](src/main/java/yyl/leetcode/p10/P1028_RecoverATreeFromPreorderTraversal.java)|困难|
+|1108|[IP 地址无效化](src/main/java/yyl/leetcode/p11/P1108_DefangingAnIpAddress.java)|简单|
+|1300|[转变数组后最接近目标值的数组和 ](src/main/java/yyl/leetcode/p12/P1300_SumOfMutatedArrayClosestToTarget)|中等|
+|1114|[按序打印](src/main/java/yyl/leetcode/p14/P1114_PrintInOrder.java)|简单|
+
