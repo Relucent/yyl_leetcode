@@ -68,7 +68,7 @@ public class P1115_PrintFoobarAlternately {
 		public void foo(Runnable printFoo) throws InterruptedException {
 			for (int i = 0; i < n; i++) {
 				synchronized (lock) {
-					if (signal != 0) {
+					while (signal != 0) {
 						lock.wait();
 					}
 					// printFoo.run() outputs "foo". Do not change or remove this line.
@@ -82,7 +82,7 @@ public class P1115_PrintFoobarAlternately {
 		public void bar(Runnable printBar) throws InterruptedException {
 			for (int i = 0; i < n; i++) {
 				synchronized (lock) {
-					if (signal != 1) {
+					while (signal != 1) {
 						lock.wait();
 					}
 					// printBar.run() outputs "bar". Do not change or remove this line.

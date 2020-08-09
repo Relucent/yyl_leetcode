@@ -146,6 +146,8 @@ Leetcode 题解
 |1025|[除数博弈](src/main/java/yyl/leetcode/p10/P1025_DivisorGame.java)|中等|
 |1028|[从先序遍历还原二叉树](src/main/java/yyl/leetcode/p10/P1028_RecoverATreeFromPreorderTraversal.java)|困难|
 |1108|[IP 地址无效化](src/main/java/yyl/leetcode/p11/P1108_DefangingAnIpAddress.java)|简单|
-|1300|[转变数组后最接近目标值的数组和 ](src/main/java/yyl/leetcode/p12/P1300_SumOfMutatedArrayClosestToTarget)|中等|
-|1114|[按序打印](src/main/java/yyl/leetcode/p14/P1114_PrintInOrder.java)|简单|
-
+|1114|[按序打印](src/main/java/yyl/leetcode/p11/P1114_PrintInOrder.java)|简单|
+|1115|[交替打印FooBar](src/main/java/yyl/leetcode/p11/P1115_PrintFoobarAlternately.java)|中等|
+|1116|[打印零与奇偶数 ](src/main/java/yyl/leetcode/p11/P1115_PrintZeroEvenOdd.java)|中等|
+|1300|[转变数组后最接近目标值的数组和 ](src/main/java/yyl/leetcode/p12/P1300_SumOfMutatedArrayClosestToTarget.java)|中等|
+|1494|[转变数组后最接近目标值的数组和 ](src/main/java/yyl/leetcode/p14/P1494_ParallelCoursesII.java)|困难|
