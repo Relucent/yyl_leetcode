@@ -139,6 +139,7 @@ Leetcode 题解
 |415|[字符串相加](src/main/java/yyl/leetcode/p04/P0415_AddStrings.java)|简单|
 |445|[两数相加 II](src/main/java/yyl/leetcode/p04/P0445_AddTwoNumbersII.java)|中等|
 |632|[最小区间 ](src/main/java/yyl/leetcode/p06/P0632_SmallestRangeCoveringElementsFromKLists.java)|困难|
+|696|[计数二进制子串](src/main/java/yyl/leetcode/p06/P0696_CountBinarySubstrings.java)|简单|
 |718|[最长重复子数组](src/main/java/yyl/leetcode/p07/P0718_MaximumLengthOfRepeatedSubarray.java)|中等|
 |739|[每日温度](src/main/java/yyl/leetcode/p07/P0739_DailyTemperatures.java)|中等|
 |785|[判断二分图](src/main/java/yyl/leetcode/p07/P0785_IsGraphBipartite.java)|中等|
