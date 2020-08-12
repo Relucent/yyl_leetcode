@@ -23,7 +23,7 @@ public class Assert {
 	 * @param expression 表达式
 	 */
 	public static void assertFalse(boolean expression) {
-		if (!expression) {
+		if (expression) {
 			fail("[Assertion failed] - this expression must be false");
 		}
 	}
