@@ -6,17 +6,17 @@ package yyl.leetcode.p11;
  * 
  * <pre>
  * public class Foo {
- * 	public void one() {
- * 		print("one");
- * 	}
+ *     public void one() {
+ *         print("one");
+ *     }
  * 
- * 	public void two() {
- * 		print("two");
- * 	}
+ *     public void two() {
+ *         print("two");
+ *     }
  * 
- * 	public void three() {
- * 		print("three");
- * 	}
+ *     public void three() {
+ *         print("three");
+ *     }
  * }
  * </pre>
  * 
@@ -45,75 +45,75 @@ package yyl.leetcode.p11;
  */
 public class P1114_PrintInOrder {
 
-	public static void main(String[] args) {
-		final Foo foo = new Foo();
-		Runnable[] runnables = { //
-				() -> foo.first(() -> System.out.print("one")), //
-				() -> foo.second(() -> System.out.print("two")), //
-				() -> foo.third(() -> System.out.print("three")), //
-		};
-		int[] ids = { 0, 2, 1 };
-		for (int id : ids) {
-			new Thread(runnables[id]).start();
-		}
-	}
+    public static void main(String[] args) {
+        final Foo foo = new Foo();
+        Runnable[] runnables = { //
+                () -> foo.first(() -> System.out.print("one")), //
+                () -> foo.second(() -> System.out.print("two")), //
+                () -> foo.third(() -> System.out.print("three")), //
+        };
+        int[] ids = { 0, 2, 1 };
+        for (int id : ids) {
+            new Thread(runnables[id]).start();
+        }
+    }
 
-	// 思路：利用 wait() 和 notifyAll() 保证顺序
-	static class Foo {
+    // 思路：利用 wait() 和 notifyAll() 保证顺序
+    static class Foo {
 
-		private final Object lock = new Object();
-		private int signal = 1;
+        private final Object lock = new Object();
+        private int signal = 1;
 
-		public Foo() {
-		}
+        public Foo() {
+        }
 
-		public void first(Runnable printFirst) {
-			synchronized (lock) {
-				while (signal != 1) {
-					try {
-						lock.wait();
-					} catch (InterruptedException e) {
-						throw new RuntimeException(e);
-					}
-				}
-				// printFirst.run() outputs "first". Do not change or remove this line.
-				printFirst.run();
-				signal = 2;
-				lock.notifyAll();
-			}
-		}
+        public void first(Runnable printFirst) {
+            synchronized (lock) {
+                while (signal != 1) {
+                    try {
+                        lock.wait();
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                // printFirst.run() outputs "first". Do not change or remove this line.
+                printFirst.run();
+                signal = 2;
+                lock.notifyAll();
+            }
+        }
 
-		public void second(Runnable printSecond) {
-			synchronized (lock) {
-				while (signal != 2) {
-					try {
-						lock.wait();
-					} catch (InterruptedException e) {
-						throw new RuntimeException(e);
-					}
-				}
-				// printSecond.run() outputs "second". Do not change or remove this line.
-				printSecond.run();
-				signal = 3;
-				lock.notifyAll();
-			}
-		}
+        public void second(Runnable printSecond) {
+            synchronized (lock) {
+                while (signal != 2) {
+                    try {
+                        lock.wait();
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                // printSecond.run() outputs "second". Do not change or remove this line.
+                printSecond.run();
+                signal = 3;
+                lock.notifyAll();
+            }
+        }
 
-		public void third(Runnable printThird) {
-			synchronized (lock) {
-				while (signal != 3) {
-					try {
-						lock.wait();
-					} catch (InterruptedException e) {
-						throw new RuntimeException(e);
-					}
-				}
+        public void third(Runnable printThird) {
+            synchronized (lock) {
+                while (signal != 3) {
+                    try {
+                        lock.wait();
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
 
-				// printThird.run() outputs "third". Do not change or remove this line.
-				printThird.run();
-				signal = 1;
-				lock.notifyAll();
-			}
-		}
-	}
+                // printThird.run() outputs "third". Do not change or remove this line.
+                printThird.run();
+                signal = 1;
+                lock.notifyAll();
+            }
+        }
+    }
 }

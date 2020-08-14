@@ -14,49 +14,49 @@ package yyl.leetcode.lcci;
  */
 
 public class L0046_BaShuZiFanYiChengZiFuChuanLcof {
-	public static void main(String[] args) {
-		Solution solution = new Solution();
-		System.out.println(solution.translateNum(12258));// 5
-		System.out.println(solution.translateNum(25035321));// 6
-		System.out.println(solution.translateNum(631));// 6
-	}
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(solution.translateNum(12258));// 5
+        System.out.println(solution.translateNum(25035321));// 6
+        System.out.println(solution.translateNum(631));// 6
+    }
 
-	// 动态规划优化（数字求余）
-	// 时间复杂度： O(N)
-	// 空间复杂度：O(1)
-	static class Solution {
-		public int translateNum(int num) {
-			int a = 1;
-			int b = 1;
-			int x;
-			int y = num % 10;
-			while (num > 0) {
-				num = num / 10;
-				x = num % 10;
-				int c = (x == 1 || (x == 2 && y <= 5)) ? (a + b) : a;
-				b = a;
-				a = c;
-				y = x;
-			}
-			return a;
-		}
-	}
+    // 动态规划优化（数字求余）
+    // 时间复杂度： O(N)
+    // 空间复杂度：O(1)
+    static class Solution {
+        public int translateNum(int num) {
+            int a = 1;
+            int b = 1;
+            int x;
+            int y = num % 10;
+            while (num > 0) {
+                num = num / 10;
+                x = num % 10;
+                int c = (x == 1 || (x == 2 && y <= 5)) ? (a + b) : a;
+                b = a;
+                a = c;
+                y = x;
+            }
+            return a;
+        }
+    }
 
-	// 动态规划
-	// 时间复杂度 O(N)
-	// 空间复杂度 O(N)
-	static class Solution2 {
-		public int translateNum(int num) {
-			String s = String.valueOf(num);
-			int a = 1;
-			int b = 1;
-			for (int i = 2; i <= s.length(); i++) {
-				String tmp = s.substring(i - 2, i);
-				int c = tmp.compareTo("10") >= 0 && tmp.compareTo("25") <= 0 ? a + b : b;
-				a = b;
-				b = c;
-			}
-			return b;
-		}
-	}
+    // 动态规划
+    // 时间复杂度 O(N)
+    // 空间复杂度 O(N)
+    static class Solution2 {
+        public int translateNum(int num) {
+            String s = String.valueOf(num);
+            int a = 1;
+            int b = 1;
+            for (int i = 2; i <= s.length(); i++) {
+                String tmp = s.substring(i - 2, i);
+                int c = tmp.compareTo("10") >= 0 && tmp.compareTo("25") <= 0 ? a + b : b;
+                a = b;
+                b = c;
+            }
+            return b;
+        }
+    }
 }

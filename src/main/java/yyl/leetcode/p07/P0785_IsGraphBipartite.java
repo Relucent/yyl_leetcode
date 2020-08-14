@@ -41,80 +41,80 @@ import java.util.Queue;
  */
 public class P0785_IsGraphBipartite {
 
-	public static void main(String[] args) {
-		Solution solution = new Solution();
-		System.out.println(solution.isBipartite(new int[][] { { 1, 3 }, { 0, 2 }, { 1, 3 }, { 0, 2 } }));// true
-		System.out.println(solution.isBipartite(new int[][] { { 1, 2, 3 }, { 0, 2 }, { 0, 1, 3 }, { 0, 2 } }));// false
-	}
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(solution.isBipartite(new int[][] { { 1, 3 }, { 0, 2 }, { 1, 3 }, { 0, 2 } }));// true
+        System.out.println(solution.isBipartite(new int[][] { { 1, 2, 3 }, { 0, 2 }, { 0, 1, 3 }, { 0, 2 } }));// false
+    }
 
-	// 深度优先搜索
-	// 二分图（Bipartite graph）是一类特殊的图，它可以被划分为两个部分(两个独立的点集)，每个部分内的点互不相连。
-	// 算法：
-	// ├ 我们任选一个节点开始，将其染成色，并从该节点开始对整个无向图进行遍历
-	// ├ 在遍历的过程中，如果我们通过节点 x 遍历到了节点 y （即 x和 y在图中有一条边直接相连），那么会有两种情况：
-	// │ ├ 如果 y 未被染色，那么我们将其染成与 x 不同的颜色，并对 y 直接相连的节点进行遍历；
-	// │ └ 如果 y 被染色，并且颜色与 x相同，那么说明给定的无向图不是二分图。我们可以直接退出遍历并返回 False作为答案。
-	// └ 当遍历结束时，说明给定的无向图是二分图，返回 True 作为答案。
-	// 时间复杂度：O(N+M)，其中 N 和 M 分别是无向图中的点数和边数。
-	// 空间复杂度：O(N)，存储节点颜色的数组需要 O(N)的空间，在深度优先搜索的过程中，栈的深度最大为 N，需要 O(N)的空间。
-	static class Solution {
-		public boolean isBipartite(int[][] graph) {
-			int n = graph.length;
-			int[] colors = new int[n];// 0,1,2
-			for (int x = 0; x < n; x++) {
-				if (colors[x] == 0) {
-					if (!dfs(x, 1, graph, colors)) {
-						return false;
-					}
-				}
-			}
-			return true;
-		}
+    // 深度优先搜索
+    // 二分图（Bipartite graph）是一类特殊的图，它可以被划分为两个部分(两个独立的点集)，每个部分内的点互不相连。
+    // 算法：
+    // ├ 我们任选一个节点开始，将其染成色，并从该节点开始对整个无向图进行遍历
+    // ├ 在遍历的过程中，如果我们通过节点 x 遍历到了节点 y （即 x和 y在图中有一条边直接相连），那么会有两种情况：
+    // │ ├ 如果 y 未被染色，那么我们将其染成与 x 不同的颜色，并对 y 直接相连的节点进行遍历；
+    // │ └ 如果 y 被染色，并且颜色与 x相同，那么说明给定的无向图不是二分图。我们可以直接退出遍历并返回 False作为答案。
+    // └ 当遍历结束时，说明给定的无向图是二分图，返回 True 作为答案。
+    // 时间复杂度：O(N+M)，其中 N 和 M 分别是无向图中的点数和边数。
+    // 空间复杂度：O(N)，存储节点颜色的数组需要 O(N)的空间，在深度优先搜索的过程中，栈的深度最大为 N，需要 O(N)的空间。
+    static class Solution {
+        public boolean isBipartite(int[][] graph) {
+            int n = graph.length;
+            int[] colors = new int[n];// 0,1,2
+            for (int x = 0; x < n; x++) {
+                if (colors[x] == 0) {
+                    if (!dfs(x, 1, graph, colors)) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
 
-		private boolean dfs(int x, int color, int[][] graph, int[] colors) {
-			colors[x] = color;
-			int cNei = color == 1 ? 2 : 1;
-			for (int y : graph[x]) {
-				if (colors[y] != cNei) {
-					return false;
-				}
-				if (colors[y] == 0) {
-					if (!dfs(y, cNei, graph, colors)) {
-						return false;
-					}
-				}
-			}
-			return true;
-		}
-	}
+        private boolean dfs(int x, int color, int[][] graph, int[] colors) {
+            colors[x] = color;
+            int cNei = color == 1 ? 2 : 1;
+            for (int y : graph[x]) {
+                if (colors[y] != cNei) {
+                    return false;
+                }
+                if (colors[y] == 0) {
+                    if (!dfs(y, cNei, graph, colors)) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+    }
 
-	// 广度优先搜索
-	// 时间复杂度：O(N+M)，其中 N 和 M 分别是无向图中的点数和边数。
-	// 空间复杂度：O(N)，存储节点颜色的数组需要 O(N)的空间，在广度优先搜索的过程中，队列中最多有 N−1 个节点，需要 O(N) 的空间。
-	static class Solution2 {
-		public boolean isBipartite(int[][] graph) {
-			int n = graph.length;
-			int[] colors = new int[n];// 0,1,2
-			for (int i = 0; i < n; i++) {
-				if (colors[i] == 0) {
-					Queue<Integer> queue = new ArrayDeque<>();
-					queue.offer(i);
-					colors[i] = 1;
-					while (!queue.isEmpty()) {
-						int node = queue.poll();
-						int cNei = colors[node] == 1 ? 2 : 1;
-						for (int neighbor : graph[node]) {
-							if (colors[neighbor] == 0) {
-								colors[neighbor] = cNei;
-								queue.offer(neighbor);
-							} else if (colors[neighbor] != cNei) {
-								return false;
-							}
-						}
-					}
-				}
-			}
-			return true;
-		}
-	}
+    // 广度优先搜索
+    // 时间复杂度：O(N+M)，其中 N 和 M 分别是无向图中的点数和边数。
+    // 空间复杂度：O(N)，存储节点颜色的数组需要 O(N)的空间，在广度优先搜索的过程中，队列中最多有 N−1 个节点，需要 O(N) 的空间。
+    static class Solution2 {
+        public boolean isBipartite(int[][] graph) {
+            int n = graph.length;
+            int[] colors = new int[n];// 0,1,2
+            for (int i = 0; i < n; i++) {
+                if (colors[i] == 0) {
+                    Queue<Integer> queue = new ArrayDeque<>();
+                    queue.offer(i);
+                    colors[i] = 1;
+                    while (!queue.isEmpty()) {
+                        int node = queue.poll();
+                        int cNei = colors[node] == 1 ? 2 : 1;
+                        for (int neighbor : graph[node]) {
+                            if (colors[neighbor] == 0) {
+                                colors[neighbor] = cNei;
+                                queue.offer(neighbor);
+                            } else if (colors[neighbor] != cNei) {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+    }
 }

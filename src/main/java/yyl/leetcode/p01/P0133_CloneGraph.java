@@ -13,8 +13,8 @@ import yyl.leetcode.util.Assert;
  * 
  * <pre>
  * class Node {
- * 	public int val;
- * 	public List<Node> neighbors;
+ *     public int val;
+ *     public List<Node> neighbors;
  * }
  * </pre>
  * 
@@ -58,44 +58,44 @@ import yyl.leetcode.util.Assert;
  */
 public class P0133_CloneGraph {
 
-	public static void main(String[] args) {
-		Solution solution = new Solution();
-		String edges = "[[2,4],[1,3],[2,4],[1,3]]";
-		Node node = Node.createGraph(edges);
-		Node clone = solution.cloneGraph(node);
-		Assert.assertEquals(node, clone);
-		Assert.assertFalse(node == clone);
-	}
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        String edges = "[[2,4],[1,3],[2,4],[1,3]]";
+        Node node = Node.createGraph(edges);
+        Node clone = solution.cloneGraph(node);
+        Assert.assertEquals(node, clone);
+        Assert.assertFalse(node == clone);
+    }
 
-	// 深度优先搜索
-	// ├ 使用一个哈希表存储所有已被访问和克隆的节点。哈希表中的 key 是原始图中的节点的值，value是克隆图中的对应节点。
-	// └ 从给定节点开始遍历图。
-	// _ ├ 如果某个节点已经被访问过，则返回其克隆图中的对应节点。
-	// _ └ 如果当前访问的节点不在哈希表中，则创建它的克隆节点并存储在哈希表中，并返回克隆节点。
-	// ___ └ 递归调用每个节点的邻接点，克隆邻接点的节点，将其放入对应克隆节点的邻接表中。
-	// 时间复杂度：O(N)，其中 N 表示节点数量。深度优先搜索遍历图的过程中每个节点只会被访问一次。
-	// 空间复杂度：O(N)，存储克隆节点和原节点的哈希表需要 O(N) 的空间，递归调用栈需要 O(H)的空间，其中 H是图的深度，O(H)<=O(N)，因此总体空间复杂度为 O(N)。
-	static class Solution {
-		public Node cloneGraph(Node node) {
-			return clone(node, new HashMap<>());
-		}
+    // 深度优先搜索
+    // ├ 使用一个哈希表存储所有已被访问和克隆的节点。哈希表中的 key 是原始图中的节点的值，value是克隆图中的对应节点。
+    // └ 从给定节点开始遍历图。
+    // _ ├ 如果某个节点已经被访问过，则返回其克隆图中的对应节点。
+    // _ └ 如果当前访问的节点不在哈希表中，则创建它的克隆节点并存储在哈希表中，并返回克隆节点。
+    // ___ └ 递归调用每个节点的邻接点，克隆邻接点的节点，将其放入对应克隆节点的邻接表中。
+    // 时间复杂度：O(N)，其中 N 表示节点数量。深度优先搜索遍历图的过程中每个节点只会被访问一次。
+    // 空间复杂度：O(N)，存储克隆节点和原节点的哈希表需要 O(N) 的空间，递归调用栈需要 O(H)的空间，其中 H是图的深度，O(H)<=O(N)，因此总体空间复杂度为 O(N)。
+    static class Solution {
+        public Node cloneGraph(Node node) {
+            return clone(node, new HashMap<>());
+        }
 
-		private Node clone(Node node, Map<Integer, Node> visited) {
-			if (node == null) {
-				return node;
-			}
-			// 如果该节点已经被访问过了，则直接从哈希表中取出对应的克隆节点返回
-			Node clone = visited.get(node.val);
-			if (clone != null) {
-				return clone;
-			}
-			// 克隆节点，并存储到哈希表
-			visited.put(node.val, clone = new Node(node.val));
-			// 遍历该节点的邻居并更新克隆节点的邻居列表
-			for (Node neighbor : node.neighbors) {
-				clone.neighbors.add(clone(neighbor, visited));
-			}
-			return clone;
-		}
-	}
+        private Node clone(Node node, Map<Integer, Node> visited) {
+            if (node == null) {
+                return node;
+            }
+            // 如果该节点已经被访问过了，则直接从哈希表中取出对应的克隆节点返回
+            Node clone = visited.get(node.val);
+            if (clone != null) {
+                return clone;
+            }
+            // 克隆节点，并存储到哈希表
+            visited.put(node.val, clone = new Node(node.val));
+            // 遍历该节点的邻居并更新克隆节点的邻居列表
+            for (Node neighbor : node.neighbors) {
+                clone.neighbors.add(clone(neighbor, visited));
+            }
+            return clone;
+        }
+    }
 }

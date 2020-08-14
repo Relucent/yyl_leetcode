@@ -28,102 +28,102 @@ import yyl.leetcode.bean.TreeNode;
  */
 public class P0297_SerializeAndDeserializeBinaryTree {
 
-	public static void main(String[] args) {
-		Codec codec = new Codec();
-		TreeNode root = TreeNode.create("[1,2,3,null,null,4,5]");
-		String serialized = codec.serialize(root);
-		System.out.println(serialized);
-		TreeNode deserialized = codec.deserialize(serialized);
-		System.out.println(deserialized);
-	}
+    public static void main(String[] args) {
+        Codec codec = new Codec();
+        TreeNode root = TreeNode.create("[1,2,3,null,null,4,5]");
+        String serialized = codec.serialize(root);
+        System.out.println(serialized);
+        TreeNode deserialized = codec.deserialize(serialized);
+        System.out.println(deserialized);
+    }
 
-	// 前序遍历(先根遍历)
-	// 时间复杂度：O(n)
-	// 空间复杂度：O(n)
-	public static class Codec {
+    // 前序遍历(先根遍历)
+    // 时间复杂度：O(n)
+    // 空间复杂度：O(n)
+    public static class Codec {
 
-		private static final TreeNode NULL_DUMMY = new TreeNode(Integer.MIN_VALUE);
+        private static final TreeNode NULL_DUMMY = new TreeNode(Integer.MIN_VALUE);
 
-		// Encodes a tree to a single string.
-		public String serialize(TreeNode root) {
-			if (root == null) {
-				return "[]";
-			}
-			Deque<TreeNode> queue = new ArrayDeque<>();
-			queue.offer(root);
-			StringBuilder builder = new StringBuilder();
-			builder.append("[");
+        // Encodes a tree to a single string.
+        public String serialize(TreeNode root) {
+            if (root == null) {
+                return "[]";
+            }
+            Deque<TreeNode> queue = new ArrayDeque<>();
+            queue.offer(root);
+            StringBuilder builder = new StringBuilder();
+            builder.append("[");
 
-			// 尾部NULL计数，用来删除最后连续的null
-			int nullTailCount = 0;
-			while (!queue.isEmpty()) {
-				int size = queue.size();
-				for (int i = 0; i < size; i++) {
-					TreeNode node = queue.poll();
-					if (node == NULL_DUMMY) {
-						builder.append("null,");
-						nullTailCount++;
-					} else {
-						nullTailCount = 0;
-						builder.append(node.val).append(",");
-						queue.offer(node.left != null ? node.left : NULL_DUMMY);
-						queue.offer(node.right != null ? node.right : NULL_DUMMY);
-					}
-				}
-			}
+            // 尾部NULL计数，用来删除最后连续的null
+            int nullTailCount = 0;
+            while (!queue.isEmpty()) {
+                int size = queue.size();
+                for (int i = 0; i < size; i++) {
+                    TreeNode node = queue.poll();
+                    if (node == NULL_DUMMY) {
+                        builder.append("null,");
+                        nullTailCount++;
+                    } else {
+                        nullTailCount = 0;
+                        builder.append(node.val).append(",");
+                        queue.offer(node.left != null ? node.left : NULL_DUMMY);
+                        queue.offer(node.right != null ? node.right : NULL_DUMMY);
+                    }
+                }
+            }
 
-			// 删除尾部连续的null
-			if (nullTailCount > 0) {
-				builder.setLength(builder.length() - 5 * nullTailCount);// "null,".length()*nullTailCount
-			}
+            // 删除尾部连续的null
+            if (nullTailCount > 0) {
+                builder.setLength(builder.length() - 5 * nullTailCount);// "null,".length()*nullTailCount
+            }
 
-			builder.setCharAt(builder.length() - 1, ']');
-			return builder.toString();
-		}
+            builder.setCharAt(builder.length() - 1, ']');
+            return builder.toString();
+        }
 
-		// Decodes your encoded data to tree.
-		public TreeNode deserialize(String data) {
-			data = data.substring(1, data.length() - 1);
-			if (data.length() == 0) {
-				return null;
-			}
-			Queue<TreeNode> queue = new ArrayDeque<>();
+        // Decodes your encoded data to tree.
+        public TreeNode deserialize(String data) {
+            data = data.substring(1, data.length() - 1);
+            if (data.length() == 0) {
+                return null;
+            }
+            Queue<TreeNode> queue = new ArrayDeque<>();
 
-			// 分割字符串，获取根结点
-			String[] parts = data.split(",");
-			TreeNode root = new TreeNode(Integer.parseInt(parts[0]));
-			queue.add(root);
-			int index = 1;
-			while (!queue.isEmpty()) {
+            // 分割字符串，获取根结点
+            String[] parts = data.split(",");
+            TreeNode root = new TreeNode(Integer.parseInt(parts[0]));
+            queue.add(root);
+            int index = 1;
+            while (!queue.isEmpty()) {
 
-				// 获取双链表的头结点作为当前结点
-				TreeNode node = queue.poll();
+                // 获取双链表的头结点作为当前结点
+                TreeNode node = queue.poll();
 
-				// 判断左子节点是否为空
-				// 判断是否还有结点可以构建的左子节点
-				if (index == parts.length) {
-					break;
-				}
-				{
-					String part = parts[index++];
-					if (!"null".equals(part)) {
-						queue.add(node.left = new TreeNode(Integer.parseInt(part)));
-					}
-				}
+                // 判断左子节点是否为空
+                // 判断是否还有结点可以构建的左子节点
+                if (index == parts.length) {
+                    break;
+                }
+                {
+                    String part = parts[index++];
+                    if (!"null".equals(part)) {
+                        queue.add(node.left = new TreeNode(Integer.parseInt(part)));
+                    }
+                }
 
-				// 判断右子节点是否为空
-				// 判断是否还有结点可以构建的右子节点
-				if (index == parts.length) {
-					break;
-				}
-				{
-					String part = parts[index++];
-					if (!"null".equals(part)) {
-						queue.add(node.right = new TreeNode(Integer.parseInt(part)));
-					}
-				}
-			}
-			return root;
-		}
-	}
+                // 判断右子节点是否为空
+                // 判断是否还有结点可以构建的右子节点
+                if (index == parts.length) {
+                    break;
+                }
+                {
+                    String part = parts[index++];
+                    if (!"null".equals(part)) {
+                        queue.add(node.right = new TreeNode(Integer.parseInt(part)));
+                    }
+                }
+            }
+            return root;
+        }
+    }
 }

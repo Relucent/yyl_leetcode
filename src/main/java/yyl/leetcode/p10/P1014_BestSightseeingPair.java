@@ -19,43 +19,43 @@ package yyl.leetcode.p10;
  */
 public class P1014_BestSightseeingPair {
 
-	public static void main(String[] args) {
-		Solution solution = new Solution();
-		System.out.println(solution.maxScoreSightseeingPair(new int[] { 8, 1, 5, 2, 6 }));// 11
-		System.out.println(solution.maxScoreSightseeingPair(new int[] { 1, 2 }));// 2
-		System.out.println(solution.maxScoreSightseeingPair(new int[] { 6, 9, 10, 5, 9, 10, 4, 5 }));// 18
-	}
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(solution.maxScoreSightseeingPair(new int[] { 8, 1, 5, 2, 6 }));// 11
+        System.out.println(solution.maxScoreSightseeingPair(new int[] { 1, 2 }));// 2
+        System.out.println(solution.maxScoreSightseeingPair(new int[] { 6, 9, 10, 5, 9, 10, 4, 5 }));// 18
+    }
 
-	// 枚举法
-	// 思路：
-	// A[i] + A[j] + i − j = (A[i] + i) + (A[j] − j)
-	// 遍历数组，根据前面最大的 数(A[i] + i)和当前的数(A[j] − j)的算最大值
-	// 时间复杂度：O(N)，其中 n 为数组 A 的大小。只需要遍历一遍数组即可。
-	// 空间复杂度：O(1)，只需要常数空间来存放若干变量。
-	static class Solution {
-		public int maxScoreSightseeingPair(int[] A) {
-			int ans = Integer.MIN_VALUE;
-			int max = A[0];
-			for (int i = 1; i < A.length; i++) {
-				ans = Math.max(max + A[i] - i, ans);
-				max = Math.max(A[i] + i, max);
-			}
-			return ans;
-		}
-	}
+    // 枚举法
+    // 思路：
+    // A[i] + A[j] + i − j = (A[i] + i) + (A[j] − j)
+    // 遍历数组，根据前面最大的 数(A[i] + i)和当前的数(A[j] − j)的算最大值
+    // 时间复杂度：O(N)，其中 n 为数组 A 的大小。只需要遍历一遍数组即可。
+    // 空间复杂度：O(1)，只需要常数空间来存放若干变量。
+    static class Solution {
+        public int maxScoreSightseeingPair(int[] A) {
+            int ans = Integer.MIN_VALUE;
+            int max = A[0];
+            for (int i = 1; i < A.length; i++) {
+                ans = Math.max(max + A[i] - i, ans);
+                max = Math.max(A[i] + i, max);
+            }
+            return ans;
+        }
+    }
 
-	// 暴力遍历法
-	// 时间复杂度：O(N^2)
-	// 空间复杂度：O(1)
-	static class Solution2 {
-		public int maxScoreSightseeingPair(int[] A) {
-			int score = 0;
-			for (int i = 0; i < A.length - 1; i++) {
-				for (int j = i + 1; j < A.length; j++) {
-					score = Math.max(score, A[i] + A[j] + i - j);
-				}
-			}
-			return score;
-		}
-	}
+    // 暴力遍历法
+    // 时间复杂度：O(N^2)
+    // 空间复杂度：O(1)
+    static class Solution2 {
+        public int maxScoreSightseeingPair(int[] A) {
+            int score = 0;
+            for (int i = 0; i < A.length - 1; i++) {
+                for (int j = i + 1; j < A.length; j++) {
+                    score = Math.max(score, A[i] + A[j] + i - j);
+                }
+            }
+            return score;
+        }
+    }
 }

@@ -25,60 +25,60 @@ import yyl.leetcode.util.Assert;
  */
 public class P0130_SurroundedRegions {
 
-	public static void main(String[] args) {
-		Solution solution = new Solution();
-		char[][] actual = { { 'X', 'X', 'X', 'X' }, { 'X', 'O', 'O', 'X' }, { 'X', 'X', 'O', 'X' }, { 'X', 'O', 'X', 'X' } };
-		solution.solve(actual);
-		char[][] expected = { { 'X', 'X', 'X', 'X' }, { 'X', 'X', 'X', 'X' }, { 'X', 'X', 'X', 'X' }, { 'X', 'O', 'X', 'X' } };
-		Assert.assertEquals(expected, actual);
-	}
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        char[][] actual = { { 'X', 'X', 'X', 'X' }, { 'X', 'O', 'O', 'X' }, { 'X', 'X', 'O', 'X' }, { 'X', 'O', 'X', 'X' } };
+        solution.solve(actual);
+        char[][] expected = { { 'X', 'X', 'X', 'X' }, { 'X', 'X', 'X', 'X' }, { 'X', 'X', 'X', 'X' }, { 'X', 'O', 'X', 'X' } };
+        Assert.assertEquals(expected, actual);
+    }
 
-	// 深度优先搜索
-	// 任何边界上的 O 都不会被填充为 X。 可以得出，所有的不被包围的 O 都直接或间接与边界上的 O相连。
-	// 1、以每一个边界上的 O为起点，标记所有与它直接或间接相连的字母 O；
-	// 2、遍历这个矩阵，对于每一个字母
-	// 如果该字母被标记过，则该字母为没有被字母 X 包围的字母 O，我们将其还原为字母 O；
-	// 如果该字母没有被标记过，则该字母为被字母 X 包围的字母 O，我们将其修改为字母 X。
-	// 时间复杂度：O(m*n)，其中 m和 n分别为矩阵的行数和列数。深度优先搜索过程中，每一个点至多只会被标记一次。
-	// 空间复杂度：O(m*n)，为深度优先搜索的栈的开销。
-	static class Solution {
+    // 深度优先搜索
+    // 任何边界上的 O 都不会被填充为 X。 可以得出，所有的不被包围的 O 都直接或间接与边界上的 O相连。
+    // 1、以每一个边界上的 O为起点，标记所有与它直接或间接相连的字母 O；
+    // 2、遍历这个矩阵，对于每一个字母
+    // 如果该字母被标记过，则该字母为没有被字母 X 包围的字母 O，我们将其还原为字母 O；
+    // 如果该字母没有被标记过，则该字母为被字母 X 包围的字母 O，我们将其修改为字母 X。
+    // 时间复杂度：O(m*n)，其中 m和 n分别为矩阵的行数和列数。深度优先搜索过程中，每一个点至多只会被标记一次。
+    // 空间复杂度：O(m*n)，为深度优先搜索的栈的开销。
+    static class Solution {
 
-		private static final char ENERGY = '0';
+        private static final char ENERGY = '0';
 
-		public void solve(char[][] board) {
-			int m = board.length;
-			if (m == 0) {
-				return;
-			}
-			int n = board[0].length;
-			for (int x = 0; x < n; x++) {
-				dfs(board, 0, x, m, n);
-				dfs(board, m - 1, x, m, n);
-			}
-			for (int y = 1; y < m - 1; y++) {
-				dfs(board, y, 0, m, n);
-				dfs(board, y, n - 1, m, n);
-			}
-			for (int y = 0; y < m; y++) {
-				for (int x = 0; x < n; x++) {
-					if (board[y][x] == ENERGY) {
-						board[y][x] = 'O';
-					} else {
-						board[y][x] = 'X';
-					}
-				}
-			}
-		}
+        public void solve(char[][] board) {
+            int m = board.length;
+            if (m == 0) {
+                return;
+            }
+            int n = board[0].length;
+            for (int x = 0; x < n; x++) {
+                dfs(board, 0, x, m, n);
+                dfs(board, m - 1, x, m, n);
+            }
+            for (int y = 1; y < m - 1; y++) {
+                dfs(board, y, 0, m, n);
+                dfs(board, y, n - 1, m, n);
+            }
+            for (int y = 0; y < m; y++) {
+                for (int x = 0; x < n; x++) {
+                    if (board[y][x] == ENERGY) {
+                        board[y][x] = 'O';
+                    } else {
+                        board[y][x] = 'X';
+                    }
+                }
+            }
+        }
 
-		private void dfs(char[][] board, int y, int x, int m, int n) {
-			if (y < 0 || m <= y || x < 0 || n <= x || board[y][x] != 'O') {
-				return;
-			}
-			board[y][x] = ENERGY;
-			dfs(board, y - 1, x, m, n);
-			dfs(board, y + 1, x, m, n);
-			dfs(board, y, x - 1, m, n);
-			dfs(board, y, x + 1, m, n);
-		}
-	}
+        private void dfs(char[][] board, int y, int x, int m, int n) {
+            if (y < 0 || m <= y || x < 0 || n <= x || board[y][x] != 'O') {
+                return;
+            }
+            board[y][x] = ENERGY;
+            dfs(board, y - 1, x, m, n);
+            dfs(board, y + 1, x, m, n);
+            dfs(board, y, x - 1, m, n);
+            dfs(board, y, x + 1, m, n);
+        }
+    }
 }

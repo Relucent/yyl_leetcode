@@ -29,89 +29,89 @@ import java.util.Arrays;
  */
 public class P1300_SumOfMutatedArrayClosestToTarget {
 
-	public static void main(String[] args) {
-		Solution solution = new Solution();
-		System.out.println(solution.findBestValue(new int[] { 4, 9, 3 }, 10));// 3
-		System.out.println(solution.findBestValue(new int[] { 2, 3, 5 }, 10));// 5
-		System.out.println(solution.findBestValue(new int[] { 2, 3, 5 }, 11));// 5
-		System.out.println(solution.findBestValue(new int[] { 60864, 25176, 27249, 21296, 20204 }, 56803));// 11361
-		System.out.println(solution.findBestValue(new int[] { 1547, 83230, 57084, 93444, 70879 }, 71237));// 17422
-	}
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(solution.findBestValue(new int[] { 4, 9, 3 }, 10));// 3
+        System.out.println(solution.findBestValue(new int[] { 2, 3, 5 }, 10));// 5
+        System.out.println(solution.findBestValue(new int[] { 2, 3, 5 }, 11));// 5
+        System.out.println(solution.findBestValue(new int[] { 60864, 25176, 27249, 21296, 20204 }, 56803));// 11361
+        System.out.println(solution.findBestValue(new int[] { 1547, 83230, 57084, 93444, 70879 }, 71237));// 17422
+    }
 
-	// 双重二分查找
-	// 时间复杂度：O(Nlog⁡N)，其中 N是数组 arr 的长度。排序需要的时间复杂度为 O(Nlog⁡N)，二分查找的时间复杂度为 O(log⁡C)，内层二分查找的时间复杂度为 O(log⁡N)O(\log N)O(logN)，它们的乘积在数量级上小于 O(Nlog⁡N)。
-	// 空间复杂度：O(N)
-	static class Solution {
-		public int findBestValue(int[] arr, int target) {
-			Arrays.sort(arr);
+    // 双重二分查找
+    // 时间复杂度：O(Nlog⁡N)，其中 N是数组 arr 的长度。排序需要的时间复杂度为 O(Nlog⁡N)，二分查找的时间复杂度为 O(log⁡C)，内层二分查找的时间复杂度为 O(log⁡N)O(\log N)O(logN)，它们的乘积在数量级上小于 O(Nlog⁡N)。
+    // 空间复杂度：O(N)
+    static class Solution {
+        public int findBestValue(int[] arr, int target) {
+            Arrays.sort(arr);
 
-			int n = arr.length;
+            int n = arr.length;
 
-			int[] prefixSums = new int[n + 1];
-			for (int i = 1; i <= n; ++i) {
-				prefixSums[i] = prefixSums[i - 1] + arr[i - 1];
-			}
+            int[] prefixSums = new int[n + 1];
+            for (int i = 1; i <= n; ++i) {
+                prefixSums[i] = prefixSums[i - 1] + arr[i - 1];
+            }
 
-			int left = 0;
-			int right = arr[n - 1];
-			int value = -1;
+            int left = 0;
+            int right = arr[n - 1];
+            int value = -1;
 
-			while (left <= right) {
-				int mid = (left + right) / 2;
-				int index = Arrays.binarySearch(arr, mid);
-				if (index < 0) {
-					index = -index - 1;
-				}
-				int cur = prefixSums[index] + (n - index) * mid;
-				if (cur <= target) {
-					value = mid;
-					left = mid + 1;
-				} else {
-					right = mid - 1;
-				}
-			}
-			int chooseSmall = check(arr, value);
-			int chooseBig = check(arr, value + 1);
-			return Math.abs(chooseSmall - target) <= Math.abs(chooseBig - target) ? value : value + 1;
-		}
+            while (left <= right) {
+                int mid = (left + right) / 2;
+                int index = Arrays.binarySearch(arr, mid);
+                if (index < 0) {
+                    index = -index - 1;
+                }
+                int cur = prefixSums[index] + (n - index) * mid;
+                if (cur <= target) {
+                    value = mid;
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+            int chooseSmall = check(arr, value);
+            int chooseBig = check(arr, value + 1);
+            return Math.abs(chooseSmall - target) <= Math.abs(chooseBig - target) ? value : value + 1;
+        }
 
-		private int check(int[] arr, int x) {
-			int sum = 0;
-			for (int num : arr) {
-				sum += Math.min(num, x);
-			}
-			return sum;
-		}
-	}
+        private int check(int[] arr, int x) {
+            int sum = 0;
+            for (int num : arr) {
+                sum += Math.min(num, x);
+            }
+            return sum;
+        }
+    }
 
-	// 二分法
-	// 时间复杂度：O(Nlog⁡N)，其中 N是数组 arr 的长度。排序需要的时间复杂度为 O(Nlog⁡N)，二分查找的时间复杂度为 O(log⁡C)，内层求和的时间复杂度为 O(N)。
-	// 空间复杂度：O(N)
-	static class Solution2 {
-		public int findBestValue(int[] arr, int target) {
-			Arrays.sort(arr);
-			int left = 0;
-			int right = arr[arr.length - 1];
-			while (left < right) {
-				int mid = (left + right + 1) / 2;
-				if (check(arr, mid) <= target) {
-					left = mid;
-				} else {
-					right = mid - 1;
-				}
-			}
-			if (Math.abs(target - check(arr, left)) <= Math.abs(target - check(arr, left + 1))) {
-				return left;
-			}
-			return left + 1;
-		}
+    // 二分法
+    // 时间复杂度：O(Nlog⁡N)，其中 N是数组 arr 的长度。排序需要的时间复杂度为 O(Nlog⁡N)，二分查找的时间复杂度为 O(log⁡C)，内层求和的时间复杂度为 O(N)。
+    // 空间复杂度：O(N)
+    static class Solution2 {
+        public int findBestValue(int[] arr, int target) {
+            Arrays.sort(arr);
+            int left = 0;
+            int right = arr[arr.length - 1];
+            while (left < right) {
+                int mid = (left + right + 1) / 2;
+                if (check(arr, mid) <= target) {
+                    left = mid;
+                } else {
+                    right = mid - 1;
+                }
+            }
+            if (Math.abs(target - check(arr, left)) <= Math.abs(target - check(arr, left + 1))) {
+                return left;
+            }
+            return left + 1;
+        }
 
-		private int check(int[] arr, int x) {
-			int sum = 0;
-			for (int num : arr) {
-				sum += Math.min(num, x);
-			}
-			return sum;
-		}
-	}
+        private int check(int[] arr, int x) {
+            int sum = 0;
+            for (int num : arr) {
+                sum += Math.min(num, x);
+            }
+            return sum;
+        }
+    }
 }

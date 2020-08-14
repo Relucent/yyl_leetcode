@@ -5,17 +5,17 @@ package yyl.leetcode.p11;
  * 
  * <pre>
  * class FooBar {
- * 	public void foo() {
- * 		for (int i = 0; i < n; i++) {
- * 			print("foo");
- * 		}
- * 	}
+ *     public void foo() {
+ *         for (int i = 0; i < n; i++) {
+ *             print("foo");
+ *         }
+ *     }
  * 
- * 	public void bar() {
- * 		for (int i = 0; i < n; i++) {
- * 			print("bar");
- * 		}
- * 	}
+ *     public void bar() {
+ *         for (int i = 0; i < n; i++) {
+ *             print("bar");
+ *         }
+ *     }
  * }
  * </pre>
  * 
@@ -35,62 +35,62 @@ package yyl.leetcode.p11;
  */
 public class P1115_PrintFoobarAlternately {
 
-	public static void main(String[] args) {
-		Runnable printFoo = () -> System.out.print("foo");
-		Runnable printBar = () -> System.out.print("bar");
-		FooBar sample = new FooBar(2);
-		new Thread(() -> {
-			try {
-				sample.foo(printFoo);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}).start();
-		new Thread(() -> {
-			try {
-				sample.bar(printBar);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}).start();
-	}
+    public static void main(String[] args) {
+        Runnable printFoo = () -> System.out.print("foo");
+        Runnable printBar = () -> System.out.print("bar");
+        FooBar sample = new FooBar(2);
+        new Thread(() -> {
+            try {
+                sample.foo(printFoo);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        new Thread(() -> {
+            try {
+                sample.bar(printBar);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
 
-	static class FooBar {
+    static class FooBar {
 
-		private final int n;
-		private Object lock = new Object();
-		private int signal = 0;
+        private final int n;
+        private Object lock = new Object();
+        private int signal = 0;
 
-		public FooBar(int n) {
-			this.n = n;
-		}
+        public FooBar(int n) {
+            this.n = n;
+        }
 
-		public void foo(Runnable printFoo) throws InterruptedException {
-			for (int i = 0; i < n; i++) {
-				synchronized (lock) {
-					while (signal != 0) {
-						lock.wait();
-					}
-					// printFoo.run() outputs "foo". Do not change or remove this line.
-					printFoo.run();
-					signal = 1;
-					lock.notifyAll();
-				}
-			}
-		}
+        public void foo(Runnable printFoo) throws InterruptedException {
+            for (int i = 0; i < n; i++) {
+                synchronized (lock) {
+                    while (signal != 0) {
+                        lock.wait();
+                    }
+                    // printFoo.run() outputs "foo". Do not change or remove this line.
+                    printFoo.run();
+                    signal = 1;
+                    lock.notifyAll();
+                }
+            }
+        }
 
-		public void bar(Runnable printBar) throws InterruptedException {
-			for (int i = 0; i < n; i++) {
-				synchronized (lock) {
-					while (signal != 1) {
-						lock.wait();
-					}
-					// printBar.run() outputs "bar". Do not change or remove this line.
-					printBar.run();
-					signal = 0;
-					lock.notifyAll();
-				}
-			}
-		}
-	}
+        public void bar(Runnable printBar) throws InterruptedException {
+            for (int i = 0; i < n; i++) {
+                synchronized (lock) {
+                    while (signal != 1) {
+                        lock.wait();
+                    }
+                    // printBar.run() outputs "bar". Do not change or remove this line.
+                    printBar.run();
+                    signal = 0;
+                    lock.notifyAll();
+                }
+            }
+        }
+    }
 }

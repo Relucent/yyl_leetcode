@@ -22,47 +22,47 @@ import yyl.leetcode.util.Assert;
  */
 public class L0803_MagicIndexLcci {
 
-	public static void main(String[] args) {
-		Solution solution = new Solution();
-		Assert.assertEquals(0, solution.findMagicIndex(new int[] { 0, 2, 3, 4, 5 }));
-		Assert.assertEquals(1, solution.findMagicIndex(new int[] { 1, 1, 1 }));
-	}
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        Assert.assertEquals(0, solution.findMagicIndex(new int[] { 0, 2, 3, 4, 5 }));
+        Assert.assertEquals(1, solution.findMagicIndex(new int[] { 1, 1, 1 }));
+    }
 
-	// 迭代
-	// 从头遍历到尾，如果 nums[i]==i，返回i；如果遍历到末尾，返回-1
-	// 时间复杂度：O(N)
-	// 空间复杂度：O(1)
-	static class Solution {
-		public int findMagicIndex(int[] nums) {
-			for (int i = 0; i < nums.length; i++) {
-				if (nums[i] == i) {
-					return i;
-				}
-			}
-			return -1;
-		}
-	}
+    // 迭代
+    // 从头遍历到尾，如果 nums[i]==i，返回i；如果遍历到末尾，返回-1
+    // 时间复杂度：O(N)
+    // 空间复杂度：O(1)
+    static class Solution {
+        public int findMagicIndex(int[] nums) {
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] == i) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+    }
 
-	// 跳跃
-	// 如果第一个魔术索引是i， 那么 ：mums[i-1] < i-1；
-	// 于是可以根据位置元素的特点对下标进行切换
-	// 时间复杂度：O(N)，虽然最差时间复杂度和迭代相同，但是一般情况可以节省中间比较。所以实际比迭代要快一些。
-	// 空间复杂度：O(1)
-	static class Solution1 {
-		public int findMagicIndex(int[] nums) {
-			for (int i = 0; i < nums.length;) {
-				if (nums[i] == i) {
-					return i;
-				}
-				if (nums[i] > i) {
-					i = nums[i];
-				}
-				// nums[i] < i
-				else {
-					i++;
-				}
-			}
-			return -1;
-		}
-	}
+    // 跳跃
+    // 如果第一个魔术索引是i， 那么 ：mums[i-1] < i-1；
+    // 于是可以根据位置元素的特点对下标进行切换
+    // 时间复杂度：O(N)，虽然最差时间复杂度和迭代相同，但是一般情况可以节省中间比较。所以实际比迭代要快一些。
+    // 空间复杂度：O(1)
+    static class Solution1 {
+        public int findMagicIndex(int[] nums) {
+            for (int i = 0; i < nums.length;) {
+                if (nums[i] == i) {
+                    return i;
+                }
+                if (nums[i] > i) {
+                    i = nums[i];
+                }
+                // nums[i] < i
+                else {
+                    i++;
+                }
+            }
+            return -1;
+        }
+    }
 }

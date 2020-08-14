@@ -26,33 +26,33 @@ package yyl.leetcode.p10;
  */
 public class P1025_DivisorGame {
 
-	public static void main(String[] args) {
-		Solution solution = new Solution();
-		System.out.println(solution.divisorGame(2));// true
-		System.out.println(solution.divisorGame(3));// false
-	}
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(solution.divisorGame(2));// true
+        System.out.println(solution.divisorGame(3));// false
+    }
 
-	// 找规律
-	// 思路与算法
-	// N=1 的时候，区间 (0,1) 中没有整数是 n 的因数，爱丽丝败。
-	// N=2 的时候，爱丽丝只能拿 1，N 变成 1，鲍勃 无法继续操作，爱丽丝 胜。
-	// N=3 的时候，爱丽丝只能拿 1，N 变成 2，根据 N=2的结论，鲍勃会获胜，爱丽丝败。
-	// N=4 的时候，爱丽丝能拿 1 或 2，如果爱丽丝拿1，根据 N=3的结论，鲍勃会失败，爱丽丝会获胜。
-	// N=5 的时候，爱丽丝只能拿 1，根据 N=4，爱丽丝会失败。
-	// ......
-	// 发现规律：N为奇数的时候先手必败，N为偶数的时候先手必胜。
-	// 证明
-	// ├ N=1 和 N=2时结论成立。
-	// └ N > 2 时
-	// ~ ├ 如果N为奇数，x只可能是奇数（x是 N的因数），而奇数减去奇数等于偶数，且 k+1−x≤k，故轮到鲍勃的时候都是偶数。
-	// ~ └ 如果N为偶数，x是奇数也可以是偶数（最小的奇数是1），如果爱丽丝选择减去奇数，那么轮到鲍勃的时候都是奇数（无论鲍勃怎么选，再次轮到爱丽丝的时候依旧是偶数）
-	// 综上所述，偶数情况，能保证自己选择的时候一直是偶数，最后到最小的偶数2，可以确定猜想是正确的。
-	// 复杂度分析
-	// 时间复杂度：O(1)
-	// 空间复杂度：O(1)O
-	static class Solution {
-		public boolean divisorGame(int N) {
-			return N % 2 == 0;
-		}
-	}
+    // 找规律
+    // 思路与算法
+    // N=1 的时候，区间 (0,1) 中没有整数是 n 的因数，爱丽丝败。
+    // N=2 的时候，爱丽丝只能拿 1，N 变成 1，鲍勃 无法继续操作，爱丽丝 胜。
+    // N=3 的时候，爱丽丝只能拿 1，N 变成 2，根据 N=2的结论，鲍勃会获胜，爱丽丝败。
+    // N=4 的时候，爱丽丝能拿 1 或 2，如果爱丽丝拿1，根据 N=3的结论，鲍勃会失败，爱丽丝会获胜。
+    // N=5 的时候，爱丽丝只能拿 1，根据 N=4，爱丽丝会失败。
+    // ......
+    // 发现规律：N为奇数的时候先手必败，N为偶数的时候先手必胜。
+    // 证明
+    // ├ N=1 和 N=2时结论成立。
+    // └ N > 2 时
+    // ~ ├ 如果N为奇数，x只可能是奇数（x是 N的因数），而奇数减去奇数等于偶数，且 k+1−x≤k，故轮到鲍勃的时候都是偶数。
+    // ~ └ 如果N为偶数，x是奇数也可以是偶数（最小的奇数是1），如果爱丽丝选择减去奇数，那么轮到鲍勃的时候都是奇数（无论鲍勃怎么选，再次轮到爱丽丝的时候依旧是偶数）
+    // 综上所述，偶数情况，能保证自己选择的时候一直是偶数，最后到最小的偶数2，可以确定猜想是正确的。
+    // 复杂度分析
+    // 时间复杂度：O(1)
+    // 空间复杂度：O(1)O
+    static class Solution {
+        public boolean divisorGame(int N) {
+            return N % 2 == 0;
+        }
+    }
 }

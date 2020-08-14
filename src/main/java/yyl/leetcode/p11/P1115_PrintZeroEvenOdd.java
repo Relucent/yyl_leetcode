@@ -33,108 +33,108 @@ package yyl.leetcode.p11;
  */
 public class P1115_PrintZeroEvenOdd {
 
-	static final class IntConsumer {
-		public void accept(int x) {
-			System.out.print(x);
-		}
-	}
+    static final class IntConsumer {
+        public void accept(int x) {
+            System.out.print(x);
+        }
+    }
 
-	public static void main(String[] args) {
-		ZeroEvenOdd zeroEvenOdd = new ZeroEvenOdd(5);
-		IntConsumer printNumber = new IntConsumer();
-		new Thread(() -> {
-			try {
-				zeroEvenOdd.zero(printNumber);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}).start();
-		new Thread(() -> {
-			try {
-				zeroEvenOdd.even(printNumber);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}).start();
-		new Thread(() -> {
-			try {
-				zeroEvenOdd.odd(printNumber);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}).start();
-	}
+    public static void main(String[] args) {
+        ZeroEvenOdd zeroEvenOdd = new ZeroEvenOdd(5);
+        IntConsumer printNumber = new IntConsumer();
+        new Thread(() -> {
+            try {
+                zeroEvenOdd.zero(printNumber);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        new Thread(() -> {
+            try {
+                zeroEvenOdd.even(printNumber);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        new Thread(() -> {
+            try {
+                zeroEvenOdd.odd(printNumber);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
 
-	static class ZeroEvenOdd {
-		private int n;
-		private int x = 0;
-		private boolean zero = true;
-		private Object lock = new Object();
+    static class ZeroEvenOdd {
+        private int n;
+        private int x = 0;
+        private boolean zero = true;
+        private Object lock = new Object();
 
-		public ZeroEvenOdd(int n) {
-			this.n = n;
-		}
+        public ZeroEvenOdd(int n) {
+            this.n = n;
+        }
 
-		// printNumber.accept(x) outputs "x", where x is an integer.
-		public void zero(IntConsumer printNumber) throws InterruptedException {
-			while (true) {
-				synchronized (lock) {
-					try {
-						while (!zero && x <= n) {
-							lock.wait();
-						}
-						if (x > n) {
-							return;
-						}
-						if (x < n) {
-							printNumber.accept(0);
-						}
-					} finally {
-						zero = false;
-						lock.notifyAll();
-					}
-				}
-			}
-		}
+        // printNumber.accept(x) outputs "x", where x is an integer.
+        public void zero(IntConsumer printNumber) throws InterruptedException {
+            while (true) {
+                synchronized (lock) {
+                    try {
+                        while (!zero && x <= n) {
+                            lock.wait();
+                        }
+                        if (x > n) {
+                            return;
+                        }
+                        if (x < n) {
+                            printNumber.accept(0);
+                        }
+                    } finally {
+                        zero = false;
+                        lock.notifyAll();
+                    }
+                }
+            }
+        }
 
-		public void even(IntConsumer printNumber) throws InterruptedException {
-			while (true) {
-				synchronized (lock) {
-					try {
-						while ((zero || x % 2 == 0) && x <= n) {
-							lock.wait();
-						}
-						x++;
-						if (x > n) {
-							return;
-						}
-						printNumber.accept(x);
-					} finally {
-						zero = true;
-						lock.notifyAll();
-					}
-				}
-			}
-		}
+        public void even(IntConsumer printNumber) throws InterruptedException {
+            while (true) {
+                synchronized (lock) {
+                    try {
+                        while ((zero || x % 2 == 0) && x <= n) {
+                            lock.wait();
+                        }
+                        x++;
+                        if (x > n) {
+                            return;
+                        }
+                        printNumber.accept(x);
+                    } finally {
+                        zero = true;
+                        lock.notifyAll();
+                    }
+                }
+            }
+        }
 
-		public void odd(IntConsumer printNumber) throws InterruptedException {
-			while (true) {
-				synchronized (lock) {
-					try {
-						while ((zero || x % 2 == 1) && x <= n) {
-							lock.wait();
-						}
-						x++;
-						if (x > n) {
-							return;
-						}
-						printNumber.accept(x);
-					} finally {
-						zero = true;
-						lock.notifyAll();
-					}
-				}
-			}
-		}
-	}
+        public void odd(IntConsumer printNumber) throws InterruptedException {
+            while (true) {
+                synchronized (lock) {
+                    try {
+                        while ((zero || x % 2 == 1) && x <= n) {
+                            lock.wait();
+                        }
+                        x++;
+                        if (x > n) {
+                            return;
+                        }
+                        printNumber.accept(x);
+                    } finally {
+                        zero = true;
+                        lock.notifyAll();
+                    }
+                }
+            }
+        }
+    }
 }
