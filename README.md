@@ -142,6 +142,7 @@ Leetcode 题解
 |410|[分割数组的最大值](src/main/java/yyl/leetcode/p04/P0410_SplitArrayLargestSum.java)|困难|
 |415|[字符串相加](src/main/java/yyl/leetcode/p04/P0415_AddStrings.java)|简单|
 |445|[两数相加 II](src/main/java/yyl/leetcode/p04/P0445_AddTwoNumbersII.java)|中等|
+|529|[扫雷游戏](yyl/leetcode/p05/P0529_Minesweeper.java)|中等|
 |546|[移除盒子](yyl/leetcode/p05/P0546_RemoveBoxes.java)|困难|
 |632|[最小区间 ](src/main/java/yyl/leetcode/p06/P0632_SmallestRangeCoveringElementsFromKLists.java)|困难|
 |696|[计数二进制子串](src/main/java/yyl/leetcode/p06/P0696_CountBinarySubstrings.java)|简单|
