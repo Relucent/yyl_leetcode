@@ -109,6 +109,7 @@ Leetcode 题解
 |108|[将有序数组转换为二叉搜索树 ](src/main/java/yyl/leetcode/p01/P0108_ConvertSortedArrayToBinarySearchTree.java)|简单|
 |109|[有序链表转换二叉搜索树 ](src/main/java/yyl/leetcode/p01/P0109_ConvertSortedListToBinarySearchTree.java)|中等|
 |110|[平衡二叉树](src/main/java/yyl/leetcode/p01/P0110_BalancedBinaryTree.java)|简单|
+|111|[二叉树的最小深度](src/main/java/yyl/leetcode/p01/P0111_MinimumDepthOfBinaryTree.java)|简单|
 |112|[路径总和 ](src/main/java/yyl/leetcode/p01/P0112_PathSum.java)|简单|
 |114|[二叉树展开为链表](src/main/java/yyl/leetcode/p01/P0114_FlattenBinaryTreeToLinkedList.java))|中等|
 |120|[三角形最小路径和 ](src/main/java/yyl/leetcode/p01/P0120_Triangle.java))|中等|
