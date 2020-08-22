@@ -146,6 +146,8 @@ Leetcode 题解
 |529|[扫雷游戏](yyl/leetcode/p05/P0529_Minesweeper.java)|中等|
 |546|[移除盒子](yyl/leetcode/p05/P0546_RemoveBoxes.java)|困难|
 |632|[最小区间 ](src/main/java/yyl/leetcode/p06/P0632_SmallestRangeCoveringElementsFromKLists.java)|困难|
+|647|[回文子串](src/main/java/yyl/leetcode/p06/P0647_PalindromicSubstrings.java)|中等|
+|679|[24点游戏](src/main/java/yyl/leetcode/p06/P0679_24Game.java)|困难|
 |696|[计数二进制子串](src/main/java/yyl/leetcode/p06/P0696_CountBinarySubstrings.java)|简单|
 |718|[最长重复子数组](src/main/java/yyl/leetcode/p07/P0718_MaximumLengthOfRepeatedSubarray.java)|中等|
 |739|[每日温度](src/main/java/yyl/leetcode/p07/P0739_DailyTemperatures.java)|中等|
