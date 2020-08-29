@@ -127,6 +127,7 @@ Leetcode 题解
 |206|[反转链表](src/main/java/yyl/leetcode/p02/P0206_ReverseLinkedList.java)|简单|
 |207|[课程表  ](src/main/java/yyl/leetcode/p02/P0207_CourseSchedule.java)|中等|
 |209|[长度最小的子数组](src/main/java/yyl/leetcode/p02/P0209_MinimumSizeSubarraySum.java)|中等|
+|214|[最短回文串](src/main/java/yyl/leetcode/p02/P0214_ShortestPalindrome.java)|困难|
 |215|[数组中的第K个最大元素](src/main/java/yyl/leetcode/p02/P0215_KthLargestElementInAnArray.java)|中等|
 |217|[存在重复元素](src/main/java/yyl/leetcode/p02/P0217_ContainsDuplicate.java)|简单|
 |234|[回文链表](src/main/java/yyl/leetcode/p02/P0234_PalindromeLinkedList.java)|简单|
