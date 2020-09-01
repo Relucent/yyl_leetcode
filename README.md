@@ -147,6 +147,7 @@ Leetcode 题解
 |415|[字符串相加](src/main/java/yyl/leetcode/p04/P0415_AddStrings.java)|简单|
 |445|[两数相加 II](src/main/java/yyl/leetcode/p04/P0445_AddTwoNumbersII.java)|中等|
 |459|[重复的子字符串](src/main/java/yyl/leetcode/p04/P0459_RepeatedSubstringPattern.java)|简单|
+|486|[递增子序列](src/main/java/yyl/leetcode/p04/P0486_PredictTheWinner.java)|中等|
 |491|[递增子序列](src/main/java/yyl/leetcode/p04/P0491_IncreasingSubsequences.java)|中等|
 |529|[扫雷游戏](yyl/leetcode/p05/P0529_Minesweeper.java)|中等|
 |546|[移除盒子](yyl/leetcode/p05/P0546_RemoveBoxes.java)|困难|
