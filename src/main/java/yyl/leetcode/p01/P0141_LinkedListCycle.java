@@ -39,13 +39,13 @@ import yyl.leetcode.util.Assert;
 public class P0141_LinkedListCycle {
 
     public static void main(String[] args) {
-        Solution1 solution = new Solution1();
-        Assert.assertTrue(solution.hasCycle(cycle(ListNode.create(3, 2, 0, -4), 1)));
-        Assert.assertTrue(solution.hasCycle(cycle(ListNode.create(3, 2, 0, -4), 0)));
-        Assert.assertFalse(solution.hasCycle(cycle(ListNode.create(3, 2, 0, -4), -1)));
+        Solution solution = new Solution();
+        Assert.assertTrue(solution.hasCycle(buildCycle(ListNode.create(3, 2, 0, -4), 1)));
+        Assert.assertTrue(solution.hasCycle(buildCycle(ListNode.create(1, 2), 0)));
+        Assert.assertFalse(solution.hasCycle(buildCycle(ListNode.create(1), -1)));
     }
 
-    private static ListNode cycle(ListNode head, int pos) {
+    private static ListNode buildCycle(ListNode head, int pos) {
         if (pos == -1) {
             return head;
         }
