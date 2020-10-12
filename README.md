@@ -155,6 +155,7 @@ Leetcode 题解
 |486|[递增子序列](src/main/java/yyl/leetcode/p04/P0486_PredictTheWinner.java)|中等|
 |491|[递增子序列](src/main/java/yyl/leetcode/p04/P0491_IncreasingSubsequences.java)|中等|
 |529|[扫雷游戏](yyl/leetcode/p05/P0529_Minesweeper.java)|中等|
+|530|[二叉搜索树的最小绝对差](yyl/leetcode/p05/P0530_MinimumAbsoluteDifferenceInBst.java)|简单|
 |546|[移除盒子](yyl/leetcode/p05/P0546_RemoveBoxes.java)|困难|
 |557|[反转字符串中的单词 III](yyl/leetcode/p05/P0557_ReverseWordsInAStringIII.java)|简单|
 |632|[最小区间 ](src/main/java/yyl/leetcode/p06/P0632_SmallestRangeCoveringElementsFromKLists.java)|困难|
