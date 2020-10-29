@@ -112,9 +112,10 @@ Leetcode 题解
 |111|[二叉树的最小深度](src/main/java/yyl/leetcode/p01/P0111_MinimumDepthOfBinaryTree.java)|简单|
 |112|[路径总和 ](src/main/java/yyl/leetcode/p01/P0112_PathSum.java)|简单|
 |114|[二叉树展开为链表](src/main/java/yyl/leetcode/p01/P0114_FlattenBinaryTreeToLinkedList.java))|中等|
-|120|[三角形最小路径和 ](src/main/java/yyl/leetcode/p01/P0120_Triangle.java))|中等|
+|120|[三角形最小路径和 ](src/main/java/yyl/leetcode/p01/P0120_Triangle.java)|中等|
 |124|[二叉树中的最大路径和  ](src/main/java/yyl/leetcode/p01/P0124_BinaryTreeMaximumPathSum.java)|困难|
 |125|[验证回文串  ](src/main/java/yyl/leetcode/p01/P0125_ValidPalindrome.java)|简单|
+|129|[求根到叶子节点数字之和](src/main/java/yyl/leetcode/p01/P0129_SumRootToLeafNumbers.java|中等|
 |130|[被围绕的区域 ](src/main/java/yyl/leetcode/p01/P0130_SurroundedRegions.java)|中等|
 |133|[克隆图](src/main/java/yyl/leetcode/p01/P0133_CloneGraph.java)|中等|
 |139|[单词拆分](src/main/java/yyl/leetcode/p01/P0139_WordBreak.java)|中等|
