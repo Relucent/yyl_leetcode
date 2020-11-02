@@ -146,6 +146,7 @@ Leetcode 题解
 |337|[打家劫舍 III](src/main/java/yyl/leetcode/p03/P0337_HouseRobberIII.java)|中等|
 |343|[整数拆分](src/main/java/yyl/leetcode/p03/P0343_IntegerBreak.java)|中等|
 |347|[前 K 个高频元素](src/main/java/yyl/leetcode/p03/P0347_TopKFrequentElements.java)|中等|
+|349|[两个数组的交集](src/main/java/yyl/leetcode/p03/P0349_IntersectionOfTwoArrays.java)|简单|
 |350|[两个数组的交集 II](src/main/java/yyl/leetcode/p03/P0350_IntersectionOfTwoArraysII.java)|简单|
 |378|[有序矩阵中第K小的元素  ](src/main/java/yyl/leetcode/p03/P0378_KthSmallestElementInASortedMatrix.java)|中等|
 |381|[O(1) 时间插入、删除和获取随机元素 - 允许重复](src/main/java/yyl/leetcode/p03/P0381_InsertDeleteGetrandomO1DuplicatesAllowed.java)|困难|
