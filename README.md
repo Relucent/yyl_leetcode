@@ -183,5 +183,6 @@ Leetcode 题解
 |1116|[打印零与奇偶数 ](src/main/java/yyl/leetcode/p11/P1115_PrintZeroEvenOdd.java)|中等|
 |1207|[独一无二的出现次数](src/main/java/yyl/leetcode/p12/P1207_UniqueNumberOfOccurrences.java)|简单|
 |1300|[转变数组后最接近目标值的数组和 ](src/main/java/yyl/leetcode/p12/P1300_SumOfMutatedArrayClosestToTarget.java)|中等|
+|1356|[根据数字二进制下1的数目排序 ](src/main/java/yyl/leetcode/p13/P1356_SortIntegersByTheNumberOf1Bits.java)|简单|
 |1365|[有多少小于当前数字的数字](src/main/java/yyl/leetcode/p13/P1365_HowManyNumbersAreSmallerThanTheCurrentNumber.java)|简单|
 |1494|[转变数组后最接近目标值的数组和 ](src/main/java/yyl/leetcode/p14/P1494_ParallelCoursesII.java)|困难|
