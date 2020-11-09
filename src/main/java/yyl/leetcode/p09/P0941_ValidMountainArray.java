@@ -1,5 +1,7 @@
 package yyl.leetcode.p09;
 
+import yyl.leetcode.util.Assert;
+
 /**
  * <h3>有效的山脉数组</h3><br>
  * 给定一个整数数组 A，如果它是有效的山脉数组就返回 true，否则返回 false。<br>
@@ -29,14 +31,13 @@ package yyl.leetcode.p09;
  */
 
 public class P0941_ValidMountainArray {
+
     public static void main(String[] args) {
         Solution solution = new Solution();
-        // Assert.assertFalse(solution.validMountainArray(new int[] { 2, 1 }));
-        // Assert.assertFalse(solution.validMountainArray(new int[] { 3, 5, 5 }));
-        // Assert.assertTrue(solution.validMountainArray(new int[] { 0, 3, 2, 1 }));
-
-        System.out.println(solution.validMountainArray(new int[] { 14, 70, 70, 68, 67, 66, 63, 60, 58, 54, 4, 3 }));
-
+        Assert.assertFalse(solution.validMountainArray(new int[] { 2, 1 }));
+        Assert.assertFalse(solution.validMountainArray(new int[] { 3, 5, 5 }));
+        Assert.assertTrue(solution.validMountainArray(new int[] { 0, 3, 2, 1 }));
+        Assert.assertFalse(solution.validMountainArray(new int[] { 14, 70, 70, 68, 67, 66, 63, 60, 58, 54, 4, 3 }));
     }
 
     // 线性扫描
