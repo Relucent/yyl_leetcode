@@ -142,6 +142,7 @@ Leetcode 题解
 |312|[戳气球 ](src/main/java/yyl/leetcode/p03/P0312_BurstBalloons.java)|困难|
 |315|[计算右侧小于当前元素的个数 ](src/main/java/yyl/leetcode/p03/P0315_CountOfSmallerNumbersAfterSelf.java)|困难|
 |327|[区间和的个数](src/main/java/yyl/leetcode/p03/P0327_CountOfRangeSum.java)|困难|
+|328|[奇偶链表](src/main/java/yyl/leetcode/p03/P0328_OddEvenLinkedList.java)|中等|
 |329|[矩阵中的最长递增路径 ](src/main/java/yyl/leetcode/p03/P0329_LongestIncreasingPathInAMatrix.java)|困难|
 |332|[重新安排行程](src/main/java/yyl/leetcode/p03/P0332_ReconstructItinerary.java)|中等|
 |336|[回文对](src/main/java/yyl/leetcode/p03/P0336_PalindromePairs.java)|困难|
