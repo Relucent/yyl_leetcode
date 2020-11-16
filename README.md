@@ -154,6 +154,7 @@ Leetcode 题解
 |378|[有序矩阵中第K小的元素  ](src/main/java/yyl/leetcode/p03/P0378_KthSmallestElementInASortedMatrix.java)|中等|
 |381|[O(1) 时间插入、删除和获取随机元素 - 允许重复](src/main/java/yyl/leetcode/p03/P0381_InsertDeleteGetrandomO1DuplicatesAllowed.java)|困难|
 |392|[判断子序列](src/main/java/yyl/leetcode/p03/P0392_IsSubsequence.java)|简单|
+|406|[根据身高重建队列](src/main/java/yyl/leetcode/p04/P0406_QueueReconstructionByHeight.java)|中等|
 |410|[分割数组的最大值](src/main/java/yyl/leetcode/p04/P0410_SplitArrayLargestSum.java)|困难|
 |415|[字符串相加](src/main/java/yyl/leetcode/p04/P0415_AddStrings.java)|简单|
 |445|[两数相加 II](src/main/java/yyl/leetcode/p04/P0445_AddTwoNumbersII.java)|中等|
