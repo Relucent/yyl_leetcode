@@ -170,6 +170,7 @@ Leetcode 题解
 |463|[岛屿的周长](src/main/java/yyl/leetcode/p04/P0463_IslandPerimeter.java)|简单|
 |486|[递增子序列](src/main/java/yyl/leetcode/p04/P0486_PredictTheWinner.java)|中等|
 |491|[递增子序列](src/main/java/yyl/leetcode/p04/P0491_IncreasingSubsequences.java)|中等|
+|493|[翻转对](src/main/java/yyl/leetcode/p04/P0493_ReversePairs.java)|困难|
 |529|[扫雷游戏](yyl/leetcode/p05/P0529_Minesweeper.java)|中等|
 |530|[二叉搜索树的最小绝对差](yyl/leetcode/p05/P0530_MinimumAbsoluteDifferenceInBst.java)|简单|
 |546|[移除盒子](yyl/leetcode/p05/P0546_RemoveBoxes.java)|困难|
