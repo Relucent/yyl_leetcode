@@ -183,6 +183,7 @@ Leetcode 题解
 |718|[最长重复子数组](src/main/java/yyl/leetcode/p07/P0718_MaximumLengthOfRepeatedSubarray.java)|中等|
 |739|[每日温度](src/main/java/yyl/leetcode/p07/P0739_DailyTemperatures.java)|中等|
 |763|[划分字母区间](src/main/java/yyl/leetcode/p07/P0763_PartitionLabels.java)|简单|
+|767|[重构字符串](src/main/java/yyl/leetcode/p07/P0767_ReorganizeString.java)|中等|
 |771|[宝石与石头](src/main/java/yyl/leetcode/p07/P0771_JewelsAndStones.java)|简单|
 |785|[判断二分图](src/main/java/yyl/leetcode/p07/P0785_IsGraphBipartite.java)|中等|
 |841|[钥匙和房间](src/main/java/yyl/leetcode/p08/P0841_KeysAndRooms.java)|中等|
