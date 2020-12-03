@@ -131,6 +131,7 @@ Leetcode 题解
 |174|[地下城游戏](src/main/java/yyl/leetcode/p01/P0174_DungeonGame.java)|困难|
 |198|[打家劫舍](src/main/java/yyl/leetcode/p01/P0198_HouseRobber.java)|简单|
 |201|[数字范围按位与](src/main/java/yyl/leetcode/p01/P0201_BitwiseAndOfNumbersRange.java)|中等|
+|204|[计数质数](src/main/java/yyl/leetcode/p01/P0204_CountPrimes.java)|简单|
 |206|[反转链表](src/main/java/yyl/leetcode/p02/P0206_ReverseLinkedList.java)|简单|
 |207|[课程表  ](src/main/java/yyl/leetcode/p02/P0207_CourseSchedule.java)|中等|
 |209|[长度最小的子数组](src/main/java/yyl/leetcode/p02/P0209_MinimumSizeSubarraySum.java)|中等|
