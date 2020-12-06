@@ -112,6 +112,7 @@ Leetcode 题解
 |111|[二叉树的最小深度](src/main/java/yyl/leetcode/p01/P0111_MinimumDepthOfBinaryTree.java)|简单|
 |112|[路径总和 ](src/main/java/yyl/leetcode/p01/P0112_PathSum.java)|简单|
 |114|[二叉树展开为链表](src/main/java/yyl/leetcode/p01/P0114_FlattenBinaryTreeToLinkedList.java))|中等|
+|118|[杨辉三角](src/main/java/yyl/leetcode/p01/P0118_PascalsTriangle.java)|简单|
 |120|[三角形最小路径和 ](src/main/java/yyl/leetcode/p01/P0120_Triangle.java)|中等|
 |122|[买卖股票的最佳时机 II](src/main/java/yyl/leetcode/p01/P0122_BestTimeToBuyAndSellStockII.java)|简单|
 |124|[二叉树中的最大路径和  ](src/main/java/yyl/leetcode/p01/P0124_BinaryTreeMaximumPathSum.java)|困难|
