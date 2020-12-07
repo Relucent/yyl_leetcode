@@ -192,6 +192,7 @@ Leetcode 题解
 |771|[宝石与石头](src/main/java/yyl/leetcode/p07/P0771_JewelsAndStones.java)|简单|
 |785|[判断二分图](src/main/java/yyl/leetcode/p07/P0785_IsGraphBipartite.java)|中等|
 |841|[钥匙和房间](src/main/java/yyl/leetcode/p08/P0841_KeysAndRooms.java)|中等|
+|861|[翻转矩阵后的得分](src/main/java/yyl/leetcode/p08/P0861_ScoreAfterFlippingMatrix.java)|中等|
 |922|[按奇偶排序数组 II](src/main/java/yyl/leetcode/p09/P0922_SortArrayByParityII.java)|简单|
 |941|[有效的山脉数组](src/main/java/yyl/leetcode/p09/P0941_ValidMountainArray.java)|简单|
 |1030|[距离顺序排列矩阵单元格](src/main/java/yyl/leetcode/p10/P1030_MatrixCellsInDistanceOrder.java)|中等|
