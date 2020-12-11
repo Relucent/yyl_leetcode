@@ -181,6 +181,7 @@ Leetcode 题解
 |621|[任务调度器](src/main/java/yyl/leetcode/p06/P0621_TaskScheduler.java)|中等|
 |632|[最小区间 ](src/main/java/yyl/leetcode/p06/P0632_SmallestRangeCoveringElementsFromKLists.java)|困难|
 |647|[回文子串](src/main/java/yyl/leetcode/p06/P0647_PalindromicSubstrings.java)|中等|
+|649|[Dota2 参议院](src/main/java/yyl/leetcode/p06/P0649_Dota2Senate.java)|中等|
 |657|[机器人能否返回原点](src/main/java/yyl/leetcode/p06/P0657_RobotReturnToOrigin.java)|简单|
 |659|[分割数组为连续子序列](src/main/java/yyl/leetcode/p06/P0659_SplitArrayIntoConsecutiveSubsequences.java)|中等|
 |679|[24点游戏](src/main/java/yyl/leetcode/p06/P0679_24Game.java)|困难|
