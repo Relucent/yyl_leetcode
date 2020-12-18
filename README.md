@@ -145,6 +145,7 @@ Leetcode 题解
 |242|[有效的字母异位词](src/main/java/yyl/leetcode/p02/P0242_ValidAnagram.java)|简单|
 |257|[二叉树的所有路径](src/main/java/yyl/leetcode/p02/P0257_BinaryTreePaths.java)|简单|
 |283|[移动零](src/main/java/yyl/leetcode/p02/P0283_MoveZeroes.java)|简单|
+|389|[找不同](src/main/java/yyl/leetcode/p02/P0389_FindTheDifference.java)|简单|
 |290|[单词规律](src/main/java/yyl/leetcode/p02/P0290_WordPattern.java)|简单|
 |297|[二叉树的序列化与反序列化](src/main/java/yyl/leetcode/p02/P0297_SerializeAndDeserializeBinaryTree.java)|困难|
 |309|[最佳买卖股票时机含冷冻期](src/main/java/yyl/leetcode/p03/P0309_BestTimeToBuyAndSellStockWithCooldown.java)|中等|
