@@ -194,6 +194,7 @@ Leetcode 题解
 |718|[最长重复子数组](src/main/java/yyl/leetcode/p07/P0718_MaximumLengthOfRepeatedSubarray.java)|中等|
 |738|[单调递增的数字](src/main/java/yyl/leetcode/p07/P0738_MonotoneIncreasingDigits.java)|中等|
 |739|[每日温度](src/main/java/yyl/leetcode/p07/P0739_DailyTemperatures.java)|中等|
+|746|[使用最小花费爬楼梯](src/main/java/yyl/leetcode/p07/P0746_MinCostClimbingStairs.java)|简单|
 |763|[划分字母区间](src/main/java/yyl/leetcode/p07/P0763_PartitionLabels.java)|简单|
 |767|[重构字符串](src/main/java/yyl/leetcode/p07/P0767_ReorganizeString.java)|中等|
 |771|[宝石与石头](src/main/java/yyl/leetcode/p07/P0771_JewelsAndStones.java)|简单|
