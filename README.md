@@ -161,6 +161,7 @@ Leetcode 题解
 |327|[区间和的个数](src/main/java/yyl/leetcode/p03/P0327_CountOfRangeSum.java)|困难|
 |328|[奇偶链表](src/main/java/yyl/leetcode/p03/P0328_OddEvenLinkedList.java)|中等|
 |329|[矩阵中的最长递增路径 ](src/main/java/yyl/leetcode/p03/P0329_LongestIncreasingPathInAMatrix.java)|困难|
+|330|[按要求补齐数组 ](src/main/java/yyl/leetcode/p03/P0330_PatchingArray.java)|困难|
 |332|[重新安排行程](src/main/java/yyl/leetcode/p03/P0332_ReconstructItinerary.java)|中等|
 |336|[回文对](src/main/java/yyl/leetcode/p03/P0336_PalindromePairs.java)|困难|
 |337|[打家劫舍 III](src/main/java/yyl/leetcode/p03/P0337_HouseRobberIII.java)|中等|
