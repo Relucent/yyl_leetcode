@@ -217,6 +217,8 @@ Leetcode 题解
 |1014|[最佳观光组合 ](src/main/java/yyl/leetcode/p10/P1014_BestSightseeingPair.java)|中等|
 |1025|[除数博弈](src/main/java/yyl/leetcode/p10/P1025_DivisorGame.java)|中等|
 |1028|[从先序遍历还原二叉树](src/main/java/yyl/leetcode/p10/P1028_RecoverATreeFromPreorderTraversal.java)|困难|
+|1030|[距离顺序排列矩阵单元格  ](src/main/java/yyl/leetcode/p10/P1030_MatrixCellsInDistanceOrder.java)|简单|
+|1046|[最后一块石头的重量](src/main/java/yyl/leetcode/p10/P1046_LastStoneWeight.java)|简单|
 |1108|[IP 地址无效化](src/main/java/yyl/leetcode/p11/P1108_DefangingAnIpAddress.java)|简单|
 |1114|[按序打印](src/main/java/yyl/leetcode/p11/P1114_PrintInOrder.java)|简单|
 |1115|[交替打印FooBar](src/main/java/yyl/leetcode/p11/P1115_PrintFoobarAlternately.java)|中等|
