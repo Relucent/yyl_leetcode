@@ -177,6 +177,7 @@ Leetcode 题解
 |381|[O(1) 时间插入、删除和获取随机元素 - 允许重复](src/main/java/yyl/leetcode/p03/P0381_InsertDeleteGetrandomO1DuplicatesAllowed.java)|困难|
 |387|[字符串中的第一个唯一字符](src/main/java/yyl/leetcode/p03/P0387_FirstUniqueCharacterInAString.java)|简单|
 |392|[判断子序列](src/main/java/yyl/leetcode/p03/P0392_IsSubsequence.java)|简单|
+|399|[除法求值](src/main/java/yyl/leetcode/p03/P0399_EvaluateDivision.java)|中等|
 |406|[根据身高重建队列](src/main/java/yyl/leetcode/p04/P0406_QueueReconstructionByHeight.java)|中等|
 |410|[分割数组的最大值](src/main/java/yyl/leetcode/p04/P0410_SplitArrayLargestSum.java)|困难|
 |415|[字符串相加](src/main/java/yyl/leetcode/p04/P0415_AddStrings.java)|简单|
