@@ -195,6 +195,7 @@ Leetcode 题解
 |529|[扫雷游戏](yyl/leetcode/p05/P0529_Minesweeper.java)|中等|
 |530|[二叉搜索树的最小绝对差](yyl/leetcode/p05/P0530_MinimumAbsoluteDifferenceInBst.java)|简单|
 |546|[移除盒子](yyl/leetcode/p05/P0546_RemoveBoxes.java)|困难|
+|547|[省份数量](yyl/leetcode/p05/P0547_NumberOfProvinces.java)|中等|
 |557|[反转字符串中的单词 III](yyl/leetcode/p05/P0557_ReverseWordsInAStringIII.java)|简单|
 |605|[种花问题](src/main/java/yyl/leetcode/p06/P0605_CanPlaceFlowers.java)|简单|
 |621|[任务调度器](src/main/java/yyl/leetcode/p06/P0621_TaskScheduler.java)|中等|
