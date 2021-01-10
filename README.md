@@ -150,6 +150,7 @@ Leetcode 题解
 |216|[组合总和 III](src/main/java/yyl/leetcode/p02/P0216_CombinationSumIII.java)|中等|
 |217|[存在重复元素](src/main/java/yyl/leetcode/p02/P0217_ContainsDuplicate.java)|简单|
 |222|[完全二叉树的节点个数](src/main/java/yyl/leetcode/p02/P0222_CountCompleteTreeNodes.java)|中等|
+|228|[汇总区间](src/main/java/yyl/leetcode/p02/P0228_SummaryRanges.java)|简单|
 |234|[回文链表](src/main/java/yyl/leetcode/p02/P0234_PalindromeLinkedList.java)|简单|
 |239|滑动窗口最大值|(src/main/java/yyl/leetcode/p02/P0239_SlidingWindowMaximum.java)|困难|
 |242|[有效的字母异位词](src/main/java/yyl/leetcode/p02/P0242_ValidAnagram.java)|简单|
