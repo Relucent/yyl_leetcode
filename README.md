@@ -101,19 +101,19 @@ Leetcode 题解
 |95|[不同的二叉搜索树II](src/main/java/yyl/leetcode/p00/P0095_UniqueBinarySearchTreesII.java)|中等|
 |96|[不同的二叉搜索树](src/main/java/yyl/leetcode/p00/P0096_UniqueBinarySearchTrees.java)|中等|
 |97|[交错字符串](src/main/java/yyl/leetcode/p00/P0097_InterleavingString.java)|困难|
-|98|[验证二叉搜索树 ](src/main/java/yyl/leetcode/p00/P0098_ValidateBinarySearchTree.java)|中难|
-|99|[恢复二叉搜索树 ](src/main/java/yyl/leetcode/p00/P0099_RecoverBinarySearchTree.java)|困难|
-|100|[相同的树 ](src/main/java/yyl/leetcode/p00/P0100_SameTree.java)|简单|
-|101|[对称二叉树 ](src/main/java/yyl/leetcode/p01/P0101_SymmetricTree.java)|简单|
+|98|[验证二叉搜索树](src/main/java/yyl/leetcode/p00/P0098_ValidateBinarySearchTree.java)|中难|
+|99|[恢复二叉搜索树](src/main/java/yyl/leetcode/p00/P0099_RecoverBinarySearchTree.java)|困难|
+|100|[相同的树](src/main/java/yyl/leetcode/p00/P0100_SameTree.java)|简单|
+|101|[对称二叉树](src/main/java/yyl/leetcode/p01/P0101_SymmetricTree.java)|简单|
 |102|[二叉树的层序遍历](src/main/java/yyl/leetcode/p01/P0102_BinaryTreeLevelOrderTraversal.java)|中等|
 |103|[ 二叉树的锯齿形层序遍历](src/main/java/yyl/leetcode/p01/P0103_BinaryTreeZigzagLevelOrderTraversal.java)|中等|
 |104|[二叉树的最大深度](src/main/java/yyl/leetcode/p01/P0104_MaximumDepthOfBinaryTree.java)|简单|
 |107|[二叉树的层序遍历 II](src/main/java/yyl/leetcode/p01/P0107_BinaryTreeLevelOrderTraversalII.java)|简单|
-|108|[将有序数组转换为二叉搜索树 ](src/main/java/yyl/leetcode/p01/P0108_ConvertSortedArrayToBinarySearchTree.java)|简单|
-|109|[有序链表转换二叉搜索树 ](src/main/java/yyl/leetcode/p01/P0109_ConvertSortedListToBinarySearchTree.java)|中等|
+|108|[将有序数组转换为二叉搜索树](src/main/java/yyl/leetcode/p01/P0108_ConvertSortedArrayToBinarySearchTree.java)|简单|
+|109|[有序链表转换二叉搜索树](src/main/java/yyl/leetcode/p01/P0109_ConvertSortedListToBinarySearchTree.java)|中等|
 |110|[平衡二叉树](src/main/java/yyl/leetcode/p01/P0110_BalancedBinaryTree.java)|简单|
 |111|[二叉树的最小深度](src/main/java/yyl/leetcode/p01/P0111_MinimumDepthOfBinaryTree.java)|简单|
-|112|[路径总和 ](src/main/java/yyl/leetcode/p01/P0112_PathSum.java)|简单|
+|112|[路径总和](src/main/java/yyl/leetcode/p01/P0112_PathSum.java)|简单|
 |114|[二叉树展开为链表](src/main/java/yyl/leetcode/p01/P0114_FlattenBinaryTreeToLinkedList.java))|中等|
 |118|[杨辉三角](src/main/java/yyl/leetcode/p01/P0118_PascalsTriangle.java)|简单|
 |120|[三角形最小路径和](src/main/java/yyl/leetcode/p01/P0120_Triangle.java)|中等|
@@ -160,14 +160,14 @@ Leetcode 题解
 |290|[单词规律](src/main/java/yyl/leetcode/p02/P0290_WordPattern.java)|简单|
 |297|[二叉树的序列化与反序列化](src/main/java/yyl/leetcode/p02/P0297_SerializeAndDeserializeBinaryTree.java)|困难|
 |309|[最佳买卖股票时机含冷冻期](src/main/java/yyl/leetcode/p03/P0309_BestTimeToBuyAndSellStockWithCooldown.java)|中等|
-|312|[戳气球 ](src/main/java/yyl/leetcode/p03/P0312_BurstBalloons.java)|困难|
-|315|[计算右侧小于当前元素的个数 ](src/main/java/yyl/leetcode/p03/P0315_CountOfSmallerNumbersAfterSelf.java)|困难|
+|312|[戳气球](src/main/java/yyl/leetcode/p03/P0312_BurstBalloons.java)|困难|
+|315|[计算右侧小于当前元素的个数](src/main/java/yyl/leetcode/p03/P0315_CountOfSmallerNumbersAfterSelf.java)|困难|
 |316|[去除重复字母](src/main/java/yyl/leetcode/p03/P0316_RemoveDuplicateLetters.java)|中等|
 |321|[拼接最大数](src/main/java/yyl/leetcode/p03/P0321_CreateMaximumNumber.java)|困难|
 |327|[区间和的个数](src/main/java/yyl/leetcode/p03/P0327_CountOfRangeSum.java)|困难|
 |328|[奇偶链表](src/main/java/yyl/leetcode/p03/P0328_OddEvenLinkedList.java)|中等|
-|329|[矩阵中的最长递增路径 ](src/main/java/yyl/leetcode/p03/P0329_LongestIncreasingPathInAMatrix.java)|困难|
-|330|[按要求补齐数组 ](src/main/java/yyl/leetcode/p03/P0330_PatchingArray.java)|困难|
+|329|[矩阵中的最长递增路径](src/main/java/yyl/leetcode/p03/P0329_LongestIncreasingPathInAMatrix.java)|困难|
+|330|[按要求补齐数组](src/main/java/yyl/leetcode/p03/P0330_PatchingArray.java)|困难|
 |332|[重新安排行程](src/main/java/yyl/leetcode/p03/P0332_ReconstructItinerary.java)|中等|
 |336|[回文对](src/main/java/yyl/leetcode/p03/P0336_PalindromePairs.java)|困难|
 |337|[打家劫舍 III](src/main/java/yyl/leetcode/p03/P0337_HouseRobberIII.java)|中等|
@@ -202,7 +202,7 @@ Leetcode 题解
 |557|[反转字符串中的单词 III](yyl/leetcode/p05/P0557_ReverseWordsInAStringIII.java)|简单|
 |605|[种花问题](src/main/java/yyl/leetcode/p06/P0605_CanPlaceFlowers.java)|简单|
 |621|[任务调度器](src/main/java/yyl/leetcode/p06/P0621_TaskScheduler.java)|中等|
-|632|[最小区间 ](src/main/java/yyl/leetcode/p06/P0632_SmallestRangeCoveringElementsFromKLists.java)|困难|
+|632|[最小区间](src/main/java/yyl/leetcode/p06/P0632_SmallestRangeCoveringElementsFromKLists.java)|困难|
 |647|[回文子串](src/main/java/yyl/leetcode/p06/P0647_PalindromicSubstrings.java)|中等|
 |649|[Dota2 参议院](src/main/java/yyl/leetcode/p06/P0649_Dota2Senate.java)|中等|
 |657|[机器人能否返回原点](src/main/java/yyl/leetcode/p06/P0657_RobotReturnToOrigin.java)|简单|
@@ -227,7 +227,8 @@ Leetcode 题解
 |922|[按奇偶排序数组 II](src/main/java/yyl/leetcode/p09/P0922_SortArrayByParityII.java)|简单|
 |941|[有效的山脉数组](src/main/java/yyl/leetcode/p09/P0941_ValidMountainArray.java)|简单|
 |1030|[距离顺序排列矩阵单元格](src/main/java/yyl/leetcode/p10/P1030_MatrixCellsInDistanceOrder.java)|中等|
-|1014|[最佳观光组合 ](src/main/java/yyl/leetcode/p10/P1014_BestSightseeingPair.java)|中等|
+|1014|[最佳观光组合](src/main/java/yyl/leetcode/p10/P1014_BestSightseeingPair.java)|中等|
+|1018|[整除的二进制前缀](src/main/java/yyl/leetcode/p10/P1018_BinaryPrefixDivisibleBy5.java)|简单|
 |1025|[除数博弈](src/main/java/yyl/leetcode/p10/P1025_DivisorGame.java)|中等|
 |1028|[从先序遍历还原二叉树](src/main/java/yyl/leetcode/p10/P1028_RecoverATreeFromPreorderTraversal.java)|困难|
 |1030|[距离顺序排列矩阵单元格](src/main/java/yyl/leetcode/p10/P1030_MatrixCellsInDistanceOrder.java)|简单|
@@ -235,12 +236,12 @@ Leetcode 题解
 |1108|[IP 地址无效化](src/main/java/yyl/leetcode/p11/P1108_DefangingAnIpAddress.java)|简单|
 |1114|[按序打印](src/main/java/yyl/leetcode/p11/P1114_PrintInOrder.java)|简单|
 |1115|[交替打印FooBar](src/main/java/yyl/leetcode/p11/P1115_PrintFoobarAlternately.java)|中等|
-|1116|[打印零与奇偶数 ](src/main/java/yyl/leetcode/p11/P1115_PrintZeroEvenOdd.java)|中等|
+|1116|[打印零与奇偶数](src/main/java/yyl/leetcode/p11/P1115_PrintZeroEvenOdd.java)|中等|
 |1202|[换字符串中的元素](src/main/java/yyl/leetcode/p12/P1202_SmallestStringWithSwaps.java)|中等|
 |1203|[项目管理](src/main/java/yyl/leetcode/p12/P1203_SortItemsByGroupsRespectingDependencies.java)|困难|
 |1207|[独一无二的出现次数](src/main/java/yyl/leetcode/p12/P1207_UniqueNumberOfOccurrences.java)|简单|
-|1300|[转变数组后最接近目标值的数组和 ](src/main/java/yyl/leetcode/p12/P1300_SumOfMutatedArrayClosestToTarget.java)|中等|
-|1356|[根据数字二进制下1的数目排序 ](src/main/java/yyl/leetcode/p13/P1356_SortIntegersByTheNumberOf1Bits.java)|简单|
+|1300|[转变数组后最接近目标值的数组和](src/main/java/yyl/leetcode/p12/P1300_SumOfMutatedArrayClosestToTarget.java)|中等|
+|1356|[根据数字二进制下1的数目排序](src/main/java/yyl/leetcode/p13/P1356_SortIntegersByTheNumberOf1Bits.java)|简单|
 |1365|[有多少小于当前数字的数字](src/main/java/yyl/leetcode/p13/P1365_HowManyNumbersAreSmallerThanTheCurrentNumber.java)|简单|
 |1370|[上升下降字符串](src/main/java/yyl/leetcode/p13/P1370_IncreasingDecreasingString.java)|简单|
-|1494|[转变数组后最接近目标值的数组和 ](src/main/java/yyl/leetcode/p14/P1494_ParallelCoursesII.java)|困难|
+|1494|[转变数组后最接近目标值的数组和](src/main/java/yyl/leetcode/p14/P1494_ParallelCoursesII.java)|困难|
