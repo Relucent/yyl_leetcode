@@ -256,4 +256,59 @@ public class P0803_BricksFallingWhenHit {
             }
         }
     }
+
+    // 逆向思维 + 深度优先搜索
+    // 逆序补回砖块，然后判断补回砖块有多少个砖块可以连接到顶部
+    // 时间复杂度：O((N+H*W)*log⁡(H*W))。
+    // 空间复杂度：O(1)，在原始网格修改
+    static class Solution1 {
+
+        private static int[][] DIRECTIONS = { { -1, 0 }, { 0, -1 }, { 0, 1 }, { 1, 0 } };
+
+        public int[] hitBricks(int[][] grid, int[][] hits) {
+            for (int[] hit : hits) {
+                grid[hit[0]][hit[1]]--;
+            }
+
+            for (int i = 0; i < grid[0].length; i++) {
+                dfs(grid, 0, i);
+            }
+
+            int[] answer = new int[hits.length];
+            for (int k = hits.length - 1; k >= 0; k--) {
+                int i = hits[k][0];
+                int j = hits[k][1];
+                grid[i][j]++;
+                if (grid[i][j] == 1 && isConnected(grid, i, j)) {
+                    answer[k] = dfs(grid, i, j) - 1;
+                }
+            }
+            return answer;
+        }
+
+        private int dfs(int[][] grid, int i, int j) {
+            if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] != 1) {
+                return 0;
+            }
+
+            grid[i][j] = 2;
+            return 1 + dfs(grid, i + 1, j) + dfs(grid, i - 1, j) + dfs(grid, i, j - 1) + dfs(grid, i, j + 1);
+        }
+
+        private boolean isConnected(int[][] grid, int x, int y) {
+            if (x == 0) {
+                return true;
+            }
+            for (int[] dir : DIRECTIONS) {
+                int i = x + dir[0];
+                int j = y + dir[1];
+                if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] != 2) {
+                    continue;
+                }
+                return true;
+            }
+
+            return false;
+        }
+    }
 }
