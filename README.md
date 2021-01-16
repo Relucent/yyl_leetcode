@@ -219,6 +219,7 @@ Leetcode 题解
 |767|[重构字符串](src/main/java/yyl/leetcode/p07/P0767_ReorganizeString.java)|中等|
 |771|[宝石与石头](src/main/java/yyl/leetcode/p07/P0771_JewelsAndStones.java)|简单|
 |785|[判断二分图](src/main/java/yyl/leetcode/p07/P0785_IsGraphBipartite.java)|中等|
+|803|[打砖块](src/main/java/yyl/leetcode/p08/P0803_BricksFallingWhenHit.java)|困难|
 |830|[较大分组的位置](src/main/java/yyl/leetcode/p08/P0830_PositionsOfLargeGroups.java)|简单|
 |841|[钥匙和房间](src/main/java/yyl/leetcode/p08/P0841_KeysAndRooms.java)|中等|
 |842|[将数组拆分成斐波那契序列](src/main/java/yyl/leetcode/p08/P0842_SplitArrayIntoFibonacciSequence.java)|中等|
