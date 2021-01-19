@@ -249,3 +249,4 @@ Leetcode 题解
 |1365|[有多少小于当前数字的数字](src/main/java/yyl/leetcode/p13/P1365_HowManyNumbersAreSmallerThanTheCurrentNumber.java)|简单|
 |1370|[上升下降字符串](src/main/java/yyl/leetcode/p13/P1370_IncreasingDecreasingString.java)|简单|
 |1494|[转变数组后最接近目标值的数组和](src/main/java/yyl/leetcode/p14/P1494_ParallelCoursesII.java)|困难|
+|1584|[连接所有点的最小费用](src/main/java/yyl/leetcode/p15/P1584_MinCostToConnectAllPoints.java)|中等|
