@@ -202,6 +202,7 @@ Leetcode 题解
 |557|[反转字符串中的单词 III](yyl/leetcode/p05/P0557_ReverseWordsInAStringIII.java)|简单|
 |605|[种花问题](src/main/java/yyl/leetcode/p06/P0605_CanPlaceFlowers.java)|简单|
 |621|[任务调度器](src/main/java/yyl/leetcode/p06/P0621_TaskScheduler.java)|中等|
+|628|[三个数的最大乘积](src/main/java/yyl/leetcode/p06/P0628_MaximumProductOfThreeNumbers.java)|简单|
 |632|[最小区间](src/main/java/yyl/leetcode/p06/P0632_SmallestRangeCoveringElementsFromKLists.java)|困难|
 |647|[回文子串](src/main/java/yyl/leetcode/p06/P0647_PalindromicSubstrings.java)|中等|
 |649|[Dota2 参议院](src/main/java/yyl/leetcode/p06/P0649_Dota2Senate.java)|中等|
