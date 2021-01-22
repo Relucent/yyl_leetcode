@@ -230,6 +230,7 @@ Leetcode 题解
 |922|[按奇偶排序数组 II](src/main/java/yyl/leetcode/p09/P0922_SortArrayByParityII.java)|简单|
 |941|[有效的山脉数组](src/main/java/yyl/leetcode/p09/P0941_ValidMountainArray.java)|简单|
 |947|[移除最多的同行或同列石头](src/main/java/yyl/leetcode/p09/P0947_MostStonesRemovedWithSameRowOrColumn.java)|中等|
+|989|[数组形式的整数加法](src/main/java/yyl/leetcode/p09/P0989_AddToArrayFormOfInteger.java)|简单|
 |1030|[距离顺序排列矩阵单元格](src/main/java/yyl/leetcode/p10/P1030_MatrixCellsInDistanceOrder.java)|中等|
 |1014|[最佳观光组合](src/main/java/yyl/leetcode/p10/P1014_BestSightseeingPair.java)|中等|
 |1018|[整除的二进制前缀](src/main/java/yyl/leetcode/p10/P1018_BinaryPrefixDivisibleBy5.java)|简单|
