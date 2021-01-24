@@ -208,6 +208,7 @@ Leetcode 题解
 |649|[Dota2 参议院](src/main/java/yyl/leetcode/p06/P0649_Dota2Senate.java)|中等|
 |657|[机器人能否返回原点](src/main/java/yyl/leetcode/p06/P0657_RobotReturnToOrigin.java)|简单|
 |659|[分割数组为连续子序列](src/main/java/yyl/leetcode/p06/P0659_SplitArrayIntoConsecutiveSubsequences.java)|中等|
+|674|[最长连续递增序列](src/main/java/yyl/leetcode/p06/P0674_LongestContinuousIncreasingSubsequence.java)|简单|
 |679|[24点游戏](src/main/java/yyl/leetcode/p06/P0679_24Game.java)|困难|
 |684|[冗余连接](src/main/java/yyl/leetcode/p06/P0684_RedundantConnection.java)|中等|
 |696|[计数二进制子串](src/main/java/yyl/leetcode/p06/P0696_CountBinarySubstrings.java)|简单|
