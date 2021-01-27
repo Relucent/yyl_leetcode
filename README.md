@@ -255,4 +255,5 @@ Leetcode 题解
 |1370|[上升下降字符串](src/main/java/yyl/leetcode/p13/P1370_IncreasingDecreasingString.java)|简单|
 |1489|[转找到最小生成树里的关键边和伪关键边](src/main/java/yyl/leetcode/p14/P1489_FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree.java)|困难|
 |1494|[转变数组后最接近目标值的数组和](src/main/java/yyl/leetcode/p14/P1494_ParallelCoursesII.java)|困难|
+|1579|[保证图可完全遍历](src/main/java/yyl/leetcode/p15/P1579_RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable.java)|困难|
 |1584|[连接所有点的最小费用](src/main/java/yyl/leetcode/p15/P1584_MinCostToConnectAllPoints.java)|中等|
