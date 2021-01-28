@@ -125,6 +125,7 @@ Leetcode 题解
 |130|[被围绕的区域](src/main/java/yyl/leetcode/p01/P0130_SurroundedRegions.java)|中等|
 |133|[克隆图](src/main/java/yyl/leetcode/p01/P0133_CloneGraph.java)|中等|
 |135|[分发糖果](src/main/java/yyl/leetcode/p01/P0135_Candy.java)|困难|
+|136|[只出现一次的数字](src/main/java/yyl/leetcode/p01/P0136_SingleNumber.java)|简单|
 |139|[单词拆分](src/main/java/yyl/leetcode/p01/P0139_WordBreak.java)|中等|
 |141|[环形链表](src/main/java/yyl/leetcode/p01/P0141_LinkedListCycle.java)|简单|
 |142|[环形链表 II](src/main/java/yyl/leetcode/p01/P0142_LinkedListCycleII.java)|中等|
@@ -215,6 +216,7 @@ Leetcode 题解
 |714|[买卖股票的最佳时机含手续费](src/main/java/yyl/leetcode/p07/P0714_BestTimeToBuyAndSellStockWithTransactionFee.java)|中等|
 |718|[最长重复子数组](src/main/java/yyl/leetcode/p07/P0718_MaximumLengthOfRepeatedSubarray.java)|中等|
 |721|[账户合并](src/main/java/yyl/leetcode/p07/P0721_AccountsMerge.java)|中等|
+|724|[账户合并](src/main/java/yyl/leetcode/p07/P0724_FindPivotIndex.java)|简单|
 |738|[单调递增的数字](src/main/java/yyl/leetcode/p07/P0738_MonotoneIncreasingDigits.java)|中等|
 |739|[每日温度](src/main/java/yyl/leetcode/p07/P0739_DailyTemperatures.java)|中等|
 |746|[使用最小花费爬楼梯](src/main/java/yyl/leetcode/p07/P0746_MinCostClimbingStairs.java)|简单|
