@@ -259,3 +259,4 @@ Leetcode 题解
 |1494|[转变数组后最接近目标值的数组和](src/main/java/yyl/leetcode/p14/P1494_ParallelCoursesII.java)|困难|
 |1579|[保证图可完全遍历](src/main/java/yyl/leetcode/p15/P1579_RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable.java)|困难|
 |1584|[连接所有点的最小费用](src/main/java/yyl/leetcode/p15/P1584_MinCostToConnectAllPoints.java)|中等|
+|1631|[最小体力消耗路径](src/main/java/yyl/leetcode/p16/P1631_PathWithMinimumEffort.java)|中等|
