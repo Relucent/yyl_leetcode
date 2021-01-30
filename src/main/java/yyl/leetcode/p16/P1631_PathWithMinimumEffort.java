@@ -68,18 +68,18 @@ public class P1631_PathWithMinimumEffort {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        // Assert.assertEquals(2, solution.minimumEffortPath(//
-        // new int[][] { { 1, 2, 2 }, { 3, 8, 2 }, { 5, 3, 5 } }//
-        // ));
-        // Assert.assertEquals(1, solution.minimumEffortPath(//
-        // new int[][] { { 1, 2, 3 }, { 3, 8, 4 }, { 5, 3, 5 } }//
-        // ));
-        // Assert.assertEquals(0, solution.minimumEffortPath(//
-        // new int[][] { { 1, 2, 1, 1, 1 }, { 1, 2, 1, 2, 1 }, { 1, 2, 1, 2, 1 }, { 1, 2, 1, 2, 1 }, { 1, 1, 1, 2, 1 } }//
-        // ));
-        // Assert.assertEquals(0, solution.minimumEffortPath(//
-        // new int[][] { { 3 } }//
-        // ));
+        Assert.assertEquals(2, solution.minimumEffortPath(//
+                new int[][] { { 1, 2, 2 }, { 3, 8, 2 }, { 5, 3, 5 } }//
+        ));
+        Assert.assertEquals(1, solution.minimumEffortPath(//
+                new int[][] { { 1, 2, 3 }, { 3, 8, 4 }, { 5, 3, 5 } }//
+        ));
+        Assert.assertEquals(0, solution.minimumEffortPath(//
+                new int[][] { { 1, 2, 1, 1, 1 }, { 1, 2, 1, 2, 1 }, { 1, 2, 1, 2, 1 }, { 1, 2, 1, 2, 1 }, { 1, 1, 1, 2, 1 } }//
+        ));
+        Assert.assertEquals(0, solution.minimumEffortPath(//
+                new int[][] { { 3 } }//
+        ));
         Assert.assertEquals(9, solution.minimumEffortPath(//
                 new int[][] { { 1, 10, 6, 7, 9, 10, 4, 9 } }//
         ));
@@ -89,7 +89,7 @@ public class P1631_PathWithMinimumEffort {
     // 可以将这个问题转化成一个「判定性」问题，即：是否存在一条从左上角到右下角的路径，其经过的所有边权的最大值不超过 x。
     // 可以用深度优先搜索去进行遍历判定
     // 时间复杂度：O(mnlog⁡C)，其中 m 和 n 分别是地图的行数和列数，C 是格子的最大高度，在本题中 C 不超过 10^6。我们需要进行 O(log⁡C) 次二分查找，每一步查找的过程中需要使用广度优先搜索，在 O(mn) 的时间判断是否可以从左上角到达右下角，因此总时间复杂度为 O(mnlog⁡C)。
-    // 空间复杂度：O(mn)，即为广度优先搜索中使用的队列需要的空间。
+    // 空间复杂度：O(mn)，visited数组和递归栈所需的空间。
     static class Solution {
 
         private static final int[][] DIRECTION = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };

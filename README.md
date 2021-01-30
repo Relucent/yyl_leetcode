@@ -223,6 +223,7 @@ Leetcode 题解
 |763|[划分字母区间](src/main/java/yyl/leetcode/p07/P0763_PartitionLabels.java)|简单|
 |767|[重构字符串](src/main/java/yyl/leetcode/p07/P0767_ReorganizeString.java)|中等|
 |771|[宝石与石头](src/main/java/yyl/leetcode/p07/P0771_JewelsAndStones.java)|简单|
+|778|[水位上升的泳池中游泳](src/main/java/yyl/leetcode/p07/P0778_SwimInRisingWater.java)|困难|
 |785|[判断二分图](src/main/java/yyl/leetcode/p07/P0785_IsGraphBipartite.java)|中等|
 |803|[打砖块](src/main/java/yyl/leetcode/p08/P0803_BricksFallingWhenHit.java)|困难|
 |830|[较大分组的位置](src/main/java/yyl/leetcode/p08/P0830_PositionsOfLargeGroups.java)|简单|
