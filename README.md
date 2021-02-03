@@ -185,6 +185,7 @@ Leetcode 题解
 |406|[根据身高重建队列](src/main/java/yyl/leetcode/p04/P0406_QueueReconstructionByHeight.java)|中等|
 |410|[分割数组的最大值](src/main/java/yyl/leetcode/p04/P0410_SplitArrayLargestSum.java)|困难|
 |415|[字符串相加](src/main/java/yyl/leetcode/p04/P0415_AddStrings.java)|简单|
+|424|[替换后的最长重复字符](src/main/java/yyl/leetcode/p04/P0424_LongestRepeatingCharacterReplacement.java)|中等|
 |435|[无重叠区间](src/main/java/yyl/leetcode/p04/P0435_NonOverlappingIntervals.java)|中等|
 |445|[两数相加 II](src/main/java/yyl/leetcode/p04/P0445_AddTwoNumbersII.java)|中等|
 |452|[最少数量的箭引爆气球](src/main/java/yyl/leetcode/p04/P0452_MinimumNumberOfArrowsToBurstBalloons.java)|中等|
@@ -192,6 +193,7 @@ Leetcode 题解
 |455|[分发饼干](src/main/java/yyl/leetcode/p04/P0455_AssignCookies.java)|简单|
 |459|[重复的子字符串](src/main/java/yyl/leetcode/p04/P0459_RepeatedSubstringPattern.java)|简单|
 |463|[岛屿的周长](src/main/java/yyl/leetcode/p04/P0463_IslandPerimeter.java)|简单|
+|480|[滑动窗口中位数](src/main/java/yyl/leetcode/p04/P0480_SlidingWindowMedian.java)|困难|
 |486|[递增子序列](src/main/java/yyl/leetcode/p04/P0486_PredictTheWinner.java)|中等|
 |491|[递增子序列](src/main/java/yyl/leetcode/p04/P0491_IncreasingSubsequences.java)|中等|
 |493|[翻转对](src/main/java/yyl/leetcode/p04/P0493_ReversePairs.java)|困难|
@@ -227,10 +229,12 @@ Leetcode 题解
 |785|[判断二分图](src/main/java/yyl/leetcode/p07/P0785_IsGraphBipartite.java)|中等|
 |803|[打砖块](src/main/java/yyl/leetcode/p08/P0803_BricksFallingWhenHit.java)|困难|
 |830|[较大分组的位置](src/main/java/yyl/leetcode/p08/P0830_PositionsOfLargeGroups.java)|简单|
+|839|[相似字符串组](src/main/java/yyl/leetcode/p08/P0839_SimilarStringGroups.java)|困难|
 |841|[钥匙和房间](src/main/java/yyl/leetcode/p08/P0841_KeysAndRooms.java)|中等|
 |842|[将数组拆分成斐波那契序列](src/main/java/yyl/leetcode/p08/P0842_SplitArrayIntoFibonacciSequence.java)|中等|
-|861|[柠檬水找零](src/main/java/yyl/leetcode/p08/P0860_LemonadeChange.java)|简单|
+|860|[柠檬水找零](src/main/java/yyl/leetcode/p08/P0860_LemonadeChange.java)|简单|
 |861|[翻转矩阵后的得分](src/main/java/yyl/leetcode/p08/P0861_ScoreAfterFlippingMatrix.java)|中等|
+|888|[公平的糖果棒交换](src/main/java/yyl/leetcode/p08/P0888_FairCandySwap.java)|简单|
 |922|[按奇偶排序数组 II](src/main/java/yyl/leetcode/p09/P0922_SortArrayByParityII.java)|简单|
 |941|[有效的山脉数组](src/main/java/yyl/leetcode/p09/P0941_ValidMountainArray.java)|简单|
 |947|[移除最多的同行或同列石头](src/main/java/yyl/leetcode/p09/P0947_MostStonesRemovedWithSameRowOrColumn.java)|中等|
