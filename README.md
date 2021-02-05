@@ -207,6 +207,7 @@ Leetcode 题解
 |621|[任务调度器](src/main/java/yyl/leetcode/p06/P0621_TaskScheduler.java)|中等|
 |628|[三个数的最大乘积](src/main/java/yyl/leetcode/p06/P0628_MaximumProductOfThreeNumbers.java)|简单|
 |632|[最小区间](src/main/java/yyl/leetcode/p06/P0632_SmallestRangeCoveringElementsFromKLists.java)|困难|
+|643|[子数组最大平均数 I](src/main/java/yyl/leetcode/p06/P0643_MaximumAverageSubarrayI.java)|简单|
 |647|[回文子串](src/main/java/yyl/leetcode/p06/P0647_PalindromicSubstrings.java)|中等|
 |649|[Dota2 参议院](src/main/java/yyl/leetcode/p06/P0649_Dota2Senate.java)|中等|
 |657|[机器人能否返回原点](src/main/java/yyl/leetcode/p06/P0657_RobotReturnToOrigin.java)|简单|
@@ -254,6 +255,7 @@ Leetcode 题解
 |1202|[换字符串中的元素](src/main/java/yyl/leetcode/p12/P1202_SmallestStringWithSwaps.java)|中等|
 |1203|[项目管理](src/main/java/yyl/leetcode/p12/P1203_SortItemsByGroupsRespectingDependencies.java)|困难|
 |1207|[独一无二的出现次数](src/main/java/yyl/leetcode/p12/P1207_UniqueNumberOfOccurrences.java)|简单|
+|1208|[尽可能使字符串相等](src/main/java/yyl/leetcode/p12/P1208_GetEqualSubstringsWithinBudget.java)|中等|
 |1232|[缀点成线](src/main/java/yyl/leetcode/p12/P1232_CheckIfItIsAStraightLine.java)|简单|
 |1300|[转变数组后最接近目标值的数组和](src/main/java/yyl/leetcode/p12/P1300_SumOfMutatedArrayClosestToTarget.java)|中等|
 |1319|[连通网络的操作次数](src/main/java/yyl/leetcode/p13/P1319_NnumberOfOperationsToMakeNetworkConnected.java)|中等|
