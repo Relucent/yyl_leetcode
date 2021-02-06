@@ -121,7 +121,7 @@ Leetcode 题解
 |123|[买卖股票的最佳时机 III](src/main/java/yyl/leetcode/p01/P0123_BestTimeToBuyAndSellStockIII.java)|困难|
 |124|[二叉树中的最大路径和](src/main/java/yyl/leetcode/p01/P0124_BinaryTreeMaximumPathSum.java)|困难|
 |125|[验证回文串](src/main/java/yyl/leetcode/p01/P0125_ValidPalindrome.java)|简单|
-|129|[求根到叶子节点数字之和](src/main/java/yyl/leetcode/p01/P0129_SumRootToLeafNumbers.java|中等|
+|129|[求根到叶子节点数字之和](src/main/java/yyl/leetcode/p01/P0129_SumRootToLeafNumbers.java)|中等|
 |130|[被围绕的区域](src/main/java/yyl/leetcode/p01/P0130_SurroundedRegions.java)|中等|
 |133|[克隆图](src/main/java/yyl/leetcode/p01/P0133_CloneGraph.java)|中等|
 |135|[分发糖果](src/main/java/yyl/leetcode/p01/P0135_Candy.java)|困难|
@@ -153,7 +153,7 @@ Leetcode 题解
 |222|[完全二叉树的节点个数](src/main/java/yyl/leetcode/p02/P0222_CountCompleteTreeNodes.java)|中等|
 |228|[汇总区间](src/main/java/yyl/leetcode/p02/P0228_SummaryRanges.java)|简单|
 |234|[回文链表](src/main/java/yyl/leetcode/p02/P0234_PalindromeLinkedList.java)|简单|
-|239|滑动窗口最大值|(src/main/java/yyl/leetcode/p02/P0239_SlidingWindowMaximum.java)|困难|
+|239|[滑动窗口最大值](src/main/java/yyl/leetcode/p02/P0239_SlidingWindowMaximum.java)|困难|
 |242|[有效的字母异位词](src/main/java/yyl/leetcode/p02/P0242_ValidAnagram.java)|简单|
 |257|[二叉树的所有路径](src/main/java/yyl/leetcode/p02/P0257_BinaryTreePaths.java)|简单|
 |283|[移动零](src/main/java/yyl/leetcode/p02/P0283_MoveZeroes.java)|简单|
@@ -262,6 +262,7 @@ Leetcode 题解
 |1356|[根据数字二进制下1的数目排序](src/main/java/yyl/leetcode/p13/P1356_SortIntegersByTheNumberOf1Bits.java)|简单|
 |1365|[有多少小于当前数字的数字](src/main/java/yyl/leetcode/p13/P1365_HowManyNumbersAreSmallerThanTheCurrentNumber.java)|简单|
 |1370|[上升下降字符串](src/main/java/yyl/leetcode/p13/P1370_IncreasingDecreasingString.java)|简单|
+|1423|[可获得的最大点数](src/main/java/yyl/leetcode/p14/P1423_MaximumPointsYouCanObtainFromCards.java)|中等|
 |1489|[转找到最小生成树里的关键边和伪关键边](src/main/java/yyl/leetcode/p14/P1489_FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree.java)|困难|
 |1494|[转变数组后最接近目标值的数组和](src/main/java/yyl/leetcode/p14/P1494_ParallelCoursesII.java)|困难|
 |1579|[保证图可完全遍历](src/main/java/yyl/leetcode/p15/P1579_RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable.java)|困难|
