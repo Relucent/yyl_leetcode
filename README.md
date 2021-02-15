@@ -194,6 +194,7 @@ Leetcode 题解
 |459|[重复的子字符串](src/main/java/yyl/leetcode/p04/P0459_RepeatedSubstringPattern.java)|简单|
 |463|[岛屿的周长](src/main/java/yyl/leetcode/p04/P0463_IslandPerimeter.java)|简单|
 |480|[滑动窗口中位数](src/main/java/yyl/leetcode/p04/P0480_SlidingWindowMedian.java)|困难|
+|485|[最大连续1的个数](src/main/java/yyl/leetcode/p04/P0485_MaxConsecutiveOnes.java)|简单|
 |486|[递增子序列](src/main/java/yyl/leetcode/p04/P0486_PredictTheWinner.java)|中等|
 |491|[递增子序列](src/main/java/yyl/leetcode/p04/P0491_IncreasingSubsequences.java)|中等|
 |493|[翻转对](src/main/java/yyl/leetcode/p04/P0493_ReversePairs.java)|困难|
@@ -203,6 +204,7 @@ Leetcode 题解
 |546|[移除盒子](yyl/leetcode/p05/P0546_RemoveBoxes.java)|困难|
 |547|[省份数量](yyl/leetcode/p05/P0547_NumberOfProvinces.java)|中等|
 |557|[反转字符串中的单词 III](yyl/leetcode/p05/P0557_ReverseWordsInAStringIII.java)|简单|
+|567|[字符串的排列](yyl/leetcode/p05/P0567_PermutationInString.java)|中等|
 |605|[种花问题](src/main/java/yyl/leetcode/p06/P0605_CanPlaceFlowers.java)|简单|
 |621|[任务调度器](src/main/java/yyl/leetcode/p06/P0621_TaskScheduler.java)|中等|
 |628|[三个数的最大乘积](src/main/java/yyl/leetcode/p06/P0628_MaximumProductOfThreeNumbers.java)|简单|
@@ -243,6 +245,7 @@ Leetcode 题解
 |959|[由斜杠划分区域](src/main/java/yyl/leetcode/p09/P0959_RegionsCutBySlashes.java)|中等|
 |978|[最长湍流子数组](src/main/java/yyl/leetcode/p09/P0978_LongestTurbulentSubarray.java)|中等|
 |989|[数组形式的整数加法](src/main/java/yyl/leetcode/p09/P0989_AddToArrayFormOfInteger.java)|简单|
+|992|[K 个不同整数的子数组](src/main/java/yyl/leetcode/p09/P0992_SubarraysWithKDifferentIntegers.java)|困难|
 |1030|[距离顺序排列矩阵单元格](src/main/java/yyl/leetcode/p10/P1030_MatrixCellsInDistanceOrder.java)|中等|
 |1014|[最佳观光组合](src/main/java/yyl/leetcode/p10/P1014_BestSightseeingPair.java)|中等|
 |1018|[整除的二进制前缀](src/main/java/yyl/leetcode/p10/P1018_BinaryPrefixDivisibleBy5.java)|简单|
