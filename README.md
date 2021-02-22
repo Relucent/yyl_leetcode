@@ -227,6 +227,7 @@ Leetcode 题解
 |739|[每日温度](src/main/java/yyl/leetcode/p07/P0739_DailyTemperatures.java)|中等|
 |746|[使用最小花费爬楼梯](src/main/java/yyl/leetcode/p07/P0746_MinCostClimbingStairs.java)|简单|
 |763|[划分字母区间](src/main/java/yyl/leetcode/p07/P0763_PartitionLabels.java)|简单|
+|766|[托普利茨矩阵](src/main/java/yyl/leetcode/p07/P0766_ToeplitzMatrix.java)|简单|
 |767|[重构字符串](src/main/java/yyl/leetcode/p07/P0767_ReorganizeString.java)|中等|
 |771|[宝石与石头](src/main/java/yyl/leetcode/p07/P0771_JewelsAndStones.java)|简单|
 |778|[水位上升的泳池中游泳](src/main/java/yyl/leetcode/p07/P0778_SwimInRisingWater.java)|困难|
