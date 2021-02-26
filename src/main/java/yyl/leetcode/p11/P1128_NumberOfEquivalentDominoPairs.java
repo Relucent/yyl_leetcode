@@ -22,9 +22,8 @@ public class P1128_NumberOfEquivalentDominoPairs {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        // Assert.assertEquals(1, solution.numEquivDominoPairs(new int[][] { { 1, 2 }, { 2, 1 }, { 3, 4 }, { 5, 6 } }));
-        // Assert.assertEquals(3, solution.numEquivDominoPairs(new int[][] { { 1, 2 }, { 1, 2 }, { 2, 1 }, { 3, 4 }, { 5, 6 } }));
-
+        Assert.assertEquals(1, solution.numEquivDominoPairs(new int[][] { { 1, 2 }, { 2, 1 }, { 3, 4 }, { 5, 6 } }));
+        Assert.assertEquals(3, solution.numEquivDominoPairs(new int[][] { { 1, 2 }, { 1, 2 }, { 2, 1 }, { 3, 4 }, { 5, 6 } }));
         Assert.assertEquals(3, solution.numEquivDominoPairs(new int[][] { { 1, 2 }, { 1, 2 }, { 2, 1 } }));
     }
 
