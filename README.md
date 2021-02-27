@@ -181,6 +181,7 @@ Leetcode 题解
 |381|[O(1) 时间插入、删除和获取随机元素 - 允许重复](src/main/java/yyl/leetcode/p03/P0381_InsertDeleteGetrandomO1DuplicatesAllowed.java)|困难|
 |387|[字符串中的第一个唯一字符](src/main/java/yyl/leetcode/p03/P0387_FirstUniqueCharacterInAString.java)|简单|
 |392|[判断子序列](src/main/java/yyl/leetcode/p03/P0392_IsSubsequence.java)|简单|
+|395|[至少有 K 个重复字符的最长子串](src/main/java/yyl/leetcode/p03/P0395_LongestSubstringWithAtLeastKRepeatingCharacters.java)|中等|
 |399|[除法求值](src/main/java/yyl/leetcode/p03/P0399_EvaluateDivision.java)|中等|
 |406|[根据身高重建队列](src/main/java/yyl/leetcode/p04/P0406_QueueReconstructionByHeight.java)|中等|
 |410|[分割数组的最大值](src/main/java/yyl/leetcode/p04/P0410_SplitArrayLargestSum.java)|困难|
@@ -234,11 +235,13 @@ Leetcode 题解
 |785|[判断二分图](src/main/java/yyl/leetcode/p07/P0785_IsGraphBipartite.java)|中等|
 |803|[打砖块](src/main/java/yyl/leetcode/p08/P0803_BricksFallingWhenHit.java)|困难|
 |830|[较大分组的位置](src/main/java/yyl/leetcode/p08/P0830_PositionsOfLargeGroups.java)|简单|
+|832|[翻转图像](src/main/java/yyl/leetcode/p08/P0832_FlippingAnImage.java)|简单|
 |839|[相似字符串组](src/main/java/yyl/leetcode/p08/P0839_SimilarStringGroups.java)|困难|
 |841|[钥匙和房间](src/main/java/yyl/leetcode/p08/P0841_KeysAndRooms.java)|中等|
 |842|[将数组拆分成斐波那契序列](src/main/java/yyl/leetcode/p08/P0842_SplitArrayIntoFibonacciSequence.java)|中等|
 |860|[柠檬水找零](src/main/java/yyl/leetcode/p08/P0860_LemonadeChange.java)|简单|
 |861|[翻转矩阵后的得分](src/main/java/yyl/leetcode/p08/P0861_ScoreAfterFlippingMatrix.java)|中等|
+|867|[转置矩阵](src/main/java/yyl/leetcode/p08/P0867_TransposeMatrix.java)|简单|
 |888|[公平的糖果棒交换](src/main/java/yyl/leetcode/p08/P0888_FairCandySwap.java)|简单|
 |922|[按奇偶排序数组 II](src/main/java/yyl/leetcode/p09/P0922_SortArrayByParityII.java)|简单|
 |941|[有效的山脉数组](src/main/java/yyl/leetcode/p09/P0941_ValidMountainArray.java)|简单|
@@ -259,6 +262,7 @@ Leetcode 题解
 |1114|[按序打印](src/main/java/yyl/leetcode/p11/P1114_PrintInOrder.java)|简单|
 |1115|[交替打印FooBar](src/main/java/yyl/leetcode/p11/P1115_PrintFoobarAlternately.java)|中等|
 |1116|[打印零与奇偶数](src/main/java/yyl/leetcode/p11/P1115_PrintZeroEvenOdd.java)|中等|
+|1178|[猜字谜](src/main/java/yyl/leetcode/p11/P1178_NumberOfValidWordsForEachPuzzle.java)|困难|
 |1202|[换字符串中的元素](src/main/java/yyl/leetcode/p12/P1202_SmallestStringWithSwaps.java)|中等|
 |1203|[项目管理](src/main/java/yyl/leetcode/p12/P1203_SortItemsByGroupsRespectingDependencies.java)|困难|
 |1207|[独一无二的出现次数](src/main/java/yyl/leetcode/p12/P1207_UniqueNumberOfOccurrences.java)|简单|
