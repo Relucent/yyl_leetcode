@@ -151,6 +151,7 @@ Leetcode 题解
 |216|[组合总和 III](src/main/java/yyl/leetcode/p02/P0216_CombinationSumIII.java)|中等|
 |217|[存在重复元素](src/main/java/yyl/leetcode/p02/P0217_ContainsDuplicate.java)|简单|
 |222|[完全二叉树的节点个数](src/main/java/yyl/leetcode/p02/P0222_CountCompleteTreeNodes.java)|中等|
+|224|[基本计算器](src/main/java/yyl/leetcode/p02/P0224_BasicCalculator.java)|困难|
 |228|[汇总区间](src/main/java/yyl/leetcode/p02/P0228_SummaryRanges.java)|简单|
 |234|[回文链表](src/main/java/yyl/leetcode/p02/P0234_PalindromeLinkedList.java)|简单|
 |239|[滑动窗口最大值](src/main/java/yyl/leetcode/p02/P0239_SlidingWindowMaximum.java)|困难|
@@ -160,6 +161,8 @@ Leetcode 题解
 |389|[找不同](src/main/java/yyl/leetcode/p02/P0389_FindTheDifference.java)|简单|
 |290|[单词规律](src/main/java/yyl/leetcode/p02/P0290_WordPattern.java)|简单|
 |297|[二叉树的序列化与反序列化](src/main/java/yyl/leetcode/p02/P0297_SerializeAndDeserializeBinaryTree.java)|困难|
+|303|[区域和检索 - 数组不可变](src/main/java/yyl/leetcode/p03/P0303_RangeSumQueryImmutable.java)|简单|
+|304|[二维区域和检索 - 矩阵不可变](src/main/java/yyl/leetcode/p03/P0304_RangeSumQuery2dImmutable.java)|中等|
 |309|[最佳买卖股票时机含冷冻期](src/main/java/yyl/leetcode/p03/P0309_BestTimeToBuyAndSellStockWithCooldown.java)|中等|
 |312|[戳气球](src/main/java/yyl/leetcode/p03/P0312_BurstBalloons.java)|困难|
 |315|[计算右侧小于当前元素的个数](src/main/java/yyl/leetcode/p03/P0315_CountOfSmallerNumbersAfterSelf.java)|困难|
@@ -172,6 +175,7 @@ Leetcode 题解
 |332|[重新安排行程](src/main/java/yyl/leetcode/p03/P0332_ReconstructItinerary.java)|中等|
 |336|[回文对](src/main/java/yyl/leetcode/p03/P0336_PalindromePairs.java)|困难|
 |337|[打家劫舍 III](src/main/java/yyl/leetcode/p03/P0337_HouseRobberIII.java)|中等|
+|338|[比特位计数](src/main/java/yyl/leetcode/p03/P0338_CountingBits.java)|中等|
 |343|[整数拆分](src/main/java/yyl/leetcode/p03/P0343_IntegerBreak.java)|中等|
 |347|[前 K 个高频元素](src/main/java/yyl/leetcode/p03/P0347_TopKFrequentElements.java)|中等|
 |349|[两个数组的交集](src/main/java/yyl/leetcode/p03/P0349_IntersectionOfTwoArrays.java)|简单|
@@ -243,6 +247,7 @@ Leetcode 题解
 |861|[翻转矩阵后的得分](src/main/java/yyl/leetcode/p08/P0861_ScoreAfterFlippingMatrix.java)|中等|
 |867|[转置矩阵](src/main/java/yyl/leetcode/p08/P0867_TransposeMatrix.java)|简单|
 |888|[公平的糖果棒交换](src/main/java/yyl/leetcode/p08/P0888_FairCandySwap.java)|简单|
+|896|[单调数列](src/main/java/yyl/leetcode/p08/P0896_MonotonicArray.java)|简单|
 |922|[按奇偶排序数组 II](src/main/java/yyl/leetcode/p09/P0922_SortArrayByParityII.java)|简单|
 |941|[有效的山脉数组](src/main/java/yyl/leetcode/p09/P0941_ValidMountainArray.java)|简单|
 |947|[移除最多的同行或同列石头](src/main/java/yyl/leetcode/p09/P0947_MostStonesRemovedWithSameRowOrColumn.java)|中等|
@@ -257,6 +262,7 @@ Leetcode 题解
 |1028|[从先序遍历还原二叉树](src/main/java/yyl/leetcode/p10/P1028_RecoverATreeFromPreorderTraversal.java)|困难|
 |1030|[距离顺序排列矩阵单元格](src/main/java/yyl/leetcode/p10/P1030_MatrixCellsInDistanceOrder.java)|简单|
 |1046|[最后一块石头的重量](src/main/java/yyl/leetcode/p10/P1046_LastStoneWeight.java)|简单|
+|1047|[删除字符串中的所有相邻重复项](src/main/java/yyl/leetcode/p10/P1047_RemoveAllAdjacentDuplicatesInString.java)|简单|
 |1054|[爱生气的书店老板](src/main/java/yyl/leetcode/p10/P1054_GrumpyBookstoreOwner.java)|中等|
 |1108|[IP 地址无效化](src/main/java/yyl/leetcode/p11/P1108_DefangingAnIpAddress.java)|简单|
 |1114|[按序打印](src/main/java/yyl/leetcode/p11/P1114_PrintInOrder.java)|简单|
