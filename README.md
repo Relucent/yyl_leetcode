@@ -288,3 +288,5 @@ Leetcode 题解
 |1584|[连接所有点的最小费用](src/main/java/yyl/leetcode/p15/P1584_MinCostToConnectAllPoints.java)|中等|
 |1603|[设计停车系统](src/main/java/yyl/leetcode/p16/P1603_DesignParkingSystem.java)|简单|
 |1631|[最小体力消耗路径](src/main/java/yyl/leetcode/p16/P1631_PathWithMinimumEffort.java)|中等|
+|1720|[解码异或后的数组](src/main/java/yyl/leetcode/p17/P1720_DecodeXoredArray.java)|简单|
+|1723|[完成所有工作的最短时间](src/main/java/yyl/leetcode/p17/P1723_FindMinimumTimeToFinishAllJobs.java)|困难|
