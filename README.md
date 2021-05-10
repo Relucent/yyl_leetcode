@@ -248,6 +248,7 @@ Leetcode 题解
 |860|[柠檬水找零](src/main/java/yyl/leetcode/p08/P0860_LemonadeChange.java)|简单|
 |861|[翻转矩阵后的得分](src/main/java/yyl/leetcode/p08/P0861_ScoreAfterFlippingMatrix.java)|中等|
 |867|[转置矩阵](src/main/java/yyl/leetcode/p08/P0867_TransposeMatrix.java)|简单|
+|872|[叶子相似的树](src/main/java/yyl/leetcode/p08/P0872_LeafSimilarTrees.java)|简单|
 |888|[公平的糖果棒交换](src/main/java/yyl/leetcode/p08/P0888_FairCandySwap.java)|简单|
 |896|[单调数列](src/main/java/yyl/leetcode/p08/P0896_MonotonicArray.java)|简单|
 |922|[按奇偶排序数组 II](src/main/java/yyl/leetcode/p09/P0922_SortArrayByParityII.java)|简单|
