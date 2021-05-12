@@ -278,6 +278,7 @@ Leetcode 题解
 |1208|[尽可能使字符串相等](src/main/java/yyl/leetcode/p12/P1208_GetEqualSubstringsWithinBudget.java)|中等|
 |1232|[缀点成线](src/main/java/yyl/leetcode/p12/P1232_CheckIfItIsAStraightLine.java)|简单|
 |1300|[转变数组后最接近目标值的数组和](src/main/java/yyl/leetcode/p12/P1300_SumOfMutatedArrayClosestToTarget.java)|中等|
+|1310|[子数组异或查询](src/main/java/yyl/leetcode/p13/P1310_XorQueriesOfASubarray.java)|中等|
 |1319|[连通网络的操作次数](src/main/java/yyl/leetcode/p13/P1319_NnumberOfOperationsToMakeNetworkConnected.java)|中等|
 |1356|[根据数字二进制下1的数目排序](src/main/java/yyl/leetcode/p13/P1356_SortIntegersByTheNumberOf1Bits.java)|简单|
 |1365|[有多少小于当前数字的数字](src/main/java/yyl/leetcode/p13/P1365_HowManyNumbersAreSmallerThanTheCurrentNumber.java)|简单|
