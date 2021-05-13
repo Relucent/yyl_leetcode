@@ -277,6 +277,7 @@ Leetcode 题解
 |1207|[独一无二的出现次数](src/main/java/yyl/leetcode/p12/P1207_UniqueNumberOfOccurrences.java)|简单|
 |1208|[尽可能使字符串相等](src/main/java/yyl/leetcode/p12/P1208_GetEqualSubstringsWithinBudget.java)|中等|
 |1232|[缀点成线](src/main/java/yyl/leetcode/p12/P1232_CheckIfItIsAStraightLine.java)|简单|
+|1269|[停在原地的方案数](src/main/java/yyl/leetcode/p12/P1269_NumberOfWaysToStayInTheSamePlaceAfterSomeSteps.java)|困难|
 |1300|[转变数组后最接近目标值的数组和](src/main/java/yyl/leetcode/p12/P1300_SumOfMutatedArrayClosestToTarget.java)|中等|
 |1310|[子数组异或查询](src/main/java/yyl/leetcode/p13/P1310_XorQueriesOfASubarray.java)|中等|
 |1319|[连通网络的操作次数](src/main/java/yyl/leetcode/p13/P1319_NnumberOfOperationsToMakeNetworkConnected.java)|中等|

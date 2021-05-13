@@ -27,11 +27,10 @@ public class P1232_CheckIfItIsAStraightLine {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        // Assert.assertTrue(solution.checkStraightLine(new int[][] { { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 5, 6 }, { 6, 7 } }));
-        // Assert.assertFalse(solution.checkStraightLine(new int[][] { { 1, 1 }, { 2, 2 }, { 3, 4 }, { 4, 5 }, { 5, 6 }, { 7, 7 } }));
-        // Assert.assertFalse(solution.checkStraightLine(new int[][] { { 1, 2 }, { 1, 3 }, { 1, 4 }, { 1, 5 }, { 1, 6 }, { 6, 7 } }));
+        Assert.assertTrue(solution.checkStraightLine(new int[][] { { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 5, 6 }, { 6, 7 } }));
+        Assert.assertFalse(solution.checkStraightLine(new int[][] { { 1, 1 }, { 2, 2 }, { 3, 4 }, { 4, 5 }, { 5, 6 }, { 7, 7 } }));
+        Assert.assertFalse(solution.checkStraightLine(new int[][] { { 1, 2 }, { 1, 3 }, { 1, 4 }, { 1, 5 }, { 1, 6 }, { 6, 7 } }));
         Assert.assertTrue(solution.checkStraightLine(new int[][] { { 0, 0 }, { 0, 1 }, { 0, -1 } }));
-
     }
 
     // 数学
