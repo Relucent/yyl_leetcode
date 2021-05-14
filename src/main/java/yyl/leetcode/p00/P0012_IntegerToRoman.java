@@ -37,21 +37,33 @@ public class P0012_IntegerToRoman {
         }
     }
 
+    // 硬编码数字
+    // 千位数字只能由 M 表示；
+    // 百位数字只能由 C CD D CM 表示；
+    // 十位数字只能由 X XL L XC 表示；
+    // 个位数字只能由 I IV V IX 表示。
+    // 恰好把这 13 个符号分为四组，且组与组之间没有公共的符号。
+    // 利用模运算和除法运算，我们可以得到 num 每个位上的数字
+    // 最后，根据 num 每个位上的数字，在硬编码表中查找对应的罗马字符，并将结果拼接在一起，即为 num 对应的罗马数字。
+    // 复杂度分析
+    // 时间复杂度：O(1)。计算量与输入数字的大小无关。
+    // 空间复杂度：O(1)。
     static class Solution {
+        private static final String[] THOUSANDS = { "", "M", "MM", "MMM" };
+        private static final String[] HUNDREDS = { "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" };
+        private static final String[] TENS = { "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" };
+        private static final String[] ONES = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
+
         public String intToRoman(int num) {
             if (num < 1 || 3999 < num) {
                 return "";
             }
-            String[] digitals = { //
-                    "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", // 10^0
-                    "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC", // 10^1
-                    "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM", // 10^2
-                    "", "M", "MM", "MMM" // 10^3
-            };
-            return digitals[((num / 1000) % 10) + 30]// 10^3
-                    + digitals[((num / 100) % 10) + 20]// 10^2
-                    + digitals[((num / 10) % 10) + 10]// 10^1
-                    + digitals[(num) % 10];// 10^0
+            StringBuilder roman = new StringBuilder();
+            roman.append(THOUSANDS[num / 1000]);
+            roman.append(HUNDREDS[num % 1000 / 100]);
+            roman.append(TENS[num % 100 / 10]);
+            roman.append(ONES[num % 10]);
+            return roman.toString();
         }
     }
 }
